@@ -1,0 +1,459 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head><title>
+	Reviews For Paper
+</title>
+<style>
+body
+{
+	font-family:verdana,arial,helvetica;
+}
+#header
+{
+    width: 100%;
+    font-size: small;
+    background-color:#F7F7F7;
+}
+.headerSeparator
+{
+    background-color: #105586;
+}
+.printThemeText
+{
+    font-size:small;
+}
+.printThemeTable td
+{
+    vertical-align:top;
+}
+.printThemeGrid th
+{
+    color:white;
+    background:#5D7B9D;
+    font-weight:bold;
+}
+.printThemeGrid
+{
+    border-collapse:collapse;
+}
+.printThemeGrid td, .printThemeGrid th
+{
+    border:solid 1px #D6D3CE;
+    padding:4px 4px 4px 4px;
+}
+.printThemeGrid .row
+{ 
+    background-color:#F7F6F3;
+    color:#333333;
+    vertical-align:top;
+}
+.printThemeGrid .altrow
+{ 
+    background-color:White;
+    color:#284775;
+    vertical-align:top;
+}
+.cellprompt
+{
+	font-weight:bold;
+	white-space:nowrap;
+    width:100px;	
+}
+.paperHeader
+{
+    background-color:#dee3e7;
+    margin:5px 5px 15px 0px;
+    width:99%;
+    font-family:Verdana;
+    font-size:medium;
+    font-weight:bold;
+}
+.sectionHeader
+{
+    background-color:#dee3e7;
+    padding:5px 5px 5px 0px;
+    width:99%;
+    text-decoration:underline;
+    font-family:Verdana;
+    font-size:small;
+    font-weight:bold;
+}
+.underlineheader
+{
+    text-decoration:underline;
+    font-weight:bold;
+    padding:5px 0px;
+}
+.response
+{
+    padding:5px 0px;
+}
+.reviewerlabel
+{
+    padding-right:20px;
+}
+.pageTitle
+{
+    background-color:#dee3e7;
+    padding:5px 5px 5px 5px;
+    margin-top:10px;
+    width:99%;
+    font-family:Verdana;
+    font-size:medium;
+    font-weight:bold;
+}
+.submissionDetailsView
+{
+}
+.submissionDetailsView tr
+{
+    vertical-align:top;
+}
+.submissionDetailsView td.prompt
+{
+    font-weight:bold;
+}
+.submissionDetailsView tr.sectionSeparator
+{
+
+}
+.submissionDetailsView tr.sectionSeparator td
+{
+    background-color:#dee3e7;
+    padding:5px 5px 5px 5px;
+    font-family:Verdana;
+    font-size:small;
+    font-weight:bold;
+    color:Navy;
+}
+/*CSS Grid View General Definitions*/
+.CssGridView
+{
+    font-size:small; 
+}
+
+.CssGridView td, .CssGridView th
+{
+    padding:4px 4px 4px 4px;
+}
+
+/*CSS Compact Grid View General Definitions*/
+.CssGridViewCompact img
+{
+    border-style:none;
+    border-width:0px;
+}
+
+.CssGridViewCompact
+{
+    font-size:1em;
+    border-style:solid;
+    border-color:#D6D3CE;
+    border-width:1px;
+}
+
+.CssGridViewCompact .hrow a
+{
+    font-size:1em;
+}
+
+.CssGridViewCompact .row a, .CssGridViewCompact .altrow a
+{
+    font-size:0.8em;
+}
+
+.CssGridViewCompact .row .normal a, .CssGridViewCompact .row .normal, .CssGridViewCompact .altrow .normal a, .CssGridViewCompact .altrow .normal
+{
+    font-size:1em;
+}
+
+/*CSS Grid View Header Styles*/
+.CssGridView .hrow, .CssGridViewCompact .hrow
+{ 
+    background-color:#5D7B9D;
+    font-weight:bold;
+    color:White;
+}
+
+
+.CssGridViewCompact .hrow td
+{ 
+    border-bottom-width:0px;
+}
+
+.CssGridViewCompact .hrow th
+{ 
+    border-top-width:0px;
+    font-size:0.8em;
+    vertical-align:top;
+    border-left-width:0px;
+    border-right-width:0px;
+}
+
+.CssGridViewCompact .smaller
+{
+    font-size:0.8em;
+}
+
+/*CSS Grid View Row Styles*/
+.CssGridViewCompact .row, .CssGridViewCompact .altrow
+{
+    border-top-style:solid;
+    border-top-color:#D6D3CE;
+    border-top-width:1px;
+    border-bottom-style:solid;
+    border-bottom-color:#D6D3CE;
+    border-bottom-width:1px;
+}
+
+/*CSS Grid View Header Styles*/
+.CssGridViewCompact .hrow .leftborder, .CssGridViewCompact .row .leftborder, .CssGridViewCompact .altrow .leftborder
+{
+    border-left-width:1px;
+    border-left-color:#D6D3CE;
+    border-left-style:solid;
+}
+
+.CssGridViewCompact .hrow .rightborder, .CssGridViewCompact .row .rightborder, .CssGridViewCompact .altrow .rightborder
+{
+    border-right-width:1px;
+    border-right-color:#D6D3CE;
+    border-right-style:solid;
+}
+
+.CssGridView .hrow a, .CssGridViewCompact .hrow a
+{ 
+    color:White;
+}
+ 
+.CssGridView .row, .CssGridViewCompact .row
+{ 
+    background-color:#F7F6F3;
+    color:#333333;
+    vertical-align:top;
+}
+
+.CssGridView .altrow, .CssGridViewCompact .altrow
+{ 
+    vertical-align:top;
+}
+
+.CssGridViewCompact .row td
+{ 
+    border-left-width:0px;
+    border-right-width:0px;
+}
+ 
+.CssGridViewCompact .altrow
+{ 
+    background-color:White;
+    color:#284775;
+    vertical-align:top;
+}
+
+.CssGridView .altrow tr, .CssGridViewCompact .altrow tr, .CssGridView .row tr, .CssGridViewCompact .row tr
+{ 
+    vertical-align:top;
+}
+</style>
+</head>
+<body>
+<form name="aspnetForm" method="post" action="ViewReviewsForPaper.aspx?paperId=305" id="aspnetForm">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTAxNDM4ODU3Ng9kFgJmD2QWAgIDD2QWAmYPZBYCAgUPDxYCHgdWaXNpYmxlZ2QWBgIBD2QWAmYPZBYEAgMPDxYCHgRUZXh0BQMzMDVkZAIFDw8WAh8BBS9RdWFsaXRhdGl2ZSBQcm9iYWJpbGl0eSBmb3IgSW50cnVzaW9uIERldGVjdGlvbmRkAgMPDxYCHwBoZGQCBQ8WAh4LXyFJdGVtQ291bnQCAxYGZg9kFgYCAw9kFgJmDxUBE0Fzc2lnbmVkX1Jldmlld2VyXzFkAgcPPCsADQEADxYEHgtfIURhdGFCb3VuZGcfAgIGZBYCZg9kFg4CAQ9kFgRmDw8WAh8BBbUCTm92ZWx0eTogVGhpcyBpcyBhcmd1YWJseSB0aGUgc2luZ2xlIG1vc3QgaW1wb3J0YW50IGNyaXRlcmlvbiBmb3Igc2VsZWN0aW5nIHBhcGVycyBmb3IgdGhlIGNvbmZlcmVuY2UuIFJldmlld2VycyBzaG91bGQgcmV3YXJkIHBhcGVycyB0aGF0IHByb3Bvc2UgZ2VudWluZWx5IG5ldyBpZGVhcyBvciBub3ZlbCBhZGFwdGF0aW9ucy9hcHBsaWNhdGlvbnMgb2YgZXhpc3RpbmcgbWV0aG9kcy4gLi4uIChGb3IgdGhlIHJlc3Qgb2YgdGhpcyBxdWVzdGlvbiwgc2VlIGh0dHA6Ly9hdWFpLm9yZy91YWkyMDE0L3Jldmlld0NyaXRlcmlhLnNodG1sKSAgZGQCAQ9kFgJmDxUB6QVUaGUgcGFwZXIgaXMgd2VsbCB3cml0dGVuLiBUaGUgcHJvYmxlbSBzZXR0aW5nIGFuZCBvYmplY3RpdmUgb2YgdGhlIHBhcGVyIGFyZSB3ZWxsIHN0cnVjdHVyZWQgYW5kIGNsZWFybHkgcHJlc2VudGVkLiBUaGUgZXhwZXJpbWVudHMgYW5kIG1ldGhvZHMgYXJlIGRldGFpbGVkIGFuZCB3ZWxsLXJlYXNvbmVkLiBUaGUgcGFwZXIgZGVzY3JpYmVzIGEgdmFyaWF0aW9uIG9uIGV4aXN0aW5nIG1ldGhvZHMgYW5kIGFwcHJvYWNoZXMgdXNpbmcgQmF5ZXNpYW4gbmV0d29yayBtb2RlbGxpbmcgdG8gaWRlbnRpZnkgYW5vbWFsaWVzIGluIGludHJ1c2lvbiBkZXRlY3Rpb24gc3lzdGVtcywgYW5kIGNvbWJpbmVzIGl0IHdpdGggWisgcXVhbGl0YXRpdmUgcHJvYmFiaWxpdHkgcmFua2luZyB0byByYW5rIHdoYXQgaXMgYW5vbWFsb3VzICh3aGljaCBtb2RlbCBpcyBtb3JlICJzdXJwcmlzaW5nIikuIFRoZSBjb25jZXB0IG9mIGxlYXJuaW5nIEJheWVzaWFuIG5ldHdvcmsgbW9kZWxzIHRvIHJhbmsgb3V0bGllcnMgYW5kIGFub21hbG91cyBiZWhhdmlvdXIgaXMgd2VsbCBkZXNjcmliZWQgaW4gbWFueSBkaXNjaXBsaW5lcyBpbmNsdWRpbmcgaWRlbnRpZnlpbmcgYXR0YWNrIGV2ZW50cyBmcm9tIGJlbmlnbiBldmVudHMsIGhvd2V2ZXIgdGhlIHVzZSBvZiBaKyBxdWFsaXRhdGl2ZSBwcm9iYWJpbGl0eSBzeXN0ZW1zIGZvciB0aGUgcmFua2luZyBpbiB0aGlzIGRpc2NpcGxpbmUgaXMgcmVsYXRpdmVseSBuZXcuPGJyIC8+ZAICD2QWBGYPDxYCHwEF1gJUZWNobmljYWwgUXVhbGl0eTogQXJlIHRoZSByZXN1bHRzIHRlY2huaWNhbGx5IHNvdW5kPyBBcmUgdGhlcmUgb2J2aW91cyBmbGF3cyBpbiB0aGUgY29uY2VwdHVhbCBhcHByb2FjaD8gQXJlIGNsYWltcyB3ZWxsLXN1cHBvcnRlZCBieSB0aGVvcmV0aWNhbCBhbmFseXNpcyBvciBleHBlcmltZW50YWwgcmVzdWx0cz8gRGlkIHRoZSBhdXRob3JzIGlnbm9yZSAob3IgYXBwZWFyIHVuYXdhcmUgb2YpIGhpZ2hseSByZWxldmFudCBwcmlvciB3b3JrPyAgLi4uIChGb3IgdGhlIHJlc3Qgb2YgdGhpcyBxdWVzdGlvbiwgc2VlIGh0dHA6Ly9hdWFpLm9yZy91YWkyMDE0L3Jldmlld0NyaXRlcmlhLnNodG1sKSBkZAIBD2QWAmYPFQGhB1RoZSBleHBlcmltZW50cyBhbmQgbWV0aG9kcyBhcmUgd2VsbCBzdHJ1Y3R1cmVkIGFuZCBkZXNjcmliZWQgaW4gZGV0YWlsLiBUaGUgZXhwZXJpbWVudHMgYXJlIGVzcGVjaWFsbHkgZWxhYm9yYXRlIGFuZCBjbGVhciBvbiBob3cgdGhlIHRlc3Qgc2V0cyBhcmUgZ2VuZXJhdGVkIGJ5IHNhbXBsaW5nIGV2ZW50cyB1c2luZyB0aGVpciBrbm93biBmYWxzZSBwb3NpdGl2ZSBhbmQgZmFsc2UgbmVnYXRpdmUgcHJvYmFiaWxpdGllcy4gIEl0IHdvdWxkIGhhdmUgYmVlbiBnb29kIGlmIHRoZSBhdXRob3JzIGNvdWxkIGRlbW9uc3RyYXRlIHRoZXJlIHJlc3VsdHMgb24gYSBjb21wbGV0ZSBkYXRhIHNldCBhbmQgbm90IG9ubHkgc2FtcGxlIGdlbmVyYXRlZCBleHBlcmltZW50cy4gIFRoZSBjb2RlIGFuZCB0aGUgZGF0YSBzZWVtIHRvIGJlIHVuYXZhaWxhYmxlIHB1YmxpY2x5IHN1Y2ggdGhhdCBmdXR1cmUgcmVwcm9kdWN0aW9uIGFuZCBjb21wYXJpc29uIGJ5IG90aGVyIHJlc2VhcmNoZXJzIGlzIGltcG9zc2libGUuIFRoZSBhdXRob3JzIGNsZWFybHkgZGlzY3Vzc2VkIGJvdGggc3RyZW5ndGhzIGFuZCB3ZWFrbmVzcyBvZiB0aGUgcmVzdWx0cyBhbmQgdGhlIGltcGxpY2F0aW9ucyB0byB0aGVpciB0ZWNobmlxdWUgYW5kIGNvbmNsdXNpb25zLiBUaGUgcmVzdWx0cyBvZiB0aGUgZXhwZXJpbWVudHMgZGVtb25zdHJhdGUgYWR2YW50YWdlIG9mIHRoZSB0ZWNobmlxdWUgcHJlc2VudGVkIGhlcmVpbi4gSG93ZXZlciwgdGhlIGNvbmNsdXNpb25zIGFuZCBleHBlcmltZW50cyB3b3VsZCBoaWdobHkgYmVuZWZpdCBmcm9tIHRoZSBjb21wYXJpc29uIHRvIG90aGVyIG1ldGhvZHMgYXMgd2VsbCBhcyBhIGJldHRlciBkZW1vbnN0cmF0aW9uIG9mIHRoZSBpbXBhY3Qgb3ZlciB0aW1lIG9uIHRoZSByZWNhbGwgYW5kIHByZWNpc2lvbi4gPGJyIC8+ZAIDD2QWBGYPDxYCHwEF3wJQb3RlbnRpYWwgSW1wYWN0IGFuZCBTaWduaWZpY2FuY2U6IElzIHRoaXMgcmVhbGx5IGEgc2lnbmlmaWNhbnQgYWR2YW5jZSBpbiB0aGUgc3RhdGUgb2YgdGhlIGFydD8gSXMgdGhpcyBhIHBhcGVyIHRoYXQgcGVvcGxlIGFyZSBsaWtlbHkgdG8gcmVhZCBhbmQgY2l0ZSBpbiBsYXRlciB5ZWFycz8gRG9lcyB0aGUgcGFwZXIgYWRkcmVzcyBhbiBpbXBvcnRhbnQgcHJvYmxlbSAoZS5nLiwgb25lIHRoYXQgcGVvcGxlIG91dHNpZGUgVUFJIGFyZSBhd2FyZSBvZik/ICAuLi4uIChGb3IgdGhlIHJlc3Qgb2YgdGhpcyBxdWVzdGlvbiwgc2VlIGh0dHA6Ly9hdWFpLm9yZy91YWkyMDE0L3Jldmlld0NyaXRlcmlhLnNodG1sKSBkZAIBD2QWAmYPFQGNBFRoZSBwYXBlciBjYXB0dXJlcyBhbmQgZGVzY3JpYmVzIHdlbGwgdGhlIGNoYWxsZW5nZXMgYW5kIHNob3J0Y29taW5ncyBvZiBhbm9tYWx5IGRldGVjdGlvbiBiYXNlZCBzeXN0ZW1zIGZvciBJbnRydXNpb24gZGV0ZWN0aW9uIHN5c3RlbXMgdG9kYXksIGUuZy4gdGhlIHF1YW50aXRhdGl2ZSB1bmJhbGFuY2UgYmV0d2VlbiBiZW5pZ24gYW5kIGF0dGFjayBldmVudHMsIHRoZSBpc3N1ZXMgd2l0aCBhcHBseWluZyBzaWduYXR1cmUgYmFzZWQgYW5vbWFseSBkZXRlY3Rpb24sIHRoZSBhZHZhbnRhZ2VzIG9mIGxvY2FsIGFub21hbHkgZGV0ZWN0aW9uIHZzIGdsb2JhbCBhbm9tYWx5IGRldGVjdGlvbiBhbmQgbW9yZS4gVGhlIG5vdGlvbiBvZiBaKyByYW5raW5nIGFuZCBCYXllc2lhbiBuZXR3b3JrcyBzZWVtcyB0byBiZSBzb3VuZCwgaG93ZXZlciwgdGhlc2UgZXhwZXJpbWVudHMgbWFrZSBpdCBkaWZmaWN1bHQgdG8gdW5kZXJzdGFuZCBob3cgaXQgY29tcGFyZXMgdG8gb3RoZXIgc3RhdGUgb2YgdGhlIGFydCBzeXN0ZW1zLmQCBA9kFgRmDw8WAh8BBZYBUXVhbGl0eSBvZiBXcml0aW5nOiBQbGVhc2UgbWFrZSBmdWxsIHVzZSBvZiB0aGUgcmFuZ2Ugb2Ygc2NvcmVzIGZvciB0aGlzIGNhdGVnb3J5IHNvIHRoYXQgd2UgY2FuIGlkZW50aWZ5IHBvb3JseS13cml0dGVuIHBhcGVycyBlYXJseSBpbiB0aGUgcHJvY2Vzcy4gZGQCAQ9kFgJmDxUBH1F1YWxpdHkgb2Ygd3JpdGluZyBpcyBleGNlbGxlbnRkAgUPZBYEZg8PFgIfAQUlT3ZlcmFsbCBOdW1lcmljIFNjb3JlIGZvciB0aGlzIFBhcGVyOmRkAgEPZBYCZg8VAZQBQSBnb29kIHBhcGVyIG92ZXJhbGwsIGFjY2VwdCBpZiBwb3NzaWJsZS4gSSB2b3RlIGZvciBhY2NlcHRhbmNlLCBhbHRob3VnaCB3b3VsZCBub3QgYmUgdXBzZXQgaWYgaXQgd2VyZSByZWplY3RlZCBiZWNhdXNlIG9mIHRoZSBsb3cgYWNjZXB0YW5jZSByYXRlLmQCBg9kFgRmDw8WAh8BBZICKE9wdGlvbmFsKSBBZGRpdGlvbmFsIENvbW1lbnRzIHRvIHRoZSBBdXRob3JzOiBwbGVhc2UgYWRkIGFueSBhZGRpdGlvbmFsIGZlZWRiYWNrIHlvdSB3aXNoIHRvIHByb3ZpZGUgdG8gdGhlIGF1dGhvcnMgaGVyZS4gRm9yIGV4YW1wbGUsIGlmIHRoZSBxdWFsaXR5IG9mIHdyaXRpbmcgaW4gdGhlIHBhcGVyIGlzIG5vdCBleGNlbGxlbnQsIHBsZWFzZSBwcm92aWRlIHNvbWUgZmVlZGJhY2sgdG8gdGhlIGF1dGhvcnMgb24gaG93IHRoZSB3cml0aW5nIGNvdWxkIGJlIGltcHJvdmVkLmRkAgEPZBYCZg8VAR1SRVBMQUNFIFRISVMgV0lUSCBZT1VSIEFOU1dFUmQCBw8PFgIfAGhkZAIIDxUBAGQCAQ9kFgYCAw9kFgJmDxUBFEFzc2lnbmVkX1Jldmlld2VyXzExZAIHDzwrAA0BAA8WBB8DZx8CAgZkFgJmD2QWDgIBD2QWBGYPDxYCHwEFtQJOb3ZlbHR5OiBUaGlzIGlzIGFyZ3VhYmx5IHRoZSBzaW5nbGUgbW9zdCBpbXBvcnRhbnQgY3JpdGVyaW9uIGZvciBzZWxlY3RpbmcgcGFwZXJzIGZvciB0aGUgY29uZmVyZW5jZS4gUmV2aWV3ZXJzIHNob3VsZCByZXdhcmQgcGFwZXJzIHRoYXQgcHJvcG9zZSBnZW51aW5lbHkgbmV3IGlkZWFzIG9yIG5vdmVsIGFkYXB0YXRpb25zL2FwcGxpY2F0aW9ucyBvZiBleGlzdGluZyBtZXRob2RzLiAuLi4gKEZvciB0aGUgcmVzdCBvZiB0aGlzIHF1ZXN0aW9uLCBzZWUgaHR0cDovL2F1YWkub3JnL3VhaTIwMTQvcmV2aWV3Q3JpdGVyaWEuc2h0bWwpICBkZAIBD2QWAmYPFQHSA1RoaXMgcGFwZXIgZXhwbG9yZXMgdGhlIGlkZWEgb2YgdXNpbmcgU3lzdGVtIForIGZvciBJbnRydXNpb24gRGV0ZWN0aW9uLCB3aGVyZSBtdWx0aXBsZSBzZW5zb3IgZGV0ZWN0aW9ucyBhcmUgZnVzZWQgKGluIHRoZWlyIGNhc2UgdGhleSB1c2VkIHRocmVlIHNlbnNvcnMgZm9yIHBvc3NpYmxlIGZ1c2lvbikuIFRoZSB0b3BpYyBpdHNlbGYgaXMgaW50ZXJlc3RpbmcgYW5kIG1heWJlIHVzaW5nIFN5c3RlbSBaKyBoYXMgc29tZSBtZXJpdCBpbiB0aGlzIHdvcmsuIFRoZSBtYWluIG5vdmVsdHkgaXMgdG8gY29uZHVjdCBleHBlcmltZW50cyB3aXRoIHN5bnRoZXRpYyBkYXRhIG9uIHRoZSBleGlzdGluZyBNSUZEIHN5c3RlbSB0byBlc3RhYmxpc2ggd2hldGhlciBxdWFsaXRhdGl2ZSAob3JkaW5hbCkgbGlrZWxpaG9vZHMgZ2l2ZSBnb29kIHJlc3VsdHMgd2hlbiBhY3R1YWwgcHJvYmFiaWxpdGllcyBhcmUgdW5rbm93bi5kAgIPZBYEZg8PFgIfAQXWAlRlY2huaWNhbCBRdWFsaXR5OiBBcmUgdGhlIHJlc3VsdHMgdGVjaG5pY2FsbHkgc291bmQ/IEFyZSB0aGVyZSBvYnZpb3VzIGZsYXdzIGluIHRoZSBjb25jZXB0dWFsIGFwcHJvYWNoPyBBcmUgY2xhaW1zIHdlbGwtc3VwcG9ydGVkIGJ5IHRoZW9yZXRpY2FsIGFuYWx5c2lzIG9yIGV4cGVyaW1lbnRhbCByZXN1bHRzPyBEaWQgdGhlIGF1dGhvcnMgaWdub3JlIChvciBhcHBlYXIgdW5hd2FyZSBvZikgaGlnaGx5IHJlbGV2YW50IHByaW9yIHdvcms/ICAuLi4gKEZvciB0aGUgcmVzdCBvZiB0aGlzIHF1ZXN0aW9uLCBzZWUgaHR0cDovL2F1YWkub3JnL3VhaTIwMTQvcmV2aWV3Q3JpdGVyaWEuc2h0bWwpIGRkAgEPZBYCZg8VAZMLVGhlIHBhcGVyIGRvZXMgbm90IHN1Y2NlZWQgaW4gZGVsaXZlcmluZyBhIGNvbXBsZXRlIHBpY3R1cmUgYXMgaG93IGRpZmZlcmVudCBhcHByb2FjaGVzIGFyZSBpbnRlZ3JhdGVkIGZvciB0aGUgcHJvcG9zZWQgaW50cnVzaW9uIGRldGVjdGlvbi4gU3BlY2lmaWNhbGx5OjxiciAvPjxiciAvPkZpcnN0LCBTeXN0ZW0gWissIEJheWVzaWFuIG5ldHdvcmtzLCBjbHVzdGVyaW5nIG1ldGhvZHMgKGZvciBzZW5zb3IgZnVzaW9uKSwgZXRjLiBzaG91bGQgYmUgaW50cm9kdWNlZCBtb3JlIGNsZWFybHkuIFdoYXQgYXJlIGJlbmlnbiBldmVudCBoeXBvdGhlc2VzIGFuZCB3aGF0IGFyZSBhdHRhY2sgZXZlbnQgaHlwb3RoZXNlcz8gV2hhdCBhcmUgY29tcGxleCBldmVudHM/ICBFdmVuIHRob3VnaCB0aGV5IGFyZSBub3QgdGhlIGZvY3VzIG9mIHRoZSBwYXBlciwgdGhleSBzaG91bGQgYXQgbGVhc3QgYmUgaW50cm9kdWNlZCB0byBnaXZlIGEgcmVhZGVyIGFuIGlkZWEgb2YgdGhlIGRpZmZlcmVuY2UgYmV0d2VlbiBhbGwgdGhlc2UgZGlmZmVyZW50IHR5cGVzIG9mIGV2ZW50cy48YnIgLz48YnIgLz5TZWNvbmQsIHJlbW92aW5nIG9sZCBldmVudCBoeXBvdGhlc2VzIGFuZCBzZW5zb3IgcmVwb3J0cyB0byBmcmVlIHVwIHJlc291cmNlcyBkb2VzIG5vdCBzZWVtIHRvIGJlIGEgcmlnaHQgYXBwcm9hY2ggZm9yIGludHJ1c2lvbiBkZXRlY3Rpb24gaWYgdGhlc2UgZXZlbnRzIGNhbiBzdGlsbCBiZSB1c2VmdWwuIFRoZXJlIHNob3VsZCBiZSBhIGp1c3RpZmljYXRpb24gYXMgdG8gd2h5IHJlbW92aW5nIHRoZXNlIHdpbGwgbm90IGFmZmVjdCB0aGUgc3lzdGVtIHBlcmZvcm1hbmNlLiBXaGVyZSB0byBzdG9yZSB0aGVtIGlzIG5vdCBzbyBpbXBvcnRhbnQuPGJyIC8+PGJyIC8+VGhpcmQsIHRoZSBub3RhdGlvbnMgaW4gdGhlIHRhYmxlIG9uIHBhZ2UgNSBhcmUgbm90IHByb3Blcmx5IGludHJvZHVjZWQuICBXaGF0IGlzIFxvbWVnYT8gQSBwb3NzaWJsZSB3b3JsZCBvciBlbHNlPyBJIHRvb2sgdGhhdCBccGhpIGlzIGEgZm9ybXVsYSAoYSBoeXBvdGhlc2lzKS4gV2hhdCBkb2VzIFxwaGkgXGluIFxvbWVnYSBtZWFuPzxiciAvPjxiciAvPkZvdXJ0aCwgSSBhbSBub3QgYWJsZSB0byBlc3RhYmxpc2ggaG93IG91dHB1dHMgZnJvbSBkaWZmZXJlbnQgc2Vuc29ycyBhcmUgcmVsYXRlZCAob3IgY29ycmVsYXRlZCkgdG8gZ2VuZXJhdGUgYSBzaW5nbGUgb3V0cHV0IChyZWZlcnJlZCB0byBhcyBjbHVzdGVyaW5nIGJ5IHRoZSBhdXRob3JzIGluIHNldmVyYWwgcGxhY2VzKS4gVGhlIGRlc2NyaXB0aW9uIG9uIHBhZ2UgNSByaWdodCBjb2x1bW4gaXMgY29uZnVzaW5nLjxiciAvPjxiciAvPkEganVzdGlmaWNhdGlvbiBzaG91bGQgYmUgcHJvdmlkZWQgZm9yIHRoZSBjaG9pY2Ugb2YgcGFyYW1ldGVyIHNldHRpbmdzIG9uIHBhZ2UgNi5kAgMPZBYEZg8PFgIfAQXfAlBvdGVudGlhbCBJbXBhY3QgYW5kIFNpZ25pZmljYW5jZTogSXMgdGhpcyByZWFsbHkgYSBzaWduaWZpY2FudCBhZHZhbmNlIGluIHRoZSBzdGF0ZSBvZiB0aGUgYXJ0PyBJcyB0aGlzIGEgcGFwZXIgdGhhdCBwZW9wbGUgYXJlIGxpa2VseSB0byByZWFkIGFuZCBjaXRlIGluIGxhdGVyIHllYXJzPyBEb2VzIHRoZSBwYXBlciBhZGRyZXNzIGFuIGltcG9ydGFudCBwcm9ibGVtIChlLmcuLCBvbmUgdGhhdCBwZW9wbGUgb3V0c2lkZSBVQUkgYXJlIGF3YXJlIG9mKT8gIC4uLi4gKEZvciB0aGUgcmVzdCBvZiB0aGlzIHF1ZXN0aW9uLCBzZWUgaHR0cDovL2F1YWkub3JnL3VhaTIwMTQvcmV2aWV3Q3JpdGVyaWEuc2h0bWwpIGRkAgEPZBYCZg8VAb8DVGhlIHByb2JsZW0gb2YgcmVkdWNpbmcgZmFsc2UgcG9zaXRpdmVzIGluIElEUyBzeXN0ZW1zIGlzIGFuIGltcG9ydGFudCBvbmUuIEhvd2V2ZXIsIHRoZSBjb250cmlidXRpb25zIG9mIHRoaXMgcGFwZXIgc2VlbSB0byBiZSByZXN0cmljdGVkIHRvIGV2YWx1YXRpbmcgb25lIHNwZWNpZmljIHN5c3RlbSBpbiBvbmUgc3BlY2lmaWMgdGVzdCBlbnZpcm9ubWVudCwgc28gaXQgaXMgbm90IGNsZWFyIHdoZXRoZXIgdGhlc2UgcmVzdWx0cyBhcmUgdXNlZnVsIG1vcmUgZ2VuZXJhbGx5LjxiciAvPjxiciAvPkl0IHNlZW1zIHRvIG1lIHRoYXQgYm9vc3RpbmcgY291bGQgYmUgdXNlZCBhcyBhbiBhbHRlcm5hdGl2ZSBhcHByb2FjaC4gU2hvdWxkIHRoZSBwYXBlciBjb21wYXJlIHRoaXMgYXBwcm9hY2ggdG8gYm9vc3Rpbmcgb3IgYXQgbGVhc3QgbWVudGlvbiBpdCBpbiBSZWxhdGVkIFdvcms/ZAIED2QWBGYPDxYCHwEFlgFRdWFsaXR5IG9mIFdyaXRpbmc6IFBsZWFzZSBtYWtlIGZ1bGwgdXNlIG9mIHRoZSByYW5nZSBvZiBzY29yZXMgZm9yIHRoaXMgY2F0ZWdvcnkgc28gdGhhdCB3ZSBjYW4gaWRlbnRpZnkgcG9vcmx5LXdyaXR0ZW4gcGFwZXJzIGVhcmx5IGluIHRoZSBwcm9jZXNzLiBkZAIBD2QWAmYPFQFDUXVhbGl0eSBvZiB3cml0aW5nIGlzIGdvb2QsIGJ1dCBjb3VsZCBiZSBpbXByb3ZlZCB3aXRoIHNvbWUgZWRpdGluZ2QCBQ9kFgRmDw8WAh8BBSVPdmVyYWxsIE51bWVyaWMgU2NvcmUgZm9yIHRoaXMgUGFwZXI6ZGQCAQ9kFgJmDxUBhAFEZWNlbnQgcGFwZXIsIGJ1dCBtYXkgYmUgYmVsb3cgdGhlIFVBSSB0aHJlc2hvbGQuIEkgdGVuZCB0byB2b3RlIGZvciByZWplY3RpbmcgaXQsIGFsdGhvdWdoIHdvdWxkIG5vdCBiZSB1cHNldCBpZiBpdCB3ZXJlIGFjY2VwdGVkLiBkAgYPZBYEZg8PFgIfAQWSAihPcHRpb25hbCkgQWRkaXRpb25hbCBDb21tZW50cyB0byB0aGUgQXV0aG9yczogcGxlYXNlIGFkZCBhbnkgYWRkaXRpb25hbCBmZWVkYmFjayB5b3Ugd2lzaCB0byBwcm92aWRlIHRvIHRoZSBhdXRob3JzIGhlcmUuIEZvciBleGFtcGxlLCBpZiB0aGUgcXVhbGl0eSBvZiB3cml0aW5nIGluIHRoZSBwYXBlciBpcyBub3QgZXhjZWxsZW50LCBwbGVhc2UgcHJvdmlkZSBzb21lIGZlZWRiYWNrIHRvIHRoZSBhdXRob3JzIG9uIGhvdyB0aGUgd3JpdGluZyBjb3VsZCBiZSBpbXByb3ZlZC5kZAIBD2QWAmYPFQH8BUluIGdlbmVyYWwsIHRoZSBwYXBlciBjb3VsZCBiZSBpbXByb3ZlZCBieSBlZGl0aW5nIGZvciBjb25jaXNlbmVzcyBhbmQgY2xlYXJlciBleHBsYW5hdGlvbnMuIFRoZSBzZWN0aW9uICJJbnRydXNpb24gRGV0ZWN0aW9uIEZ1c2lvbiIgaGFzIGEgdmVyeSBsb25nIHNlY3Rpb24gb2YgaW50cm9kdWN0b3J5IHRleHQgYW5kIGEgc2hvcnQgc2VjdGlvbiBvbiBSZWxhdGVkIFdvcmsuIFRoZSBpbnRyb2R1Y3RvcnkgdGV4dCB3b3VsZCBiZW5lZml0IGZyb20gdGlnaHRlciBlZGl0aW5nLiBUaGUgcmVsYXRlZCB3b3JrIHNlY3Rpb24gY291bGQgYmUgZXhwYW5kZWQgYW5kIHByZXNlbnRlZCBtb3JlIGNsZWFybHksIHRvIHNlcGFyYXRlIG1ldGhvZHMgc3VjaCBhcyBGU01zIG9yIEJheWVzIG5ldHdvcmtzIGZyb20gaW1wbGVtZW50YXRpb25zIGxpa2UgQVJJUyBvciBBcmNzaWdodC48YnIgLz48YnIgLz5NSUZEIGlzIGludHJvZHVjZWQgaW4gdGhlIGFic3RyYWN0IGJ1dCBpcyBub3QgZGVmaW5lZCB1bnRpbCBwLjMuIFBsZWFzZSBkZWZpbmUgeW91ciB0ZXJtcyBvbiBmaXJzdCB1c2U7IGFic3RyYWN0cyBzaG91bGQgYmUgc2VsZi1jb250YWluZWQuPGJyIC8+PGJyIC8+UHV0IGZpZ3VyZXMgb24gdGhlIHNhbWUgcGFnZSB3aGVyZSB0aGV5IGFyZSByZWZlcmVuY2VkIHdoZXJlIHBvc3NpYmxlLCBlLmcuIEZpZy4xIHNob3VsZCBiZSBvbiBwLjMuIFBsZWFzZSBsYWJlbCB0aGUgYXhlcyBpbiBGaWdzLjMtNy4gRmlnLjYgaXMgaGFyZCB0byBpbnRlcnByZXQuZAIHDw8WAh8AaGRkAggPFQEAZAICD2QWBgIDD2QWAmYPFQETQXNzaWduZWRfUmV2aWV3ZXJfNGQCBw88KwANAQAPFgQfA2cfAgIGZBYCZg9kFg4CAQ9kFgRmDw8WAh8BBbUCTm92ZWx0eTogVGhpcyBpcyBhcmd1YWJseSB0aGUgc2luZ2xlIG1vc3QgaW1wb3J0YW50IGNyaXRlcmlvbiBmb3Igc2VsZWN0aW5nIHBhcGVycyBmb3IgdGhlIGNvbmZlcmVuY2UuIFJldmlld2VycyBzaG91bGQgcmV3YXJkIHBhcGVycyB0aGF0IHByb3Bvc2UgZ2VudWluZWx5IG5ldyBpZGVhcyBvciBub3ZlbCBhZGFwdGF0aW9ucy9hcHBsaWNhdGlvbnMgb2YgZXhpc3RpbmcgbWV0aG9kcy4gLi4uIChGb3IgdGhlIHJlc3Qgb2YgdGhpcyBxdWVzdGlvbiwgc2VlIGh0dHA6Ly9hdWFpLm9yZy91YWkyMDE0L3Jldmlld0NyaXRlcmlhLnNodG1sKSAgZGQCAQ9kFgJmDxUBswNJbiB0aGlzIHBhcGVyLCB0aGUgYXV0aG9ycyBzZWVtIHRvIGJlIGF0dGVtcHRpbmcgdG8gZGV0ZXJtaW5lIHN0cmVuZ3RocyBhbmQgd2Vha25lc3NlcyBvZiBTeXN0ZW0gWisgd2l0aCByZWdhcmQgdG8gdGhlaXIgaW50cnVzaW9uIGRldGVjdGlvbiBzeXN0ZW0uIEknbSBub3Qgc3VyZSB0aGVyZSBpcyBtdWNoIG5vdmVsdHkgaGVyZS4gVGhlIElEUyBpcyB0aGUgcmVzdWx0IG9mIHByZXZpb3VzIHdvcmssIGFuZCBTeXN0ZW0gWisgaXMgYnkgbm8gbWVhbnMgbmV3LiBJdCBzZWVtcyBqdXN0IGxpa2UgYSBzdHJhaWdodGZvcndhcmQgYXBwbGljYXRpb24gb2Yga25vd24gaWRlYXMuIFRoZSBhdXRob3JzIHBlcmZvcm0gdGVzdGluZywgYnV0IGZyb20gd2hhdCBJIGNhbiB0ZWxsIHRoaXMgdGVzdGluZyBpcyBqdXN0IGJlaW5nIGFwcGxpZWQgdG8gZXhpc3Rpbmcgd29yay5kAgIPZBYEZg8PFgIfAQXWAlRlY2huaWNhbCBRdWFsaXR5OiBBcmUgdGhlIHJlc3VsdHMgdGVjaG5pY2FsbHkgc291bmQ/IEFyZSB0aGVyZSBvYnZpb3VzIGZsYXdzIGluIHRoZSBjb25jZXB0dWFsIGFwcHJvYWNoPyBBcmUgY2xhaW1zIHdlbGwtc3VwcG9ydGVkIGJ5IHRoZW9yZXRpY2FsIGFuYWx5c2lzIG9yIGV4cGVyaW1lbnRhbCByZXN1bHRzPyBEaWQgdGhlIGF1dGhvcnMgaWdub3JlIChvciBhcHBlYXIgdW5hd2FyZSBvZikgaGlnaGx5IHJlbGV2YW50IHByaW9yIHdvcms/ICAuLi4gKEZvciB0aGUgcmVzdCBvZiB0aGlzIHF1ZXN0aW9uLCBzZWUgaHR0cDovL2F1YWkub3JnL3VhaTIwMTQvcmV2aWV3Q3JpdGVyaWEuc2h0bWwpIGRkAgEPZBYCZg8VAeABVGhlIHVuZGVybHlpbmcgaWRlYXMgYmVoaW5kIHRoZWlyIElEUyBzZWVtIHNvdW5kLCBzaW5jZSB0aGV5IGFyZSBiYXNlZCBvbiBwcmlvciB3b3JrLiBUaGUgZXhwZXJpbWVudGFsIHNlY3Rpb24gY29udGFpbnMgYSBsb3Qgb2YgaW5mb3JtYXRpb24sIGJ1dCBpcyBwb29ybHkgb3JnYW5pemVkIGFuZCBJJ20gbm90IHN1cmUgZXhhY3RseSB3aGF0IHRoZSBwb2ludCBvZiB0aGUgdGVzdHMgYXJlLiBkAgMPZBYEZg8PFgIfAQXfAlBvdGVudGlhbCBJbXBhY3QgYW5kIFNpZ25pZmljYW5jZTogSXMgdGhpcyByZWFsbHkgYSBzaWduaWZpY2FudCBhZHZhbmNlIGluIHRoZSBzdGF0ZSBvZiB0aGUgYXJ0PyBJcyB0aGlzIGEgcGFwZXIgdGhhdCBwZW9wbGUgYXJlIGxpa2VseSB0byByZWFkIGFuZCBjaXRlIGluIGxhdGVyIHllYXJzPyBEb2VzIHRoZSBwYXBlciBhZGRyZXNzIGFuIGltcG9ydGFudCBwcm9ibGVtIChlLmcuLCBvbmUgdGhhdCBwZW9wbGUgb3V0c2lkZSBVQUkgYXJlIGF3YXJlIG9mKT8gIC4uLi4gKEZvciB0aGUgcmVzdCBvZiB0aGlzIHF1ZXN0aW9uLCBzZWUgaHR0cDovL2F1YWkub3JnL3VhaTIwMTQvcmV2aWV3Q3JpdGVyaWEuc2h0bWwpIGRkAgEPZBYCZg8VAdsBSSBkbyBub3QgYW50aWNpcGF0ZSB0aGlzIGhhdmluZyBhbiBpbXBhY3QgaW4gdGhlIGZpZWxkLiBJdCBpcyBwb3NzaWJsZSB0aGVpciBJRFMgbWlnaHQgcGVyZm9ybSB2ZXJ5IHdlbGwgYW5kIGhhdmUgYW4gaW1wYWN0IGluIG90aGVyIGNvbW11bml0aWVzLCBidXQgdGhpcyBwYXBlciBkb2VzIG5vdCBhY3R1YWxseSBhZGRyZXNzIHRoZSBjYXBhYmlsaXRpZXMgb2YgdGhhdCBzeXN0ZW0uZAIED2QWBGYPDxYCHwEFlgFRdWFsaXR5IG9mIFdyaXRpbmc6IFBsZWFzZSBtYWtlIGZ1bGwgdXNlIG9mIHRoZSByYW5nZSBvZiBzY29yZXMgZm9yIHRoaXMgY2F0ZWdvcnkgc28gdGhhdCB3ZSBjYW4gaWRlbnRpZnkgcG9vcmx5LXdyaXR0ZW4gcGFwZXJzIGVhcmx5IGluIHRoZSBwcm9jZXNzLiBkZAIBD2QWAmYPFQFOUXVhbGl0eSBvZiB3cml0aW5nIGlzIG1hcmdpbmFsIHRvIG9rIC0gaXQgbmVlZHMgc2lnbmlmaWNhbnQgYWRkaXRpb25hbCBlZGl0aW5nZAIFD2QWBGYPDxYCHwEFJU92ZXJhbGwgTnVtZXJpYyBTY29yZSBmb3IgdGhpcyBQYXBlcjpkZAIBD2QWAmYPFQGEAURlY2VudCBwYXBlciwgYnV0IG1heSBiZSBiZWxvdyB0aGUgVUFJIHRocmVzaG9sZC4gSSB0ZW5kIHRvIHZvdGUgZm9yIHJlamVjdGluZyBpdCwgYWx0aG91Z2ggd291bGQgbm90IGJlIHVwc2V0IGlmIGl0IHdlcmUgYWNjZXB0ZWQuIGQCBg9kFgRmDw8WAh8BBZICKE9wdGlvbmFsKSBBZGRpdGlvbmFsIENvbW1lbnRzIHRvIHRoZSBBdXRob3JzOiBwbGVhc2UgYWRkIGFueSBhZGRpdGlvbmFsIGZlZWRiYWNrIHlvdSB3aXNoIHRvIHByb3ZpZGUgdG8gdGhlIGF1dGhvcnMgaGVyZS4gRm9yIGV4YW1wbGUsIGlmIHRoZSBxdWFsaXR5IG9mIHdyaXRpbmcgaW4gdGhlIHBhcGVyIGlzIG5vdCBleGNlbGxlbnQsIHBsZWFzZSBwcm92aWRlIHNvbWUgZmVlZGJhY2sgdG8gdGhlIGF1dGhvcnMgb24gaG93IHRoZSB3cml0aW5nIGNvdWxkIGJlIGltcHJvdmVkLmRkAgEPZBYCZg8VAfcHVGhlIHBhcGVyIGlzIHZlcnkgZGlmZmljdWx0IHRvIGZvbGxvdyBhbmQgdW5kZXJzdGFuZC4gTXkgbWFpbiBjb25jZXJuIGFib3V0IHRoZSBwYXBlciAtIGl0IGlzIG5vdCBjbGVhciBpbiB0aGUgaW50cm9kdWN0aW9uIHdoYXQgdGhlIHByb2JsZW0gaXMgdGhleSBhcmUgdHJ5aW5nIHRvIHNvbHZlLCBhbmQgd2h5IHRoZXkgYXJlIHJ1bm5pbmcgYWxsIG9mIHRoZXNlIHRlc3RzLiA8YnIgLz48YnIgLz5UaGUgZmlyc3QgaGFsZiBvZiB0aGUgcGFwZXIgcmVhbGx5IGp1c3QgZGVzY3JpYmVzIHRoZSBJRFMgdGhhdCB0aGV5IGhhdmUgYWxyZWFkeSBkZXZlbG9wZWQuIFNvIHRoZXJlIGlzIG5vdGhpbmcgbmV3IGhlcmUsIGFuZCBJIGtub3cgdGhlIGF1dGhvcnMgbmVlZCBtYWludGFpbiBhbm9ueW1pdHksIGJ1dCB0aGUgcGFwZXIgaXMgbm90IHNlbGYtY29udGFpbmVkIGJlY2F1c2Ugb2YgdGhpcy4gVGhlIG5leHQgcGFydCBvZiB0aGUgcGFwZXIgZ29lcyB0aG91Z2ggYSBidW5jaCBvZiBleHBlcmltZW50cyBvbiB0aGVpciBJRFMsIGJ1dCBpdCBpcyBub3QgY2xlYXIgd2h5IHRoZXkgYXJlIGV2ZW4gZG9pbmcgdGhpcy4gSXQgc2VlbXMgbGlrZSB0aGV5IGFyZSB0ZXN0aW5nIGp1c3QgZm9yIHRoZSBzYWtlIG9mIHRlc3RpbmcuPGJyIC8+PGJyIC8+KioqKiBQb3N0IENvbW1lbnRzPGJyIC8+PGJyIC8+SSBhcHByZWNpYXRlIHRoZSBhdXRob3IgY29tbWVudHMsIGFuZCBJIGRvIGFncmVlIHdpdGggdGhlbSBvbiBtb3N0IG9mIHRoZWlyIHBvaW50cy4gSG93ZXZlciwgSSByZWFsbHkgdGhpbmsgdGhhdCB0aGUgcG9pbnRzIHRoYXQgdGhleSBtYWRlIGluIHJlc3BvbnNlIHRvIG15IHJldmlldyAtbXVzdC0gYmUgaW5jb3Jwb3JhdGVkIGludG8gdGhlIHBhcGVyIGluIHNvbWUgd2F5LiBJIGRvbid0IHRoaW5rIEkgd2lsbCBiZSB0aGUgb25seSBvbmUgdG8gcXVlc3Rpb24gdGhlaXIgcGFwZXIgd2l0aG91dCB0aGUgYWRkaXRpb25hbCBkZXRhaWxzIHRoZXkgcHJvdmlkZWQgaW4gdGhlIHJlc3BvbnNlLmQCBw8PFgIfAGhkZAIIDxUBAGQYAwUfY3RsMDAkY3BoJGd2UmV2aWV3cyRjdGwwMiRjdGwwMA88KwAKAQgCAWQFH2N0bDAwJGNwaCRndlJldmlld3MkY3RsMDEkY3RsMDAPPCsACgEIAgFkBR9jdGwwMCRjcGgkZ3ZSZXZpZXdzJGN0bDAwJGN0bDAwDzwrAAoBCAIBZFhlhvN1Jk9jjWF9YQKx64czHZbz" />
+</div>
+
+<table id="header">
+<tr>
+<td width="100%"><a href='http&#58;&#47;&#47;auai.org&#47;uai2014&#47;' target='_blank'>UAI-2014</a><br /><b>Conference on Uncertainty in Artificial Intelligence </b><br />July 23-27, 2014, Quebec City, Canada</td>
+</tr>
+<tr class='headerSeparator'>
+    <td style='height:5px'></td>
+</tr>
+</table>
+<table id="content"><tr><td class='contentBorder'>&nbsp;</td><td class="contentContainer">
+<span id="ctl00_cph_Label4" style="font-size:Small;font-weight:bold;">Reviews For Paper</span>
+<span id="ctl00_cph_lblErrorMessage" class="error" style="font-size:Small;"></span>
+<div id="ctl00_cph_pnlReviews">
+	
+    <span style="font-size:Small;">
+<table class="nicetable2" style="text-align:left; width: 100%;">
+    
+    <tr>
+        <td width="100px"><b>Paper ID</b></td>
+        <td><span id="ctl00_cph_infoSubmission_lblPaperId" style="font-size:Small;">305</span></td>
+    </tr>
+    <tr>
+        <td><b>Title</b></td>
+        <td><span id="ctl00_cph_infoSubmission_lblPaperTitle" style="font-size:Small;">Qualitative Probability for Intrusion Detection</span></td>
+    </tr>
+    
+    
+    
+    
+    
+</table></span>
+    
+    
+            <hr />
+            <table>
+                <tr>
+                    <td>
+                        <span id="ctl00_cph_gvReviews_ctl00_Label2" style="font-size:Small;font-weight:bold;">Masked Reviewer ID:</span>
+                    </td>
+                    <td>
+                        <span id="ctl00_cph_gvReviews_ctl00_Label1" style="font-size:Small;">Assigned_Reviewer_1</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span id="ctl00_cph_gvReviews_ctl00_Label3" style="font-size:Small;font-weight:bold;">Review:</span>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+            </table>
+            <div>
+		<table cellspacing="0" cellpadding="4" rules="all" border="1" style="color:#333333;border-width:1px;border-style:None;font-family:Verdana;font-size:Small;border-collapse:collapse;">
+			<tr style="color:White;background-color:#5D7B9D;font-weight:bold;">
+				<th scope="col">Question</th><th scope="col">&nbsp;</th>
+			</tr><tr style="color:#333333;background-color:#F7F6F3;">
+				<td style="width:20%;">Novelty: This is arguably the single most important criterion for selecting papers for the conference. Reviewers should reward papers that propose genuinely new ideas or novel adaptations/applications of existing methods. ... (For the rest of this question, see http://auai.org/uai2014/reviewCriteria.shtml)  </td><td style="width:80%;">
+                            The paper is well written. The problem setting and objective of the paper are well structured and clearly presented. The experiments and methods are detailed and well-reasoned. The paper describes a variation on existing methods and approaches using Bayesian network modelling to identify anomalies in intrusion detection systems, and combines it with Z+ qualitative probability ranking to rank what is anomalous (which model is more "surprising"). The concept of learning Bayesian network models to rank outliers and anomalous behaviour is well described in many disciplines including identifying attack events from benign events, however the use of Z+ qualitative probability systems for the ranking in this discipline is relatively new.<br />
+                        </td>
+			</tr><tr style="color:#284775;background-color:White;">
+				<td style="width:20%;">Technical Quality: Are the results technically sound? Are there obvious flaws in the conceptual approach? Are claims well-supported by theoretical analysis or experimental results? Did the authors ignore (or appear unaware of) highly relevant prior work?  ... (For the rest of this question, see http://auai.org/uai2014/reviewCriteria.shtml) </td><td style="width:80%;">
+                            The experiments and methods are well structured and described in detail. The experiments are especially elaborate and clear on how the test sets are generated by sampling events using their known false positive and false negative probabilities.  It would have been good if the authors could demonstrate there results on a complete data set and not only sample generated experiments.  The code and the data seem to be unavailable publicly such that future reproduction and comparison by other researchers is impossible. The authors clearly discussed both strengths and weakness of the results and the implications to their technique and conclusions. The results of the experiments demonstrate advantage of the technique presented herein. However, the conclusions and experiments would highly benefit from the comparison to other methods as well as a better demonstration of the impact over time on the recall and precision. <br />
+                        </td>
+			</tr><tr style="color:#333333;background-color:#F7F6F3;">
+				<td style="width:20%;">Potential Impact and Significance: Is this really a significant advance in the state of the art? Is this a paper that people are likely to read and cite in later years? Does the paper address an important problem (e.g., one that people outside UAI are aware of)?  .... (For the rest of this question, see http://auai.org/uai2014/reviewCriteria.shtml) </td><td style="width:80%;">
+                            The paper captures and describes well the challenges and shortcomings of anomaly detection based systems for Intrusion detection systems today, e.g. the quantitative unbalance between benign and attack events, the issues with applying signature based anomaly detection, the advantages of local anomaly detection vs global anomaly detection and more. The notion of Z+ ranking and Bayesian networks seems to be sound, however, these experiments make it difficult to understand how it compares to other state of the art systems.
+                        </td>
+			</tr><tr style="color:#284775;background-color:White;">
+				<td style="width:20%;">Quality of Writing: Please make full use of the range of scores for this category so that we can identify poorly-written papers early in the process. </td><td style="width:80%;">
+                            Quality of writing is excellent
+                        </td>
+			</tr><tr style="color:#333333;background-color:#F7F6F3;">
+				<td style="width:20%;">Overall Numeric Score for this Paper:</td><td style="width:80%;">
+                            A good paper overall, accept if possible. I vote for acceptance, although would not be upset if it were rejected because of the low acceptance rate.
+                        </td>
+			</tr><tr style="color:#284775;background-color:White;">
+				<td style="width:20%;">(Optional) Additional Comments to the Authors: please add any additional feedback you wish to provide to the authors here. For example, if the quality of writing in the paper is not excellent, please provide some feedback to the authors on how the writing could be improved.</td><td style="width:80%;">
+                            REPLACE THIS WITH YOUR ANSWER
+                        </td>
+			</tr>
+		</table>
+	</div>
+            
+        
+            <hr />
+            <table>
+                <tr>
+                    <td>
+                        <span id="ctl00_cph_gvReviews_ctl01_Label2" style="font-size:Small;font-weight:bold;">Masked Reviewer ID:</span>
+                    </td>
+                    <td>
+                        <span id="ctl00_cph_gvReviews_ctl01_Label1" style="font-size:Small;">Assigned_Reviewer_11</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span id="ctl00_cph_gvReviews_ctl01_Label3" style="font-size:Small;font-weight:bold;">Review:</span>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+            </table>
+            <div>
+		<table cellspacing="0" cellpadding="4" rules="all" border="1" style="color:#333333;border-width:1px;border-style:None;font-family:Verdana;font-size:Small;border-collapse:collapse;">
+			<tr style="color:White;background-color:#5D7B9D;font-weight:bold;">
+				<th scope="col">Question</th><th scope="col">&nbsp;</th>
+			</tr><tr style="color:#333333;background-color:#F7F6F3;">
+				<td style="width:20%;">Novelty: This is arguably the single most important criterion for selecting papers for the conference. Reviewers should reward papers that propose genuinely new ideas or novel adaptations/applications of existing methods. ... (For the rest of this question, see http://auai.org/uai2014/reviewCriteria.shtml)  </td><td style="width:80%;">
+                            This paper explores the idea of using System Z+ for Intrusion Detection, where multiple sensor detections are fused (in their case they used three sensors for possible fusion). The topic itself is interesting and maybe using System Z+ has some merit in this work. The main novelty is to conduct experiments with synthetic data on the existing MIFD system to establish whether qualitative (ordinal) likelihoods give good results when actual probabilities are unknown.
+                        </td>
+			</tr><tr style="color:#284775;background-color:White;">
+				<td style="width:20%;">Technical Quality: Are the results technically sound? Are there obvious flaws in the conceptual approach? Are claims well-supported by theoretical analysis or experimental results? Did the authors ignore (or appear unaware of) highly relevant prior work?  ... (For the rest of this question, see http://auai.org/uai2014/reviewCriteria.shtml) </td><td style="width:80%;">
+                            The paper does not succeed in delivering a complete picture as how different approaches are integrated for the proposed intrusion detection. Specifically:<br /><br />First, System Z+, Bayesian networks, clustering methods (for sensor fusion), etc. should be introduced more clearly. What are benign event hypotheses and what are attack event hypotheses? What are complex events?  Even though they are not the focus of the paper, they should at least be introduced to give a reader an idea of the difference between all these different types of events.<br /><br />Second, removing old event hypotheses and sensor reports to free up resources does not seem to be a right approach for intrusion detection if these events can still be useful. There should be a justification as to why removing these will not affect the system performance. Where to store them is not so important.<br /><br />Third, the notations in the table on page 5 are not properly introduced.  What is \omega? A possible world or else? I took that \phi is a formula (a hypothesis). What does \phi \in \omega mean?<br /><br />Fourth, I am not able to establish how outputs from different sensors are related (or correlated) to generate a single output (referred to as clustering by the authors in several places). The description on page 5 right column is confusing.<br /><br />A justification should be provided for the choice of parameter settings on page 6.
+                        </td>
+			</tr><tr style="color:#333333;background-color:#F7F6F3;">
+				<td style="width:20%;">Potential Impact and Significance: Is this really a significant advance in the state of the art? Is this a paper that people are likely to read and cite in later years? Does the paper address an important problem (e.g., one that people outside UAI are aware of)?  .... (For the rest of this question, see http://auai.org/uai2014/reviewCriteria.shtml) </td><td style="width:80%;">
+                            The problem of reducing false positives in IDS systems is an important one. However, the contributions of this paper seem to be restricted to evaluating one specific system in one specific test environment, so it is not clear whether these results are useful more generally.<br /><br />It seems to me that boosting could be used as an alternative approach. Should the paper compare this approach to boosting or at least mention it in Related Work?
+                        </td>
+			</tr><tr style="color:#284775;background-color:White;">
+				<td style="width:20%;">Quality of Writing: Please make full use of the range of scores for this category so that we can identify poorly-written papers early in the process. </td><td style="width:80%;">
+                            Quality of writing is good, but could be improved with some editing
+                        </td>
+			</tr><tr style="color:#333333;background-color:#F7F6F3;">
+				<td style="width:20%;">Overall Numeric Score for this Paper:</td><td style="width:80%;">
+                            Decent paper, but may be below the UAI threshold. I tend to vote for rejecting it, although would not be upset if it were accepted. 
+                        </td>
+			</tr><tr style="color:#284775;background-color:White;">
+				<td style="width:20%;">(Optional) Additional Comments to the Authors: please add any additional feedback you wish to provide to the authors here. For example, if the quality of writing in the paper is not excellent, please provide some feedback to the authors on how the writing could be improved.</td><td style="width:80%;">
+                            In general, the paper could be improved by editing for conciseness and clearer explanations. The section "Intrusion Detection Fusion" has a very long section of introductory text and a short section on Related Work. The introductory text would benefit from tighter editing. The related work section could be expanded and presented more clearly, to separate methods such as FSMs or Bayes networks from implementations like ARIS or Arcsight.<br /><br />MIFD is introduced in the abstract but is not defined until p.3. Please define your terms on first use; abstracts should be self-contained.<br /><br />Put figures on the same page where they are referenced where possible, e.g. Fig.1 should be on p.3. Please label the axes in Figs.3-7. Fig.6 is hard to interpret.
+                        </td>
+			</tr>
+		</table>
+	</div>
+            
+        
+            <hr />
+            <table>
+                <tr>
+                    <td>
+                        <span id="ctl00_cph_gvReviews_ctl02_Label2" style="font-size:Small;font-weight:bold;">Masked Reviewer ID:</span>
+                    </td>
+                    <td>
+                        <span id="ctl00_cph_gvReviews_ctl02_Label1" style="font-size:Small;">Assigned_Reviewer_4</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span id="ctl00_cph_gvReviews_ctl02_Label3" style="font-size:Small;font-weight:bold;">Review:</span>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+            </table>
+            <div>
+		<table cellspacing="0" cellpadding="4" rules="all" border="1" style="color:#333333;border-width:1px;border-style:None;font-family:Verdana;font-size:Small;border-collapse:collapse;">
+			<tr style="color:White;background-color:#5D7B9D;font-weight:bold;">
+				<th scope="col">Question</th><th scope="col">&nbsp;</th>
+			</tr><tr style="color:#333333;background-color:#F7F6F3;">
+				<td style="width:20%;">Novelty: This is arguably the single most important criterion for selecting papers for the conference. Reviewers should reward papers that propose genuinely new ideas or novel adaptations/applications of existing methods. ... (For the rest of this question, see http://auai.org/uai2014/reviewCriteria.shtml)  </td><td style="width:80%;">
+                            In this paper, the authors seem to be attempting to determine strengths and weaknesses of System Z+ with regard to their intrusion detection system. I'm not sure there is much novelty here. The IDS is the result of previous work, and System Z+ is by no means new. It seems just like a straightforward application of known ideas. The authors perform testing, but from what I can tell this testing is just being applied to existing work.
+                        </td>
+			</tr><tr style="color:#284775;background-color:White;">
+				<td style="width:20%;">Technical Quality: Are the results technically sound? Are there obvious flaws in the conceptual approach? Are claims well-supported by theoretical analysis or experimental results? Did the authors ignore (or appear unaware of) highly relevant prior work?  ... (For the rest of this question, see http://auai.org/uai2014/reviewCriteria.shtml) </td><td style="width:80%;">
+                            The underlying ideas behind their IDS seem sound, since they are based on prior work. The experimental section contains a lot of information, but is poorly organized and I'm not sure exactly what the point of the tests are. 
+                        </td>
+			</tr><tr style="color:#333333;background-color:#F7F6F3;">
+				<td style="width:20%;">Potential Impact and Significance: Is this really a significant advance in the state of the art? Is this a paper that people are likely to read and cite in later years? Does the paper address an important problem (e.g., one that people outside UAI are aware of)?  .... (For the rest of this question, see http://auai.org/uai2014/reviewCriteria.shtml) </td><td style="width:80%;">
+                            I do not anticipate this having an impact in the field. It is possible their IDS might perform very well and have an impact in other communities, but this paper does not actually address the capabilities of that system.
+                        </td>
+			</tr><tr style="color:#284775;background-color:White;">
+				<td style="width:20%;">Quality of Writing: Please make full use of the range of scores for this category so that we can identify poorly-written papers early in the process. </td><td style="width:80%;">
+                            Quality of writing is marginal to ok - it needs significant additional editing
+                        </td>
+			</tr><tr style="color:#333333;background-color:#F7F6F3;">
+				<td style="width:20%;">Overall Numeric Score for this Paper:</td><td style="width:80%;">
+                            Decent paper, but may be below the UAI threshold. I tend to vote for rejecting it, although would not be upset if it were accepted. 
+                        </td>
+			</tr><tr style="color:#284775;background-color:White;">
+				<td style="width:20%;">(Optional) Additional Comments to the Authors: please add any additional feedback you wish to provide to the authors here. For example, if the quality of writing in the paper is not excellent, please provide some feedback to the authors on how the writing could be improved.</td><td style="width:80%;">
+                            The paper is very difficult to follow and understand. My main concern about the paper - it is not clear in the introduction what the problem is they are trying to solve, and why they are running all of these tests. <br /><br />The first half of the paper really just describes the IDS that they have already developed. So there is nothing new here, and I know the authors need maintain anonymity, but the paper is not self-contained because of this. The next part of the paper goes though a bunch of experiments on their IDS, but it is not clear why they are even doing this. It seems like they are testing just for the sake of testing.<br /><br />**** Post Comments<br /><br />I appreciate the author comments, and I do agree with them on most of their points. However, I really think that the points that they made in response to my review -must- be incorporated into the paper in some way. I don't think I will be the only one to question their paper without the additional details they provided in the response.
+                        </td>
+			</tr>
+		</table>
+	</div>
+            
+        
+    <br />
+    <br />
+
+</div>
+</td><td class='contentBorder'>&nbsp;</td></tr></table>
+</form>
+</body>
+</html>

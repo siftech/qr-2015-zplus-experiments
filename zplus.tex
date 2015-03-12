@@ -1,0 +1,196 @@
+% \subsection{System Z+}
+% \label{sec:zplus}
+
+MIFD
+follows Pearl's exhortation~\shortcite{Pearlbook} that the core of probability theory is
+the patterns of inference it enables (explaining away, combining forward causal
+inference and evidential reasoning, etc.), rather than precise numerical
+calculations.  He recommends these patterns be used even when precise numbers are
+not available, and that is what MIFD does.  As outlined above, MIFD treats
+\ids fusion as an abductive problem, formalized using Bayes nets.
+But precise values for the parameters of these Bayes nets ---
+probabilities of attacks, false positives, false negatives, etc. ---
+are \emph{never} available to us: populations of
+attacks and attackers change, different networks have little in common with each other, distributions are
+non-stationary, etc.  Moreover these difficulties are not solvable via machine learning:
+Sommer and Paxson~\shortcite{Sommer10outsidethe} discuss the challenges \ids pose to ML.
+
+Goldszmidt and
+Pearl's \zplus{}~\shortcite{Goldszmidt:96},
+shares the
+basic structure of normal probability theory, but abstracts the actual
+probabilities.
+Events have a natural number rank \tkappa{}
+corresponding to their degree of surprise (so a rank of one is more surprising
+than zero). The semantics of this scheme comes from a set of probability
+distributions in which the probabilities are polynomials over some infinitesimal
+$\epsilon$. In this scheme, the \tkappa{} corresponds to the exponent
+of the polynomial's leading term.
+As we mentioned earlier, \zplus is similar to the ``big-$O$'' method used
+in analysis of algorithms.
+This semantics gives \zplus{} a
+qualitative flavor by providing a ``ladder'' of events of qualitatively different
+orders of likelihood.
+Note that \zplus is very different from Wellman's qualitative probability
+networks~\cite{Wellman:90}, whose abstraction is based on direction of change, rather than order
+of magnitude relations ``at rest,'' as it were.
+Wellman's approach is more relevant when choosing interventions (as in his work
+on medical diagnosis and treatment), and less for fusion.
+
+\hide{
+The \assessor{} must combine the judgments of a wide variety of intrusion
+detection systems (and potentially other relevant information sources), that use
+widely varying sources of information and algorithms. Further, in general we
+will not have access to the internals of these sensors.  In such an environment,
+it is not realistic to expect good models of the response of these sensors; in
+particular, exact measures of P(sensor response|event) are not available.  There
+have been some attempts to investigate sensor response (e.g., the studies
+conducted by Lincoln Labs~\cite{lippmann00:eval}), but the results seem heavily dependent on the
+context in which the sensors are deployed.
+
+The issue of prior probabilities also militates against the use of exact
+probabilities.  In order to use an exact Bayesian method, we would need not only
+the detection probability, $P(\mathit{sensor\ response}|\mathit{event})$, and
+the false alarm probability, $P(\mathit{sensor\ response}|\neg \mathit{event})$,
+but also $P(\mathit{event})$, a measure of the prior
+probabilities of the events that interest us, in this case the attacks and the
+benign events that can cause false positives.  Even in the most constrained
+environments, the probabilities of the various attacks, are unlikely to be
+available to us,  and the Scyllarus system is designed for application across a
+wide variety of enterprises.  Further, the probability distributions for benign
+events are likely to be of odd forms (e.g., one's own network-mapping software
+runs at particular times of the day).  So our solution must tolerate vague
+measures of likelihood.
+
+Finally, in this domain, as with most practical applications of probabilistic
+updating, the effect of the evidence will \emph{usually} overwhelm the effect of the prior
+likelihoods(e.g., \cite{pradhan:96}). So inexactitude in the quantities specified will not matter to our
+final conclusions.}
+
+Under \zplus\ we may apply the normal operation
+of probability theory --- conditionalization, Bayes' law, etc. --- but
+the arithmetic operations we use for them change.  Rather than multiplying
+probabilities, we add degrees of surprise; rather than adding
+probabilities, we take the minimum surprise.  Goldszmidt and
+Pearl~\shortcite{Goldszmidt:96} provide the following substitutions
+between the quantitative probability function $P$ and its qualitative
+counterpart $\kappa$ for formulas $\phi$ and $\psi$, and primitive events, $e$.
+\begin{displaymath}
+  \small
+  \begin{array}{|l|l|}
+    \hline
+  P(\psi) = \sum_{e \in \psi} P(e) & \kappa(\psi) =
+  \operatorname{min}_{e \in \psi} \kappa(\phi) \\ \hline
+  P(\psi) + P(\neg \psi) = 1 & \kappa(\psi) = 0 \vee \kappa(\neg \psi) = 0
+  \\ \hline
+  P(\psi | \phi) = P(\psi \wedge \phi) / P(\phi) &
+  \kappa(\psi | \phi) = \kappa(\psi \wedge \phi) - \kappa(\phi)
+  \\ \hline
+\end{array}
+\end{displaymath}
+\noindent
+In a Bayes network, with conditionally independent $\omega$ and
+$\phi$ we further have $\kappa(\omega \wedge \phi) = \kappa(\omega) + \kappa(\phi)$.
+\hide{Instead of the probability
+of an event being the sum of the probabilities of the primitive outcomes that
+make up that event, the degree of surprise of an event is the minimum of the
+degrees of surprise of the primitive outcomes that make it up. Instead of having
+the probabilities of mutually exclusive and exhaustive events sum to one, at
+least one of a set of mutually exclusive and exhaustive events must be
+unsurprising. Finally, we have an analog of Bayes' law in which the normalizing
+operation consists of subtraction rather than division.
+}
+
+\hide{We used Bayesian networks to help us in modeling and solving the correlation problem. Bayesian networks are 
+ways of graphically capturing probabilistic reasoning. They are useful in expert systems because they 
+simplify knowledge acquisition and, by capturing (conditional) independences, simplify computation 
+(Pearl, 1988). In particular, in the domain of intrusion detection, Bayes nets help us capture several 
+important patterns or probabilistic reasoning:
+\begin{itemize}
+\item	Reasoning based on evidence merging; 
+\item	``Explaining away'' reports by alternative explanations.  E.g., if a benign event accounts for a number 
+of reports, those reports will be explained away, and no longer provide support for more alarming 
+hypotheses.
+
+\item	Abstraction reasoning that employs the sub\-class/su\-per\-class relationships in the event dictionary.
+
+\item	Part/whole reasoning, to recognize complex composite events.
+
+\item	Distinguishing between judgments that are based on different sensor bases and those that use the same 
+sensor.  This helps us distinguish between cases when two sensors provide support for each other and 
+when we simply have redundant reports (e.g., two network intrusion detection systems using exactly 
+the same algorithm that see the same traffic, at two different points).
+\end{itemize}
+A Bayesian network is a directed, acyclic graph (DAG) depicting a set of random variables. Edges between 
+nodes in the DAG represent causal influences. Using a Bayesian network, we can capture a joint 
+distribution factorized into unconditional probabilities for root nodes and conditional probability tables for 
+non-root nodes. The conditional probability tables contain probability distributions for the child nodes, 
+conditioned on all the values of their parents.
+}
+
+There are a number of efficient algorithms for finding the posterior distributions of Bayesian networks, 
+conditional on observations of some of the random variables. These algorithms may readily be adapted to 
+provide posterior $\kappa$ rankings instead of probabilities.
+MIFD translates Bayes networks into an
+%% DONE Charniak:88 is Charniak and Goldman --- withhold this one too? No --
+%% it's not obviously tied to this paper, so we don't need to worry about it
+%% breaching anonymity. [2014/08/24:rpg]
+ATMS~\cite{Forbus+DeKleer:1993}; see \cite{Charniak:88,Poole:93,provan-ijcai89}
+and \anoncite{goldman:09Scyllarus} for this encoding.
+This implementation is not especially efficient, but we have found
+it is I/O which dominates runtime, and we apply several optimizations to
+handle common special cases.
+To date (somewhat to our disappointment!) optimizing the general \zplus
+inference method has not been key to system performance.
+% To date, finding the optimal inference method
+% % in terms of runtime
+% has been
+% less important than finding an algorithm easy to modify for \zplus.
+
+MIFD's assessment ranks hypotheses as either
+\emph{likely}, \emph{plausible} or \emph{unlikely}. A hypothesis $h$,
+conditioned on evidence $\omega$,
+is \emph{likely} if
+$\kappa(h|\omega) < \kappa(\neg h|\omega)$, \emph{plausible} if $\kappa(h|\omega) = \kappa(\neg h|\omega)$
+and \emph{unlikely} otherwise.
+
+The MIFD system requires comparatively few \tkappa parameters given the above
+design.  For sensors, we need \fpKappa, and for events (attack and benign)
+we need $\kappa(\text{event})$.  In practice, we assign global defaults for
+these, based on how generally accurate the input \idses are: for example, we set
+these \tkappa\ values so that it takes $n = 2\ \text{or}\ 3$ sensors for us to judge an event
+as \emph{likely}, with
+the following consistency constraints:
+\begin{align}
+  \label{eqn:coherence-ineq}
+  \kappa(\text{false-positive}),\kappa(\text{benign})
+  &< \kappa(\text{attack}) \\
+ &< n \cdot \kappa(\text{false-positive}) \nonumber
+\end{align}
+That is, a single sensor false positive is less surprising than an
+  attack event;
+a benign event is also less surprising than an attack; and
+an attack is less surprising than false positives from $n$
+  of the sensors detecting that event.
+%
+With a few exceptions, this paper assumes $n=3$ sensors, so we
+have $0 < \kappa(\text{benign}) < \kappa(\text{attack}) 
+    < 3 \kappa(\text{false-positive})$.
+% \begin{displaymath}
+%   \begin{split}
+%     0 &< \kappa(\text{benign-event}) < \kappa(\text{attack-event}) \\
+%     &< 3 \kappa(\text{false-positive})
+%   \end{split}
+% \end{displaymath}
+% \noindent
+In actual deployments, we then
+nudge the false positive rankings up in the rare cases where we have a
+particularly good sensor, or down if we have a particularly bad sensor.
+We are less likely to adjust attack event probabilities, but
+there are exceptions such as scanning (very common), and some complex events.
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "main"
+%%% End: 

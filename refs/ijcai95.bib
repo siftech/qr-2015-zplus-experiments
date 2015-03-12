@@ -1,0 +1,92 @@
+File /net/users/goldman/refs/ijcai95.bib last modified on Thu Aug 31 10:24:03 1995.
+@string{IJCAI-95 	= "Proceedings of the 14th International Joint
+						Conference on Artificial Intelligence"}
+
+@INPROCEEDINGS{Bacchus:ijcai95,
+	AUTHOR = {Fahiem Bacchus and Joseph Y. Halpern and
+		  Hector J. Levesque},
+	TITLE = "Reasoning about Noisy Sensors in the Situation Calculus",
+	PAGES = {1933--1940},
+	CROSSREF = {ijcai95},
+	ANNOTE = {The authors extend the situation calculus to cover 
+		  actions that contain noisy sensors.  The work is a
+		  further extension from Scherl and Levesque's 1993 
+		  work, that adds a modal logic-like belief operator to
+		  the situation calculus.  The authors use Bacchus' 
+		  probabilistic logic to permit
+		  a probability distribution over the belief-accessible
+		  worlds.}
+}
+
+@INPROCEEDINGS{Baral:ijcai95,
+	AUTHOR = {Chitta Baral},
+	TITLE = {Reasoning about actions:
+		 Non-deterministic effects, constraints, and
+		 qualification},
+	PAGES = {2017--2023},
+	CROSSREF = {ijcai95},
+	ANNOTE = {Approach is to describe actions in terms of state 
+		  specifications.  I couldn't be bothered to read this
+		  carefully, since no comparisons were made between 
+		  Baral's language and other, more accepted languages
+		  for action description, in particular the situation
+		  calculus.}
+}
+
+@INPROCEEDINGS{Fink:ijcai95,
+	AUTHOR = {Eugene Fink and Qiang Yang},
+	TITLE = "Planning with primary effects: experiments and analysis",
+	PAGES = {1606--1611},
+	CROSSREF = {ijcai95},
+	ANNOTE = {The authors conduct some experiments on the effects of the
+		  technique of specifying primary effects for planner
+		  actions.  This means identifying certain effects of actions
+		  as primary and others as side effects.  One restricts the
+		  planner to only add actions to the plan to achieve their 
+		  primary effects.  The authors propose a method for 
+		  automatically identifying the primary effects.  The work
+		  seems sensible, but not earth-shattering.}
+}
+
+@INPROCEEDINGS{Laborie:ijcai95,
+	AUTHOR = {Philippe Laborie and Malik Ghallab},
+	TITLE = "Planning with Sharable Resource Constraints",
+	PAGES = {1643--1649},
+	NOTE = {},
+	CROSSREF = {ijcai95},
+	ANNOTE = {A treatment of sharable (metric) resources in a 
+		  partial-order planner.  Their planner has two support
+		  components: a TMM and a 
+		  variable constraint manager.  They define a special
+		  Possible Intersection Graph data structure for users
+		  of resources.  This is a graph with nodes for each 
+		  resource requirement.  Out of this graph, they derive
+		  minimum critical sets(MCSes) --- a set of 
+		  possibly-intersecting
+		  resource consumers whose consumption exceeds supply and 
+		  which is minimal in the sense that removal of one of the 
+		  consumers is sufficient to cause the resource consumption
+		  to fall below the acceptable level.  A problem for them is
+		  that they will generate far too many MCS-candidates.}
+}
+
+# this is a template for entries... [1995/08/29:goldman]
+@INPROCEEDINGS{:ijcai95,
+	AUTHOR = {},
+	TITLE = "",
+	PAGES = {},
+	NOTE = {},
+	CROSSREF = {ijcai95},
+	ANNOTE = {}
+}
+
+
+@proceedings(ijcai95,
+	booktitle = IJCAI-95,
+	title = IJCAI-95,
+	key = IJCAI-95,
+	publisher = "Morgan Kaufmann Publishers, Inc.",
+	editor = {Chris S. Mellish},
+	address = {Montr\'{e}al, Quebec, Canada},
+	month = {August},
+	year = {1995})

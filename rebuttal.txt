@@ -1,0 +1,86 @@
+* Reviewer 1
+** Anomaly detection
+The paper describes an approach to fuse reports from IDSes; it does not do anomaly detection. MIFD fuses IDS reports from both anomaly- and signature-based IDSes. Perhaps confusion arises from System Z+'s use of the term "surprise" for its measure, which goes up as likelihood goes down.
+** Code and data are not available
+The data will be made available on the web. The code could be made available under limited license for research purposes, making reproduction and comparison feasible.
+** Comparison
+While this would be desirable, existing IDS fusion techniques do not share an input format or output definition. Most simply cluster and do not categorize hypotheses by posterior likelihood. However, it would be simple for other researchers to adapt their systems to our data sets: our synthetic reports would be simple to translate into other input formats.
+* Reviewer 11
+** Clarifications
+*** Three sensors
+You'd noted in the review that we "used three sensors for possible fusion." That's not exactly right --- although we do use a ratio of three sensors detecting each attack in most experiments, we vary that ratio in the first experiment.
+*** Removing event hypotheses and sensor reports
+We'd intended this remark as something of an aside, since (as the paper states) we are not actually doing this cleanup in the system under experimentation.  
+The volume of data which IDSs encounter necessitates some sort of garbage collection. You are correct that the timing of such clean up must be carefully considered. In the full system, hypotheses are only purged after an interval since receipt of the last related IDS report. All reports and hypotheses are archived in a database.
+It would probably be best to simply cut this minor aside from the paper, since garbage-collection plays no role in these experiments.
+** Justification for choice of parameter settings
+In all cases, the initial settings for the configuration parameters are both typical values for an IDS, and consistent with Z+'s assumptions. The experiments vary these values in ways which we anticipate would be worse for MIFD's performance, to examine our expected performance both under typical conditions, and under less typical conditions approaching worst-case.
+** Relation to boosting
+Boosting does provide an alternative method for fusion, but is not appropriate to IDS fusion. Boosting is based on learning, but IDS fusion problems do not admit use of ML: we do not get labeled data of attacks, nor do we get reference data showing systems operating without attacks. We will add a citation to papers about the failure of ML for IDS. These challenges (see [Sommer&Paxson,2010;Gates&Taylor,2006] on the challenges of ML in IDS, full cites available upon request) account for our adoption of a qualitative, non-adaptive framework. Also note that different IDSes do not share a single "ontology" of events; part of the function of MIFD's clustering is to align reports with different frames of reference.
+** Other suggestions
+Thank you for the many thoughtful suggestions for clarification.  We will edit the text to address all of these issues.
+* Reviewer 4
+** Novelty, technical quality, and significance
+We respectfully disagree with this review's judgment about the novelty of our work.
+It is true that System Z+ is well-studied in the literature, and /proposals/ to apply it to inference problems are common. However, we reviewed the 250+ papers citing the Z+ AIJ paper on Google Scholar (We will make the list of citations available upon request), and found no other paper describing an application of Z+ to a real-world problem. Accordingly, we assert that studying the application, and more to the point, the range of applicability, of System Z+ is novel.
+Further, in order to apply an approximation technique such as Z+, one must have a clear understanding of when it will work, when it will fail, and how it will degrade from one to the other. Z+ is based on an idealization of uncertain reasoning, and it is necessary to study how it will work when its simplifying assumptions are violated. Our experiments studied exactly this --- beginning with assumptions in line with both the particular application of IDS and with Z+, and then diverging from them --- not "testing for the sake of testing."
+There are numerous useful points of comparison in the literature: Consider how naive Bayesian classification has been studied: Anecdotal experience that useful results were computed even when violating independence assumptions led to more systematic studies of the integrity of Bayes classification as the independence failed.  Heckerman and Horvitz's study of why confidence factors work is in a similar vein.  Another point of comparison is big-O analysis: while it is of great utility, there are many cases where the constant factors do matter, and the idealization provides misleading results. Failure to investigate such cases would hamper computer science as a whole.
+In this case System Z+ has been believed to be a useful approximation to real probabilities, and the novelty here is to examine the performance of Z+ as its assumptions are increasingly violated (with particular application to sensor fusion).
+If we aren't willing to accept research that explores why a technique works or fails to work in practice, we doom applications work to be prescientific. Any single application can be made to work with a large enough investment of one-off labor: generalizing and validating requires follow-up.
+Finally, we stress that our results are relevant to sensor fusion applications in general, not just IDS fusion.
+We will improve the clarity of these introductory points in the final version of the paper.
+** Quality of writing
+Although it is difficult to address the non-specific claim of poor writing, our incorporation of the specific suggestions from the above reviews may address this reviewer's concerns.
+
+* COMMENT Uses of System Z+
+We have looked at the 250+ citations of G&P's AIJ paper on System Z+. Of these
+citations, only the following show an application of the technique. And none are
+to actual real-world applications. Accordingly, we can challenge the claim that
+this is not novel.
++ Approximating MDP in [[http://pdf.aminer.org/000/387/692/faster_heuristic_search_algorithms_for_planning_with_uncertainty_and_full.pdf][Bonet and Geffner]].  Same technique used in
+  [[http://juban.free.fr/hp/publications/challenge_pomdp.pdf][The Challenge of Solving POMDPs for Control, Monitoring and Repair of Complex Systems]].
++ Plan recognition, [[http://www.aaai.org/ocs/index.php/AAAI/AAAI10/paper/download/1821/2160][Ramirez&Geffner]]
++ (possibly) [[http://link.springer.com/chapter/10.1007/978-3-319-02621-3_11][Diagnosing Dependent Action Delays in Temporal Multiagent Plans]]
+
+* COMMENT other notes:
++ From description of clustering:
+  Note
+  that clustering does not itself generate a single output; clustering
+  is in fact the first step to generate all of the possible
+  hypotheses. The separate step of assessment assigns qualitative
+  probabilities to the hypotheses. Even then, assessment might not
+  produce a /single/ output; it may in fact be more than one event
+  which causes the observed reports, or we may hypothesize different
+  events with equal likelihood.
+
+  We'll describe the IDS fusion problem more generally.
++ Definition of MIFD in abstract.
++ Positioning of figures on the same page as referenced
++ Axis labels in Figures 3-7.
++ Readability of Figure 6.
+
+** Reviewer 11's other suggestions
++ Defining benign event hypotheses vs. attack event hypotheses.
++ Defining complex event hypotheses. Briefly, these refer to the case
+  where a hypothesized event is taken as evidence for another
+  hypothesized event.  Since we do not use these in the current experiments,
+  we may drop this remark from the final paper.
++ Better define the notation used in table of System Z+ rules. \omega
+  is a possible world; \phi\in\omega is the same as \omega\models\phi.
++ Clustering. MIFD generates event hypotheses for incoming sensor
+  reports based on its model of attacks and sensors.
+  In general, clustering will generate multiple hypotheses for a single report,
+  and multiple reports may support a single hypothesis.
++ Suggestions to the intro/related work balance in "Intrusion
+  Detection Fusion" section, and comparison to boosting.
+
+* COMMENT Possible note
+They have, counting extremely generously, 2 application-type papers in UAI 2013,
+out of a total of 73.  It's tempting to raise this, but I'm not sure that I
+care, because I suspect I'd rather have this paper accepted at AAAI instead of
+UAI.
+
+
+# Local Variables:
+# mode: org
+# End:

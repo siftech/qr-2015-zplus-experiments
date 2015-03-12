@@ -1,0 +1,149 @@
+\section{Introduction}
+\label{sec:introduction}
+
+We experimentally analyze the accuracy of the \zplus qualitative
+probability scheme when used for diagnosis and information fusion.
+In cyber defense, an ``intrusion detection system (IDS) is a device or
+software application that monitors network or system activities for malicious
+activities or policy violations''~\cite{wiki:ids}.
+In previous work we developed a technique for IDS
+fusion, deployed in the Scyllarus system~\anoncite{goldman:09Scyllarus}, and its
+successor MIFD~\anoncite{stratus:saso12}.
+These systems fuse together reports from multiple, heterogeneous IDSes,
+hypothesizing underlying events to explain those reports, and assessing the events'
+likelihood, to detect cyber attacks.
+Their likelihood assessment is based on \zplus, a qualitative
+abstraction of probability theory~\cite{Goldszmidt:96}.
+Scyllarus has been extensively tested in real networks, using both
+real and synthetic data, and has shown its ability to accurately fuse reports
+from extremely noisy sensors. 
+We also
+drastically reduce false alarm rates, the bane of intrusion
+detection systems, reducing the flood of incoming reports by multiple
+orders of magnitude.
+Unfortunately, it is difficult to draw crisp, \emph{general} conclusions based on
+field evaluations alone.
+We need to demonstrate that the results are due to features of the algorithm,
+not simply artifacts of details of the test network, traffic, and
+attacks.  This problem is particularly acute in the area of intrusion detection,
+as we explain below.
+% This is a general problem of evaluating IDSes, which we discuss
+% further below.
+%
+
+In this paper, we analyze the underlying reasoning machinery to
+complement earlier field studies.
+%
+% In particular we explore the suitability of qualitative
+% probabilistic techniques --- and \zplus in particular ---
+% for information fusion, especially in areas where
+% standard probabilistic methods cannot be applied because statistics are not
+% available, and machine learning techniques are not appropriate.
+\zplus models uncertain phenomena as falling into a small set of
+\emph{qualitatively distinct} levels of likelihood, similar to the way that
+big-$O$ methods abstract computational effort.
+% In our experiments, we show that our abstraction supports accurate event
+% detection, and explore the robustness of our techniques as
+% the qualitative abstraction fits the world less well.
+To use the big-$O$ analogy again, we check to make sure that our results degrade
+gracefully as the orders of magnitude become less important compared to the
+constant factors.
+% For example, we examine how our qualitative approach degrades when
+% modeling probability distributions in which the probabilities corresponding to the
+% qualitative strata get closer together.
+
+%
+% %%% Can we remove this? It's a bit early for future work, so maybe
+% %%% push to back if necessary and space allows?
+%
+%Additionally, our original work was in the context of an open system that fused
+%a set of ``take them or leave them'' \idses.  We are moving to incorporate our
+%fusion system in an integrated system that will perform computer network
+%defense.  In this new framework, we have the opportunity to make decisions about
+%what sorts of sensors to deploy, possibly developing new sensors in the process,
+%and where to deploy these sensors.  The results here will help inform such
+%decisions.
+
+The experimental results we report show that \zplus{}'s accuracy degrades
+gracefully as the qualitative abstraction fits less and less well. We also show
+that the accuracy of our system degrades gracefully with decreasing sensor
+precision. Finally, MIFD is accurate even when detecting very rare events,
+not only when sensors fail independently, but also in
+the face of correlated false positives.
+These results confirm the results of our
+earlier field tests, and help explain why the
+qualitative scheme works so well.
+
+
+% Our experimental analyses use simulated sensors and events,
+% allowing us to precisely control stimuli to the system,
+% and so allow us to draw general conclusions about the applicability of our
+% approach.
+% %, to identify when it will behave well or poorly, show that it degrades
+% % gracefully, rather than suddenly, etc.
+% The experiments are very encouraging, confirm the results of our
+% earlier field tests, and help to explain why it is that the
+% qualitative scheme has been found to work so well.
+% % They show that under very weak assumptions, 
+% We show that
+% MIFD's sensor fusion approach provides good detection rates with a low
+% rate of false positives even when the underlying assumption that the
+% likelihoods of events do qualitatively differ is violated.  The
+% experiments further show that MIFD functions correctly even when the
+% connection of sensors to events is ambiguous.  MIFD achieves
+% acceptable false positive rates even when detecting very rare events,
+% and can do so not only when sensors fail independently, but also in
+% the face of correlated false positives (represented as \emph{benign}
+% events).
+
+Our results are generally
+relevant to qualitative probabilistic reasoning for
+information and sensor fusion.
+Our fusion problems are modeled as problems of causal explanation, or abduction:
+what are the events most likely to have caused the observations (the IDS
+reports) given certain causal relations?
+Therefore our results are also of interest to researchers in diagnosis.
+Qualitative probability systems like $Z+$ offer an attractive middle point between
+purely disjunctive reasoning in diagnosis, and full probabilistic reasoning.
+
+To the best of our knowledge, ours is the only empirical work to explore the
+\emph{accuracy} of reasoning with \zplus.
+Of about 250 works citing Goldszmidt and Pearl's 1996
+work~\cite{google-scholar-query}, none of the few which detail
+applications of \zplus\ reasoning conduct such investigations.
+%
+Minock and Kraus~\shortcite{minock-kraus-LIAI02} investigate the
+\emph{efficiency} of an implementation of \zplus,
+\hide{restricted to specific classes of
+Horn theories,}
+but not its accuracy.
+% Minock and Kraus compile queries over Horn and q-Horn clauses to an
+% implementation of \zplus, but they report only ``initial performance
+% results'' for partition construction to illustrate the tractability of
+% their approach~\shortcite{minock-kraus-LIAI02}.
+%
+% Fujimoto and Matsuzawa use qualitative rankings similar to \zplus\ to
+% categorize subjective evaluations in
+% text~\shortcite{fujimoto-matsuzawa-newgencomp99,fujimoto-WIIAT2010};
+% their system predicts reactions to advertising messages.  Fujimoto's
+% experiment~\shortcite{fujimoto-WIIAT2010} is directed towards a
+% regression analysis, examining prediction accuracy on a set of survey
+% responses.
+%
+% We do not question the correctness of those experiments, but
+% the substitution of qualitative probabilities for actual values should
+% not be made without confirming the appropriateness of the
+% approximation for the particular domain.  We believe that the
+% experiments we report here are the first such rigorous investigation
+% of the suitability of \zplus\ for a specific application.
+
+In the next section we introduce the problem of \ids fusion
+and its challenges.  Then we describe our approach to the
+problem, as implemented in the Scyllarus and MIFD systems.  We describe our
+experimental designs, present the results and conclude with some proposals for
+future work.
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "main"
+%%% End: 

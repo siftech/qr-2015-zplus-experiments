@@ -1,0 +1,203 @@
+@InProceedings{BoutilierETAL:2001,
+  author =	 {Craig Boutilier and Ray Reiter and Bob Price},
+  title =	 "Symbolic Dynamic Programming for First-Order {MDP}s",
+  booktitle =	 IJCAI-01,
+  annote =	 {Describes a dynamic-programming algorithm for
+                  first-order MDPs that can be used for reasoning
+                  about DT-Golog programs, see
+                  ~\cite{BoutilierETAL:2000}}
+}
+
+@InProceedings{BoutilierETAL:2000,
+  author =	 {Craig Boutilier and Ray Reiter and Mikhail
+                  Soutchanski and Sebastian Thrun},
+  title =	 {Decision-theoretic, High-level Agent Programming in
+                  the Situation Calculus},
+  crossref =	 {AAAI00},
+  pages =	 {355--362},
+  annote =	 {Describes modifications to Golog to turn it into
+                  DT-Golog, adding actions with uncertain
+                  outcomes. The description is only sufficient for a
+                  single agent world, and implementation is not well
+                  described. Relies on an encoding where actions with
+                  uncertain outcomes have start and end
+                  pseudo-actions.}
+}
+
+@InProceedings{FinziPirriReiter:2000,
+  author =	 {Alberto Finzi and Fiori Pirri and Ray Reiter},
+  title =	 "Open World Planning in the Situation Calculus",
+  crossref =	 {AAAI00},
+  pages =	 {754--760},
+  annote =	 {Describes how to do ``open world'' planning in the
+                  situation calculus and golog. Disappointingly, this
+                  just means planning in an incompletely-specified
+                  initial state, and does \emph{not} cover open
+                  universes of objects. The set of objects must, as
+                  before, be given in its completeness, and the
+                  technique for quantification is essentially that of
+                  computing a \emph{universal base}, used by
+                  \sc{Ucpop}. The authors do regression with
+                  theorem-proving. They describe a method for
+                  compiling their database to a prime implicate form,
+                  but this method does not scale very well; the
+                  compilation is too expensive.}
+}
+
+
+@INPROCEEDINGS{GiacomoReiterSoutchanski:98,
+	AUTHOR = {Giuseppe De Giacomo and Ray Reiter and
+		  Mikhail Soutchanski},
+	TITLE = "Execution Monitoring of High-level Robot Programs",
+	BOOKTITLE = {Commonsense 98},
+	YEAR = {1998}
+}
+
+@Book{Reiter:2001,
+  author =	 {Raymond Reiter},
+  title = 	 "Knowledge in Action",
+  publisher = 	 MITP,
+  year = 	 2001,
+  address =	 MITP-ADDRESS
+}
+
+@article{ levesque97golog,
+    author = LEVESQUE # " and Raymond Reiter and " # LESPERANCE # " and Fangzhen Lin and Richard B. Scherl",
+    title = "{GOLOG}: A Logic Programming Language for Dynamic Domains",
+    journal = "Journal of Logic Programming",
+    volume = "31",
+    number = "1-3",
+    pages = "59-83",
+    year = "1997",
+    url = "citeseer.nj.nec.com/levesque94golog.html" }
+
+
+@Article{deGiacomoETAL:2001,
+  author =       "Giuseppe De Giacomo and Hector J. Levesque and
+                 Sebastian Sardi{\~n}a",
+  title =        "Incremental execution of guarded theories",
+  journal =      "ACM Transactions on Computational Logic",
+  volume =       "2",
+  number =       "4",
+  pages =        "495--525",
+  month =        oct,
+  year =         "2001",
+  coden =        "????",
+  ISSN =         "1529-3785",
+  bibdate =      "Tue Feb 19 15:32:35 MST 2002",
+  acknowledgement = ack-nhfb,
+}
+
+
+
+@InProceedings{LevesquePagnucoo:2000,
+  author =	 {Hector J. Levesque and Maurice Pagnucco},
+  title =	 {Legolog: Inexpensive Experiments in Cognitive
+                  Robotics},
+  booktitle =	 {Proceedings of the Second International Cognitive
+                  Robotics Workshop},
+  year =	 2000,
+  address =	 {Berlin, Germany},
+  month =	 aug
+}
+
+
+
+@InProceedings{GrosskreutzLakemeyer:2001,
+  author = 	 {Henrik Grosskreutz and Gerhard Lakemeyer},
+  title = 	 "On-Line Execution of {\tt cc-Golog} Plans",
+  crossref =	 {IJCAI01},
+  pages =	 {12--18}
+}
+
+@inproceedings{lesperance:00,
+  author =	 LESPERANCE # { and Todd G. Kelley and John
+                  Mylopoulos and Eric S. K. Yu},
+  title =	 {Modeling Dynamic Domains with {ConGolog}},
+  booktitle =	 {Proceedings of the 11th International Conference on
+                  Advanced Information Systems Engineering},
+  year =	 1999,
+  isbn =	 {3-540-66157-3},
+  pages =	 {365--380},
+  publisher =	 {Springer-Verlag},
+}
+
+@inproceedings{BaralSon:1999,
+  booktitle =	 "Agent Theories, Architectures, and Languages",
+  pages =	 "188-204",
+  year =	 "1999",
+  title =	 "Extending {ConGolog} to allow partial ordering",
+  author =	 "Chitta Baral and Tran Cao Son",
+  month =	 apr,
+  abstract =     "In this paper we extend the high level execution
+                 language ConGolog (developed at the University of
+                 Toronto) by adding to it a new construct which we call
+                 the htn-construct. The new construct improves ConGolog
+                 by allowing easy specification of non-determinism when
+                 a partial ordering between a set of actions needs to be
+                 maintained. Furthermore, it allows temporal constraints
+                 to be specified easily. We present an implementation of
+                 the htn-construct in PROLOG which can be directly added
+                 to PROLOG implementations of ConGolog interpreters.",
+  annote =	 "Provides an augmentation to the ConGolog interpreter
+                  to permit including HTN schemas. The big challenge
+                  is to handle partial ordering; everything else works
+                  already. One thing that seemed odd to me was that
+                  they formalize the process using the Trans
+                  relationship, and have all of the reduction of
+                  schemas be done in the initial situation. That's
+                  reasonably ok semantics, but it means that they need
+                  a very large additional set of semantics to handle
+                  the progression of the state through execution of
+                  the HTN planner, which seems inelegant.",
+  URL =		 "\url{http://citeseer.ist.psu.edu/423853.html}"
+}
+
+@INPROCEEDINGS{Gabaldon02,
+  AUTHOR =	 {Alfredo Gabaldon},
+  TITLE =	 {Programming Hierarchical Task Networks in the
+                  Situation Calculus},
+  BOOKTITLE =	 {{AIPS}'02 Workshop on On-line Planning and
+                  Scheduling},
+  LOCATION =	 {Toulouse, France},
+  MONTH = apr,
+  PDF = {http://www.cs.toronto.edu/cogrobo/Papers/htn-opw.pdf},
+  PS = {http://www.cs.toronto.edu/cogrobo/Papers/htn-opw.ps},
+  URL = {http://www.cs.toronto.edu/cogrobo/Papers/htn-opw.ps.gz},
+  YEAR = 2002,
+  abstract =     "this paper is 1) to give an account of HTNplanning as
+                 high-level programming in the situation calculus
+                 (McCarthy 1963) based languages Golog/ConGolog
+                 (Levesque et al. 1997; De Giacomo, Lesperance, \&
+                 Levesque 2000) and 2) to illustrate our approach with a
+                 ConGolog encoding of a logistics domain HTN-planning
+                 problem. The Golog/ConGolog languages have been
+                 extended to deal with explicit time, sensing actions,
+                 exogenous events, execution monitoring, incomplete
+                 knowledge of the initial state, stochastic actions and
+                 others. Thus the range of problems that can be tackled
+                 with this approach is potentially much larger. As an
+                 example, we modified the logistics domain encoding to
+                 execute on-line and deal with run-time exogenous
+                 delivery requests",
+  annote =	 "A successor to the paper by Baral and Son. This
+                  paper shows how to capture HTN-style methods in
+                  Golog, without adding any special facilities. Sor,
+                  for example, method choice is handled using guarded
+                  branches, and partial orders are handled within
+                  standard Golog procs, with interrupts that simulate
+                  protections."
+}
+
+@Article{DeGiacomoETAL:2000a,
+  author =	"Giuseppe De Giacomo and " # LESPERANCE # " and " # LEVESQUE,
+  title =	"{C}on{G}olog, {A} Concurrent Programming Language
+		 based on Situation Calculus",
+  journal =	AIJ,
+  year = 	2000,
+  volume =	121,
+  number =	"1--2",
+  pages =	"109--169",
+  topic =	"Golog;situation-calculus;concurrency;cognitive-robotics;",
+}
+

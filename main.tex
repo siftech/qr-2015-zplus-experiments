@@ -1,0 +1,81 @@
+\documentclass[letterpaper]{article}
+% Required Packages
+\usepackage{aaai}
+\usepackage{times}
+\usepackage{helvet}
+\usepackage{courier}
+\setlength{\pdfpagewidth}{8.5in}
+\setlength{\pdfpageheight}{11in}
+%%%%%%%%%%
+% PDFINFO for PDFL A TEX
+% Uncomment and complete the following for metadata (your paper must compile with PDFL A TEX)
+
+% FIXME reinstate after anonymity removed.
+%
+% /Author (Robert P. Goldman, John Maraist)
+\pdfinfo{
+/Title (Experimental Evaluation of Qualitative Probability applied to Sensor Fusion and Intrusion Detection)
+/Keywords (qualitative reasoning, computer security, diagnosis, evaluation, uncertainty)
+}
+% The following were added by Org-mode when exporting from outline. We can
+% restore them if needed. [2014/03/14:rpg]
+% \usepackage[utf8]{inputenc}
+% \usepackage[T1]{fontenc}
+% \usepackage{fixltx2e}
+\usepackage{graphicx}
+% \usepackage{longtable}
+% \usepackage{float}
+% \usepackage{wrapfig}
+% \usepackage{rotating}
+% \usepackage[normalem]{ulem}
+\usepackage{amsmath}
+% \usepackage{textcomp}
+% \usepackage{marvosym}
+% \usepackage{wasysym}
+% \usepackage{amssymb}
+% \usepackage{hyperref}
+% \tolerance=1000
+\usepackage{ifthen} 
+\usepackage{xspace}
+%% \usepackage{natbib} %% incompatible with aaai.sty
+\usepackage{url}
+\newboolean{anonymous}
+\setboolean{anonymous}{true}
+% \usepackage{proceed2e}
+\usepackage{paralist,multicol}
+\author{\ifthenelse{\boolean{anonymous}}{Anonymous}{Robert P. Goldman and John Maraist}}
+\title{Experimental Evaluation of Qualitative Probability applied to Sensor Fusion and Intrusion Detection}
+\input{defs}
+
+\setboolean{draft}{false}
+
+%% This suppresses the copyright block --- OK to do for the
+%% submission, and buys us an additional half-column-inch.
+\nocopyright
+\begin{document}
+
+\maketitle
+\input{abstract}
+\input{intro}
+\input{ids-fusion}
+\input{scyllarus-and-mifd}
+\input{design}
+\input{results}
+\input{conclusions}
+
+\ifthenelse{\boolean{anonymous}}{}{%
+\subsubsection*{Acknowledgments}
+\label{sec:acknowledgments}
+
+This paper was supported by DARPA and the U.S. Air Force under contract number
+FA8650-11-C-7191.  
+Approved for Public Release, Distribution Unlimited. 
+\textit{[The previous is the clearance expression we will put in upon clearance]}
+The views expressed are those of the
+authors and do not reflect the official policy or position of the Department
+of Defense or the U.S. Government.} %endif anonymous
+
+\clearpage{}
+\bibliographystyle{aaai}
+\bibliography{refs/names,refs/strings,refs/prob,refs/cyber,refs/goldman,refs/charniak,refs/collections,refs/ai,main}
+\end{document}

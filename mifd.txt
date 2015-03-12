@@ -1,0 +1,151 @@
+#+TITLE: Qualitative Probability for Intrusion Detection
+#+DATE: <2014-03-10 Mon>
+#+AUTHOR: Robert P. Goldman and John Maraist
+#+EMAIL: rpgoldman@sift.info
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:t c:nil
+#+OPTIONS: creator:comment d:(not LOGBOOK) date:t e:t email:nil f:t inline:t
+#+OPTIONS: num:t p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t timestamp:t
+#+OPTIONS: toc:nil todo:t |:t
+#+CREATOR: Emacs 24.3.50.2 (Org mode 8.2.1)
+#+DESCRIPTION:
+#+EXCLUDE_TAGS: noexport
+#+KEYWORDS:
+#+LANGUAGE: en
+#+DATE: <2014-03-10 Mon>
+#+OPTIONS: texht:t
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS:
+#+LATEX_HEADER: \usepackage{ifthen} \usepackage{xspace}
+#+LATEX_HEADER_EXTRA: \newboolean{anonymous}
+#+LATEX_HEADER_EXTRA: \setboolean{anonymous}{true}
+#+LATEX_HEADER_EXTRA: \newcommand{\anoncite}[1]{\ifthenelse{\boolean{anonymous}}{{\textbf citation withheld for anonymity}}{\cite{#1}}}
+#+LATEX_HEADER_EXTRA: \newcommand{\zplus}{System $Z+$\xspace}
+#+SELECT_TAGS: export
+
+* Introduction
+
+In previous work, we have developed a technique for intrusion detection system (IDS)
+fusion \anoncite{goldman:09Scyllarus} in cyber defense, whose likelihood computations are based on the System Z+
+qualitative probability scheme \cite{Goldszmidt:96}.
+Our original system has been extensively tested in real networks, using both
+real and synthetic data.
+Unfortunately, it is difficult to draw many general conclusions based on such
+evaluations, whose results are very specific to the test network, traffic, and
+attacks.  This is a general problem of evaluating IDSes, which we discuss
+further below.
+
+As a complement to these in-the-field evaluations, in this paper we present
+experimental analysis of the underlying reasoning machinery in our
+system, using simulated sensors and events.
+Our experimental analysis, divorced from specific networks, sensors,
+etc., allows us to draw general conclusions about the applicability of our
+approach, and identify when it will behave well and when poorly.
+
+The key issue that we explore here is the suitability of qualitative
+probabilistic techniques, and \zplus in particular.
+\zplus asks us to treat uncertain phenomena as if they fall into a small set of
+/qualitatively distinct/ levels of likelihood.
+What we do in our experiments is to explore how robust our techniques are as
+this abstraction fits the world less and less well.
+For example, we consider how our qualitative approach degrades as it is used to
+model probability distributions in which the probabilities corresponding to the
+qualitative strata get closer and closer together.
+
+While our experiments are aimed specifically at IDS fusion, they should be of
+interest to other researchers and developers who wish to pursue qualitative
+methods.
+At the level of abstraction treated in this paper, our results will be of
+direct interest to those pursuing qualitative probabilistic approaches to
+information and sensor fusion.
+The fusion problems we address are very close in structure to diagnosis
+problems, so our results should also be of interest to that community.
+
+** Quick summary of research results
+
+** Paper Roadmap here
+
+* Intrusion Detection Fusion
+
+** Definition
+
+** Challenges of IDS evaluation
+
+* System Z+
+
+* The Scyllarus and MIFD systems
+
+Our original system, entitled Scyllarus, performed IDS fusion on ....
+The successor system, MIFD (FIXME: what's the expansion for this), is a new
+version of the Scyllarus system, enhanced as part of the STRATUS system, which
+integrates IDS fusion into a comprehensive suite for cyber defense
+\anoncite{thayer13:_compar_strat_tactic_respon_cyber_threat}.
+
+** Give examples of inference networks
+
+*** Simple inference network
+Single event, multiple sensor reports.
+
+*** Multiple hypothesis inference networks
+
+*** Benign events
+
+* Experimental Design
+
+** Explain how the simulator works
+
+Explain how we generate settings, events, benign events, and sensor reports.
+
+** Objectives
+
+Our experiments aim to probe the limits of performance of our information fusion approach.
+
++ Our first experiments aim to see how performance of MIFD degrades as we
+  progressively violate the assumption that the different levels of
+  the stratified likelihood ranking are qualitatively different.
++ Our next experiments follow-up on the first experiments, which simply assigned
+  a single probability to each event, according to its $\kappa$ ranking. In
+  these new experiments, we use a Beta distribution to define a second order
+  probability distribution corresponding to each $\kappa$ ranking.
++ We next explore how the performance of our techniques degrade as the sensors
+  increasingly overlap in their "field of view."
++ /What's a plausible next thing to test?/  Some possible ideas:
+  + Infection spreading through networks: impose a topology on the hosts in the
+    setting, and spread through adjacent hosts.  This would require a time
+    series over the course of a run, and would require that we have both
+    attacker and defender hosts (currently we really only have defenders).
+    Probably the most interesting thing to do, but do we have time?
+  + Current experiments are based on assuming that, given the false
+    positive rates, it takes three sensors to reliably detect an
+    attack.  Some modifications
+    + Consider a revised model, per our earlier discussion, where we
+      assume it takes only two sensors to reliably detect an attack.
+    + Specifically explore variations in the "true" false positive
+      rate (or false positive and false negative rates), distinct from
+      varying the rates of attacks, and explore how that causes
+      problems.
+  + Address the base rate issues.  As the rate of true attacks goes down, how
+    does our performance degrade.  There's a real base rate problem here, where
+    even a high accuracy sensor might give unacceptable false positive rates if
+    the prior of attacks is sufficiently low.  I'm actually surprised that we
+    haven't seen this...  It makes me a little suspicious.
+  + Make more reasonable use of the benign events.
+
+* Results
+
+** Varying probabilities
+
+** Qualitative abstractions of non point-value distributions
+
+** Varying the topology
+
+* Conclusions
+
+\bibliographystyle{djm-url}
+\bibliography{refs/names,refs/strings,refs/prob,refs/goldman,refs/collections}
+
+* COMMENT File variables
+
+
+# Local Variables:
+# mode: org
+# End:

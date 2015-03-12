@@ -1,0 +1,87 @@
+----------------------- REVIEW 1 ---------------------
+PAPER: 1925
+TITLE: Experimental Evaluation of Qualitative Probability applied to Sensor Fusion and Intrusion Detection
+AUTHORS: Robert P. Goldman and John Maraist
+
+Significance of the Contribution: 3 (---)
+Soundness and Positioning with Respect to Related Work: 3 (---)
+Depth of Theoretical and/or Experimental Analysis (as appropriate): 3 (---)
+Quality of Presentation: 3 (---)
+SUMMARY RATING: -3 (---)
+
+----------- COMMENTS FOR THE AUTHORS -----------
+This paper presents experimental results on evaluating System Z+ for network intrusion detection. Intrusion detection is an interesting and important topic and the attempt to deploy ideas from AI are to intrusion detection shall be encouraged. However, I struggle to work out the novelty of the paper.
+
+There are a number of aspects that are not clear to me.
+
+First the paper seemed to suggest that the sensor data fusion stage (referred to as clustering) plays an important role for subsequent estimation of qualitative probabilities of “event hypothesis”.  The fusion stage has been referred again in the conclusion “The results also justify the claim that by combining the output of multiple sensors, even very noisy sensors, IDS fusion can tame the high false positive rates”. I do not see how the experimental results justify this since there is no detail as  how Fusion has been performed.
+
+Second, I found the experimental setting and the experimental scale are too small for realistic evaluations of the approach for large sensor networks.
+
+Third, since complex events are out of the scope of the paper, does it mean that any Bayesian network you create only has two layers – events layer and hypotheses layer?  This again, seems to have over simplified real-world scenarios on intrusion detection.
+
+Fourth, do the probabilities of k(2) and k(3)  have to go up or down together, I mean can one value go up and another go down in your table 3, and what experimental results will look like?
+
+Fifth, I found repeated emphasize of fusion is confusing, such as the sentence  “Our second experiment examines how variation in the probabilities of the events at the same qualitative likelihood affects the accuracy of qualitative fusion.”  Since the paper never presented the Fusion stage, it is hard to see again how the experiments had shown the accuracy of fusion.
+
+Finally, the reference to a paper that cannot be known to reviewers make it hard for a reviewer to know what is novel and what is not in the current paper.  The section on Related work only listed a few pieces of work related to intrusion detection without detailed comparison or analysis as how the new approach provide better solutions.
+
+For table on page 4, it is not clear what e stands for in the probability distribution situation, and what notation e\in \varphi means (right). The notation is changed for k function (left). What is w in the sentence following the table?
+
+----------------------- REVIEW 2 ---------------------
+PAPER: 1925
+TITLE: Experimental Evaluation of Qualitative Probability applied to Sensor Fusion and Intrusion Detection
+AUTHORS: Robert P. Goldman and John Maraist
+
+Significance of the Contribution: 8 (+++)
+Soundness and Positioning with Respect to Related Work: 8 (+++)
+Depth of Theoretical and/or Experimental Analysis (as appropriate): 7 (++)
+Quality of Presentation: 8 (+++)
+SUMMARY RATING: 3 (+++)
+
+----------- COMMENTS FOR THE AUTHORS -----------
+The paper provides an experimental evaluation of a qualitative probability representation based on the system Z+ in the context of an application for intrusion detection.
+I think it is very useful to have this kind of reports from real applications (even if the results come from simulations rather than from on-field operation).
+
+The paper is well-written and provide a suitable description of the application context and its challenges, of the role of the System Z+ within the intrusion detection system, of the design of the experiments, and of the results.
+
+Given the breadth of the matter, the presentation is rather high-level and does not include all the relevant technical details, but I think it provides anyway a very interesting example of a good combination of theory and practice which may deserve consideration from many researchers in the field.
+
+----------------------- REVIEW 3 ---------------------
+PAPER: 1925
+TITLE: Experimental Evaluation of Qualitative Probability applied to Sensor Fusion and Intrusion Detection
+AUTHORS: Robert P. Goldman and John Maraist
+
+Significance of the Contribution: 4 (--)
+Soundness and Positioning with Respect to Related Work: 4 (--)
+Depth of Theoretical and/or Experimental Analysis (as appropriate): 3 (---)
+Quality of Presentation: 7 (++)
+SUMMARY RATING: -2 (--)
+
+----------- COMMENTS FOR THE AUTHORS -----------
+The authors present an experimental evaluation of a qualitative
+probability system, applied to an intrusion detection problem. Their
+system fuses information from multiple reports and outputs qualitative
+probablities to hypotheses, conditioned on data.
+
+The paper begins with a lengthy review of the intrusion detection
+problem and the use of qualitative probabilities in this domain. The
+description of the inference in qualitative probability domain is
+rather short, but understandable.
+
+The two experiments - "varying probabilities" and "non point-value
+distributions" - form the core of the paper. The descriptions of the
+experiment are rather short and technical, motivating aspects of these
+experiments are maybe not so well developed. The second experiment
+builds on adding a Beta prior to the system. This incorporation of
+quantitative probabilities is contrary to the whole approach of using
+qualitative probabilities. This left me slightly puzzled. The set of
+results is rather modest, pointing to the non-surprising degradation
+of the reuslts. Beta prior seems to have no effect on precision and
+recall.
+
+There are lots of reference to Web resources, this weakens the
+theoretical framework by little.  I know that it may be difficult to
+find academic work supporting the intrusion detection narrative.
+
+------------------------------------------------------

@@ -1,0 +1,163 @@
+-*- mode: org; -*-
+
+* Reviewer 1
+** Topic
+[must be stated more politely]
+This reviewer seems to believe strongly that "information fusion" is defined as
+the clustering phase of the process. We stress that the term "fusion" is not
+firmly defined for the intrusion detection domain (in fact, the process is
+typically referred to as "correlation," and often consists only of
+clustering). We regret the confusion, but we do not feel that our usage is
+misleading -- indeed we have adopted the term "fusion" to avoid the misleading
+implications of "correlation."
+
+This reviewer seems to wish that we were discussing the clustering aspect of the
+work, but that is simply not the topic of the paper.  It is true that we achieve
+multiple (in our experience 2-3) order of magnitude reductions through the
+clustering process and elimination of uninteresting events; nevertheless
+distinguishing likely from unlikely is critical to the success of the system.
+
+While reviewer 1 argues that the experimental setting and scale are insufficient
+for realistic evaluations of the approach for large sensor networks, we stress
+that this is absolutely the first work to experimentally evaluate the
+performance of this kind of qualitative abstraction. At this stage, it is
+important to establish the behavior on small cases, where we can understand the
+topology, before expanding our work to larger, more complex cases, as we have
+proposed to do in our future work.
+
+Question 4: We have experimented with moving the probabilities corresponding to
+k=1 and k=2 independently. For reasons of space, we showed cases where they
+moved simultaneously.
+John -- do we have any data for additional cases here?  If not, I suppose I
+could run some today.
+
+- [JM] No, I think we're presenting the only cases we ran after the
+  last set of changes to the code.
+
+Question 5: Here the reviewer simply insists on using his definition of "fusion"
+in preference to the one in the paper.
+
+The reference: The paper in question is unavailable: since the set of authors of
+the paper in question is not identical to the set of authors of this paper, we
+propose to make it available.  It is "Goldman, R. P., and Harp,
+S. A. 2009. Model-based intrusion assessment in common lisp. In Proc. Int’l Lisp
+Conference."
+
+We are sorry that our references to related work are unsatisfactory, and
+qualitative. However, that is the state of the art: there are not standard
+testbeds, etc. for IDSes, much less for systems that combine reports from
+multiple IDSes. Such systems are rare, and we explain that they all compute
+slightly different things. Accordingly, the comparisons with related work are
+necessarily feature based and qualitative. We hope work like ours will help
+improve this situation.
+
+For the table on page 4, e are primitive events. So e \in \psi means that \psi
+is equivalent to the disjunction of the mutually exclusive events e. \omega and
+\phi in the following sentence are conditionally independent events.
+
+* Review 2
+
+No response needed.
+
+* Review 3
+
+WRT the use of quantitative probabilities, we are evaluating how well our
+qualitative abstraction works in a world which is not qualitative.  Accordingly,
+we must ask "if the real world behaves like this," where "this" is modeled
+quantitatively, "then will our abstraction behave well?"
+
+If we know the true probabilities, of course, we could use them. But in this
+case they are not available (and we explain that they are in principle
+unavailable, so not simply learnable), so we show that the system behaves well
+over a range of possible (hidden) real world configurations. We explore the
+simple (unrealistic) case where all the members of the abstract classes behave
+identically, and then explore the more realistic case where the abstract class
+members are heterogeneous (within limits).
+
+In general, reviewer three has completely missed the point. I'm not sure if we
+failed to put it over, but considering the other reviews, I think he just wasn't
+sufficiently attentive.
+
+- [JM] We can respond that we'll emphasize that point more in the
+  intro --- no harm in it (and we do get a bit more space, with the
+  last-page-all-references restriction going away, right?).
+
+* Draft response
+
+Reviewer 3 comments, "This incorporation of quantitative probabilities is
+contrary to the whole approach of using qualitative probabilities."  The point
+of this work is to evaluate how well the qualitative abstraction can be used in
+the real, quantitative, world.  To answer this question, we must ask "if the real world
+behaves like THIS then will our abstraction behave well?" where "THIS" is
+modeled quantitatively.
+
+If we knew the real world's probabilities, then of course we would use them.
+But in this case they are not available (and as we explain, they are
+in principle unavailable, so simply learning them is not possible).
+What we show instead is that the system behaves well over a range of
+possible (hidden) real world configurations.  We explore the simple
+(unrealistic) case where all the members of the abstract classes
+behave identically, and then explore the more realistic case where the
+abstract class members (events of the same kappa rank) are more heterogeneous in
+their likelihood (the Beta experiments).
+
+In the final version of the paper we will make this point clearer in
+the introduction.
+
+Review 1 seems very concerned with an issue of terminology.  We have defined the
+term "IDS fusion" as the combination of clustering and assessment (likelihood
+reasoning).  The review asserts that "fusion" and "clustering" are exactly the
+same, and on this basis argues that we don't discuss "fusion" at all. This is
+not an issue where one person is right and one is wrong: the process we describe
+is typically referred to as "correlation" (a term we have avoided as misleading) and
+its input-output behavior is not consistently defined in the literature (as our
+related work section illustrates). We have tried to be very clear that the topic
+of this paper is the assessment of qualitative probabilistic reasoning as applied
+to combining the output of multiple sensors, and that clustering is out of
+scope. We described clustering only to provide context: perhaps it was a mistake to
+mention it at all.
+
+Review 1's fifth point is about this same issue of terminology --- we
+are using "fusion" in a different sense than this reviewer.
+
+Review 1's second and third points argue that the experimental setting
+and scale are insufficient for realistic evaluations of the approach
+for large sensor networks.  We stress that this is absolutely the
+first work to experimentally evaluate the performance of this kind of
+qualitative abstraction. At this stage, it is important to establish
+the behavior on small cases, where we can understand the topology,
+before expanding our work to larger, more complex cases, as we have
+proposed to do in our future work. Until we understand what sort of sensors and
+phenomena can be reasoned about accurately in the small, it is premature to
+consider complex hypotheses.
+
+About Review 1's fourth point: P(k=1) and P(k=2) certainly can be varied as
+suggested.  We didn't have time to configure and run a full set of experiments
+during the rebuttal period, but we certainly could do so and include the results
+in the final version of the paper.  We ran three sets of new results with
+varying values for P(k=2) corresponding to the first row of that table (with
+P(k=1) = 0.005 and with s2a=3). As we varied p(k=2) from 0.00075, to 0.001 to
+0.0025 the effect on precision was negligible, but recall went from the original
+96.73% to 96.05%, 96.53%, and 94.90%. So the difference between k=1 and k=2 has
+much less effect than the difference between k=0 and k>0. This is not very
+surprising, since the difference between k=1 and k=2 is relevant only in the
+less common cases where there is a benign explanation for multiple reports, with
+no external "tie breaker."
+
+Reviewer 1 was dissatisfied with the withheld reference. We were cautious in
+withholding this citation for anonymity.  However the set of authors of that
+paper is not identical to the set of authors of this paper, and so perhaps we
+were overly cautious: it is "Goldman, R. P., and Harp, S. A. 2009. Model-based
+intrusion assessment in Common Lisp. In Proc. Int’l Lisp Conference."
+
+We understand that the citations of related work seem unsatisfactory, but that
+is the state of the art.  There are not standard testbeds, etc. for IDSes, much
+less for systems that combine reports from multiple IDSes.  IDS correlators are
+rare, and as we explain they all compute slightly different things. Accordingly,
+the comparisons with related work are necessarily feature-based and qualitative.
+Our work here is intended to improve this situation.
+
+WRT the table on page 4, the e are primitive events. So e \in \psi
+means that \psi is equivalent to the disjunction of the mutually
+exclusive events e. \omega and \phi in the subsequent sentence are
+conditionally independent events.

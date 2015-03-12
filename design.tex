@@ -1,0 +1,372 @@
+\section{Experimental Design}
+\label{sec:experimental-design}
+
+Our experiments probe limits of accuracy of \zplus.
+Our first two experiments consider what happens as our qualitative abstraction
+is a more or less accurate reflection of reality.  It is relatively accurate when the
+probabilities of events it treats as qualitatively distinct are far apart, and
+less and less accurate as they come closer and closer together. \hide{This is similar
+to the way big-$O$ analysis degrades as the constants get larger and larger.}
+Our third experiment considers how MIFD degrades as its input sensors become
+less and less precise.
+Finally, we consider how well MIFD addresses base rate problems -- to what
+extent, and under what circumstances fusing redundant sensors qualitatively will
+increase accuracy.
+
+In all of these experiments, we define sensor arrangements, and probabilities for attacks, confounding
+benign events, and sensor false positives and false negatives. We sample from
+them to find ground truth and sensor report sets, run MIFD on the sensor
+reports, and evaluate its accuracy.
+These experiments are necessarily artificial, since they assume
+omniscience about parameters which are even in principle inaccessible.
+
+\hide{
+Our experiments are based on \emph{settings} comprised of
+%% a set of  \emph{locations} (simulating hosts),
+attack and benign event \emph{prototypes}, plus
+\emph{sensors} which simulate \idses, each
+sensing some number of attacks and possibly also (inadvertently)
+benign events.  Since there is no opportunity to perform 
+fusion if events are not sensed, in our simulated configurations each attack
+event will be sensed by some number of sensors, greater than 1.  We vary this
+sensor-to-attack ratio in our experiments.}
+% In this first set of experiments, we do not simulate networks as
+% such, so all of the locations are treated as identical: the same set
+% of events can occur everywhere, and the same set of sensors are
+% deployed at each location.
+
+% DONE: Can you give the reader a sense of the distinction between
+% configuration, setting, and run? The notion of "run" is relatively clear, but
+% not the other two.  Something like "For example, a configuration might specify
+% how a set of attacks is generated, and the set of sensors. A particular
+% setting would involve a particular set of possible attacks, a particular set
+% of sensors, and a particular set of sensing relations between attacks and
+% sensors."
+%
+% FIXME - Robert, in the marked-up PDF you suggested discussing
+% locations, but earlier we'd decided to prune that discussion, since
+% we didn't end up using different locations.
+% Right, but here how will the reader know that we are going to sample from the
+% same event multiple times?  The fact is that the whole notion of "run" as
+% distinct from "location" is broken, so we must make the best of it that we
+% can.  Please have a whack at this.
+For each experiment we create a \emph{configuration},
+parameters specifying how a set of events and sensors (the
+\emph{setting}) is generated.  A
+setting comprises a set of possible attacks, a set
+of sensors, and a set of sensing relations between attacks and
+sensors.
+In each \emph{run} of a setting we sample %, for each location,
+% some number of 
+from the attack and benign events.
+% These are
+% Bernoulli random variables; we discuss setting their probabilities
+% below.
+In each experiment we generated 1,000 settings with
+100 runs per setting.
+%
+After sampling events, we sample from the sensors
+%at the corresponding location,
+according to their false positive and false negative probabilities.  
+\hide{For each of
+the $i$ events which the sensor might detect, we consider the probability
+$\mathit{fn}$ of a false negative, so the probability of the sensor firing is $1
+- \mathit{fn}^i$. If none of the sensed events occurred, the sensor will fire
+according to its false positive probability.
+}
+
+\hide{
+When measuring recall, we care only about trials where attacks
+actually occur, but in some configurations the probability of an attack
+is so small that the sample size required to meaningfully assess
+recall with standard sampling would not be feasible.
+Conversely, when measuring precision, false positives are of critical
+importance, so samples without attacks are interesting.
+Accordingly we sample separately for precision and recall, and
+for recall we perform rejection sampling, rejecting any event samples
+in which no attacks occur.}
+
+Having generated the events and sensor reports for a run, we then use
+the reports as
+input to MIFD, and assess the resulting Bayes networks.  We extract
+the set of attack event hypotheses that have been labeled as
+\emph{likely} by MIFD.
+We evaluate MIFD's performance in terms of \emph{precision} and \emph{recall},
+comparing the set of events that MIFD considers likely with ground
+truth generated for the run.
+Recall is the percentage of actual attack events
+which are labeled as likely. \hide{We compute recall as the fraction
+\[\frac{\textrm{correct positives}}
+       {\textrm{correct positives}+\textrm{false
+           negatives}}\enspace.\] }
+%
+Precision is the percentage of attack events labeled as likely which 
+actually occurred.\hide{
+in fact part of the ground truth. We compute precision as the fraction
+\[\frac{\textrm{correct positives}}
+       {\textrm{correct positives}+\textrm{false positives}}\enspace.\]
+%
+We generally consider precision and recall aggregated over all runs
+from a setting.}
+Because of the high rate of reports and the low rate of events, precision and
+recall must be in the high nineties, or the sensing system will not be usable.
+We report the effect of our experiments on precision and recall in our
+results section below.
+
+\textbf{Configurations.}
+\label{sec-5-1}
+%% Explain how we generate settings, events, benign events, and sensor
+%% reports.
+% Generation of each experimental run of \mifd\ is governed by a number
+% of experimental parameters.  
+% Over any particular experiment, we will vary one or two parameters,
+% and set others to values typical for an \ids.
+In each of our experiments, we start with a configuration that reflects the
+realities of IDS fusion, and whose parameter values are broadly consistent with
+the simplifying assumptions of \zplus.
+Configuration parameters may be either constants or parameterized random
+variables.
+We then vary some configuration parameter in ways which degrade
+MIFD's performance. These experiments show us MIFD's performance under best-case conditions, and
+how that performance degrades.
+\begin{compactitem}
+\item \numEventProtosDetected\ --- The total number of events (both
+  benign and attacks) to be
+  detected by each sensor, a measure of the sensor's specificity.
+  Initially we use a random variable which returns 1 80\%
+  of the time, and 2 otherwise.
+\item \sensorToAttackRatio\ --- The number of sensors which should
+  detect each attack event, initially 3.
+\item \sensorOverlap\ --- The number of types of attack to be detected by each
+  sensor, specified as a probability checked when deciding whether to
+  associate an additional attack type with a sensor, initially 0.2.
+\item \fpKappa\ --- The qualitative probability of
+  false-positives for the sensors. We choose these to be 1
+  in configurations where it takes 3 reports to rank a hypothesis likely, or 2
+  where it takes only 2.
+% 
+%% Commenting out this bullet point --- not really relevant.
+%
+% \item $\kappa(\text{false-negative})$ --- MIFD does not currently reason about false negatives;
+%  we take this probability to be whatever
+%  corresponds to $\kappa = 2$ in the configuration.
+%
+\item \attackKappa\ and \benignKappa\ --- The qualitative
+  probabilities of attack and benign events, initially
+  2 and 1 respectively.
+
+  %% This item is commented out in favor of the one below ---
+  %% because we don't actually use \numBenignEvents in any experiment
+  %% reported here.
+
+  %% \item \numBenignEvents\ and \sensorToBenignRatio\ --- Exactly one
+  %%   of these parameters should be given, and the other will be
+  %%   derived. The former specifies a total number of benign events
+  %%   which should be used in generated settings; the latter
+  %%   specifies the number of sensors which should detect each benign
+  %%   event.  We default to a constant value of 3 for
+  %%   \sensorToBenignRatio.
+\item \sensorToBenignRatio\ --- The number of sensors which should
+  detect each benign event, initially 3.
+
+\item \kappaTranslations\ --- Translations (into a constant or into a
+  random variable) of qualitative probability values to real values in
+  $[0,1]$. Initially we translate to constants, $\kappa(0)=0.5$,
+  $\kappa(1)=0.01$, $\kappa(2)=0.001$.
+  
+% \item \numLocations --- Defaults to 1.
+
+\item \numAttacks\ --- % Number of attack prototypes; 
+  The number of attacks to take place, %at each location
+  initially 4.
+
+
+\end{compactitem}
+%
+% The values of \sensorToAttackRatio\ and the various \emph{kappa}s are
+% interrelated. A sensible scenario should respect the orderings
+% \begin{align}
+% \end{align}
+% or in other words,
+% \begin{compactitem}
+% \item A single sensor false positive is less surprising than an
+%   attack event.
+% \item A benign event is also less surprising than an attack event.
+% \item An attack event is less surprising than false positives from all
+%   of the sensors which detect that event.
+% \end{compactitem}
+%
+%% (run-config ...)
+%%  > (make-configuration-settings configuration)
+%%  > (make-setting :configuration configuration)
+%%  > (make-instance 'setting :configuration configuration ...)
+%%    :after (initialize-instance ((obj setting)) ...)
+%%             > (make-attack-events num-attacks attack-kappa)
+%%                 ;; just the attack protos
+%%    (setf (slot-value setting 'sensors) (make-sensors setting))
+%%                 ;; sensor and benign protos
+%%    (stratus-simulator:init-random-mifd-world setting num-locations
+%%    ...)
+%
+%
+\textbf{Settings.}
+When creating a setting, we first consult
+the \numAttacks\ parameter to determine the number of attack prototypes.
+Each prototype is associated with an
+occurrence probability given by (or sampled for each prototype from)
+\attackKappa. The number of sensors is not fixed, but instead depends
+on several configuration parameters. For each attack, we keep track of
+the number of sensors which we must assign to detect it; this value is
+initially set from \sensorToAttackRatio.  We create new sensors as
+long as any attack requires assignment to an additional sensor. A new
+sensor is initially assigned a total number of events which it will
+detect from \numEventProtosDetected, and some set of attack
+events. Each sensor is assigned at least one attack, plus
+additional attacks up to its total number of events as consecutive
+samples of a Bernoulli random variable with success probability
+\sensorOverlap\ return 1.  After all sensor prototypes are
+created and assigned attacks, we assign benign events to the sensors
+to reach their total number of events.
+%% \begin{itemize}
+%% \item If we are given \numBenignEvents, then we create that total
+%%   number of benign event prototypes, and distribute them among the
+%%   sensors using a \sensorToBenignRatio\ which allows each sensor's
+%%   total event count to be satisfied.
+%% \item
+%%   If we are given a \sensorToBenignRatio, then we create the
+%%   necessary number of benign event prototypes to satisfy both
+%%   \sensorToBenignRatio\ and each sensor's total event count.
+%% \end{itemize}
+We create enough benign event prototypes to satisfy
+both \sensorToBenignRatio\ and each sensor's total event count, and
+distribute them randomly among the sensors according to their total
+event counts. 
+% Finally we generate a network with the number of nodes
+% determined by \numLocations.
+
+%% (nondegenerate-simulate-step setting ...)
+%%   > (simulate-step setting)
+%%   > (events-for-location setting location)
+%%     (reports-for-events setting location events)
+% From the setting we can generate the ground truth aspect for an actual
+% \mifd\ run: actual attack and benign events, plus the sensor reports
+% which those events (or false positives) trigger. We proceed by
+% considering each location of the network in turn.  We create the
+% events which occur at each location by considering each attack and
+% benign prototype. For each prototype, if a sample of a Bernoulli
+% random variable whose success probability is the occurrence
+% probability of the prototype is 1, then the ground truth aspect will
+% contain a sensor report with that prototype and location.
+% %
+% For sensor reports at each location, we consider each sensor report
+% prototype of the setting. If a prototype indicates that the sensor can
+% detect one of the events which we have generated for that location,
+% then we may have a report based on the events; otherwise we may have
+% report because of a false positive.
+% \begin{compactitem}
+% \item If we have detectable events, then for each one we sample a
+%   Bernoulli random variable whose success probability is the false
+%   negative probability of the report prototype. If \emph{any} of these
+%   samples are 0 --- that is, if for any event we do \emph{not} have a
+%   false negative --- then the ground truth aspect will contain a
+%   sensor report with that prototype and location.
+% \item If there are no events at a location which could trigger a
+%   report of that prototype, then we consult a Bernoulli random
+%   variable whose success probability is the false positive probability
+%   of the sensor report prototype; if it returns 1, then the ground
+%   truth aspect will contain a sensor report with that prototype and
+%   location.
+% \end{compactitem}
+
+\textbf{The experiments.}
+% Our experiments probe the performance limits of our
+% information fusion approach.  Our first two sets of tests examine how MIFD's
+% performance degrades as events considered qualitatively different grow
+% closer in likelihood.
+% We then test how MIFD's performance degrades as the sensors it
+% incorporates grow less and less discriminating.
+% Finally, we examine how MIFD's sensor fusion helps base rate issues,
+% and provide some analytic information.
+
+\emph{Varying probabilities.}
+Our first experiment examines how MIFD's performance degrades as
+we progressively violate the assumption that different levels of
+the stratified likelihood ranking qualitatively differ.
+Specifically we consider a sequence of settings in which we assign
+probabilities to each \tkappa,
+always with
+$P(\kappa=0)=0.5$ but varying the values for 1 and 2.
+We test with \sensorToAttackRatio{}s of 2 and 3 to see how much corroboration is
+necessary.  In the case of two sensors/attack we took \fpKappa=2, \benignKappa=2, \attackKappa=3
+instead of the defaults above, in order to satisfy
+Equation~\ref{eqn:coherence-ineq}.
+We bring the probabilities corresponding to
+the \tkappas closer and closer to see how MIFD's performance degrades.
+
+\emph{Non point-value distributions.}
+The above experiment still represents a considerable abstraction:  in general
+the set of events to which we assign the same qualitative likelihood will not
+all have the same probability.
+Our second experiment examines how variation in the probabilities of the
+events at the same qualitative likelihood affects the accuracy of qualitative
+fusion.
+To do so, we
+define a second order probability distribution
+for each \(\kappa\) ranking
+using a \emph{beta distribution},
+the Bayesian prior for Bernoulli
+distributions.
+The $\beta$ has two parameters, $\alpha$ and $\beta$.
+The sum $\alpha+\beta$
+corresponds to increasing the
+``virtual sample size,'' and controls the variance.
+% Beta distributions are appropriate for distributions over a finite
+% domain such as the translations of these $\kappa$ values.
+To assess the sensitivity of MIFD to variance in the probabilities,
+we fix the mean values
+of the distributions for $\kappa(0)$,
+$\kappa(1)$ and $\kappa(2)$ at $0.5$, $0.01$ and $0.001$,
+and increase the variance by decreasing the number of virtual samples.
+% representing decreasing certainty in our parameter assignment.
+% and vary the sample size $\nu=\alpha+\beta$, taking $\alpha=\mu\nu$,
+% $\beta=(1-\mu)\nu$ for the translated distributions.  Higher sample
+% sizes give smaller variance, and are thus closer to the single-value
+% translations above; with smaller sample sizes the distributions will
+% overlap, in the cases of our distributions for $\kappa(1)$ and
+% $\kappa(2)$ with $\alpha<1$ and thus modes at $x=0$.
+
+\emph{Sensor imprecision.}
+We next explore how the performance of our techniques degrade as the
+sensors encounter an increasing overlap of possible events in their
+``field of view.'' 
+For this experiment we fix the \sensorOverlap\ to be 0.9, and vary
+\numEventProtosDetected. This value for \sensorOverlap is
+significantly higher than in earlier runs, but we do not expect
+performance in Setting~1 of this experiment to differ greatly from
+Setting~1 of the earlier experiments because of the low initial values of
+\numEventProtosDetected:  80\% of the time in this first run there will be only a single
+event associated with a sensor, in which cases the \sensorOverlap\ is
+not consulted at all.  With the higher
+values from \numEventProtosDetected\ in subsequent settings, more
+attacks will be associated with each sensor, increasing the opportunity
+for \mifd\ to misdiagnose the true cause of sensor reports.
+
+\emph{Base rate.}
+Our fourth experiment examines how our performance
+degrades
+as the rate of true attacks goes down.
+Such base rate problems, where even a high accuracy sensor can perform unacceptably
+for very unlikely events, plague intrusion detection~\cite{Axelsson:1999:BFI:319709.319710}.
+We examine these issues by reducing
+the probability of generating attack events
+(but not the probability of generating benign events). \hide{We do not actually change the
+\attackKappa\ value used for the assessment step,
+but instead introduce a
+discrepancy between the model and the actual attack event probability.}
+
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "main"
+%%% End: 

@@ -1,0 +1,451 @@
+# -*- org -*-
+#+CATEGORY: AAAI MIFD paper
+#+TODO: TODO WAIT RPG JM | DONE(d!) CANCELED(c@)
+
+* AAAI'15 submission
+** Excel graphs
+*** DONE In Figures 4, 5, 7, can we move the captions from the settings table into the actual figure?
+    CLOSED: [2014-08-22 Fri 12:50]
+    - State "DONE"       from "TODO"       [2014-08-22 Fri 12:50]
+    - And add x-axis label
+*** DONE Extra column in Figure 4 lower graph
+    CLOSED: [2014-08-22 Fri 12:49]
+    - State "DONE"       from "TODO"       [2014-08-22 Fri 12:49]
+** JM What's the contribution?
+
+   [please review my response here. Need to thrash out the precise nature of the
+   contribution, then we can press forward.]
+
+   We wrote a nice argument for Reviewer 4 to justify these
+   experiments as a validation of Z+ itself as an approximation of
+   actual quantitative probability, but as written this isn't a stated
+   main thrust of the paper: in the intro it doesn't come up until the
+   third paragraph, it gets just one sentence in the conclusion, and
+   isn't well-promoted in the abstract.
+
+   RPG: I don't think we can make an argument that we are experimenting to
+   validate Z+ as an approximation of standard probability theory.  That can be
+   demonstrated analytically.  What we are doing is experimenting to validate
+   that this approximation can /usefully/ be applied to information fusion (with
+   particular application to IDS, which has pathological features that make it
+   especially suited to qualitative abstraction (notably that not only are we
+   unable to get these probabilities in a particular case, there is /no/
+   imaginable case where we could get them...).
+
+   Does this make sense?
+   - JM: Yes.
+
+   So we should think about strengthening these higher-level claims in
+   the introduction. Some ideas:
+*** CANCELED Make the very first paragraph about the lack of experimental validation of Z+
+    CLOSED: [2014-08-22 Fri 14:33]
+    - State "CANCELED"   from "TODO"       [2014-08-22 Fri 14:33] \\
+      Not exactly this.
+    And then introduce IDS as a particular example.
+
+*** Categorize and pick examples from the 250+ Z+ citers
+    So we can say something like: Of the more than 250 papers citing
+    the original Z+ paper\footnote{As enumerated in July 2014 in a
+    Google Scholar search, <URL>.}, there are ample explorations of
+    the system's properties (notably CITE, CITE and CITE), proposals
+    --- but not post-deployment reports --- of applications of Z+ to
+    real-world systems (CITE, CITE and CITE), OTHER CATEGORY (CITE,
+    CITE and CITE), and OTHER CATEGORY (CITE, CITE and CITE).
+    However, this seems to be the first research which ...
+
+    And then move on to (possibly a less aggressive version of) the
+    text we have in the rebuttal.
+
+    See [[ZCitations][list of citations]].  These were the only applications papers I cauld
+    find.  I don't think that we can put in all the citations for things that
+    are /not/ applications papers, because of the page limit (I'm pretty sure a
+    AAAI paper must be shorter than UAI).
+
+**** DONE Secure copies of the [[ZCitations]] and put in paper opp subdir
+     CLOSED: [2014-08-15 Fri 13:26]
+     - State "DONE"       from "JM"         [2014-08-15 Fri 13:26]
+       Did this some time ago.
+     - In progress: one found on Google search, others requested from
+       HCLib.
+** DONE Remove garbage collection discussion
+   CLOSED: [2014-07-25 Fri 13:32]
+   - State "DONE"       from "JM"         [2014-07-25 Fri 13:32]
+     Converted to a footnote.
+
+   RPG: Agreed.  Garbage collect.
+
+   Or make it a footnote/remark that acknowledges its necessity, but
+   doesn't go into details.
+   - Reviewer 11: [R]emoving old event hypotheses and sensor reports
+     to free up resources does not seem to be a right approach for
+     intrusion detection if these events can still be useful. There
+     should be a justification as to why removing these will not
+     affect the system performance. Where to store them is not so
+     important.
+     - Rebuttal: We'd intended this remark as something of an aside,
+       since (as the paper states) we are not actually doing this
+       cleanup in the system under experimentation.  The volume of
+       data which IDSs encounter necessitates some sort of garbage
+       collection. You are correct that the timing of such clean up
+       must be carefully considered. In the full system, hypotheses
+       are only purged after an interval since receipt of the last
+       related IDS report. All reports and hypotheses are archived in
+       a database. It would probably be best to simply cut this minor
+       aside from the paper, since garbage-collection plays no role in
+       these experiments.
+** TODO Availability of code
+   The reviewers objected to the unavailability of the code, and we
+   mentioned in the rebuttal that we could make a limited license for
+   research available. Should we address this ahead of time? How would
+   this impact review anonymity?
+*** JM consider versioning issues
+Are we still able to pull together a full distribution of a version of the code
+that generated these results?
+*** JM consider de-STRATUSing
+Can we distribute a version of the MIFD code that does not contain other bits of
+STRATUS?  I think it would be a lot easier to do the distribution if we don't
+have to give away other STRATUS stuff, /especially/ mission models.
+** DONE Add some cross links
+   CLOSED: [2014-07-25 Fri 13:40]
+   - State "DONE"       from "JM"         [2014-07-25 Fri 13:40]
+
+     Well...really just two, and I'd copied all of the info from the
+     UAI list to here. But sure --- links added.
+
+There are a bunch of places where you have "From UAI'14 task list." It would be
+nicer if we had a hyperlink there (put a target in the corresponding UAI
+task?). As it is, it seems like linear search to find these previous tasks.
+** TODO Challenges of IDS evaluation
+   - [[UAI14 Challenges of IDS evaluation][From UAI'14 task list]].
+   - If space permits.
+** TODO Further related work
+   - [[UAI14 related work][From UAI'14 task list]].
+   - Ours is a little stale.  If you have time: take a quick peek to see
+     if anyone's citing the related work we cite, and see if we should
+     refer to them.
+** TODO Organization of Related Work section
+   - Reviewer 11: The related work section could be expanded and
+     presented more clearly, to separate methods such as FSMs or Bayes
+     networks from implementations like ARIS or Arcsight.
+     - Rebuttal was the general "thanks, we'll address that."
+   - Revier 1: However, the conclusions and experiments would highly
+     benefit from the comparison to other methods [...].
+     - Rebuttal: While this would be desirable, existing IDS fusion
+       techniques do not share an input format or output
+       definition. Most simply cluster and do not categorize
+       hypotheses by posterior likelihood. However, it would be simple
+       for other researchers to adapt their systems to our data sets:
+       our synthetic reports would be simple to translate into other
+       input formats.
+** RPG Non-generated data
+   Is there a reasonable way to address this?
+   - Reviewer 1: It would have been good if the authors could
+     demonstrate there results on a complete data set and not only
+     sample generated experiments.
+   - RPG: Wait I don't even... What does reviewer 1 even mean by "a complete
+     data set"?  I think we are going to have to ignore this.  I'd love to have
+     a sentence in the paper, though, to explain why this is impossible.
+   - JM: I'm not even sure where to bring this up. Maybe just at the
+     end of Sec. 4.1? Or at the end of the pargraph starting "Having
+     generated the sensor reports"?
+** CANCELED Impact over time
+   CLOSED: [2014-07-27 Sun 11:16]
+   - State "CANCELED"   from "TODO"       [2014-07-27 Sun 11:16]
+   One reviewer referred to the impact over time on recall and
+   precision. I'm not sure what to make of that.
+   - Reviewer 1: However, the conclusions and experiments would highly
+     benefit from the comparison to other methods as well as a better
+     demonstration of the impact over time on the recall and
+     precision.
+   I don't even know what this means.
+
+   [JM] OK, let's just kill it - marking as cancelled.
+** RPG Make Figure 6 less horrible
+   - [JM] My first thought was some sort of 3-D histogram, but these
+     don't exist in gnuplot.  Maybe a multiplot, three across, with
+     the same axes setup for each?  The opaque 3D surfaces might be
+     useful as well.
+   - [JM July 27] Robert, I'm committed a rough version of graph
+     breaking up the three plots, and rendering them as opaque
+     surfaces. I didn't spend time fine-tuning; want to get your take
+     on the basic layout before doing any further tweaking.
+** RPG Label the axes in Figs. 3-5 and 7
+   - <2014-08-24 Sun> [JM] Re-did these in gnuplot, in part for the
+     lower axis captioning but also for control of spacing, and the
+     x-axes are all labelled.  Do you think we should also label the
+     y-axes? They'd all be clear from the caption.
+** RPG Figure 6
+   - <2014-08-24 Sun> Re-did the splot that was very hard to read.
+     This one isn't perfect, but I think it is easier to see the
+     point.  What do you think?
+** Additional experiments
+   These sections copied from UAI'14 submission section
+*** WAIT Vary fp-kappa in 2-reports
+    When the vary-kappa with 2 reports finishes I'll set up another run
+    which holds the kappa-translations constant, but which varies the
+    fp-kappa value actually used in the coinflip, to make it more
+    likely that we get FPs.
+*** WAIT 2-reports with vary-kappa betas
+*** WAIT Vary FP/FN rates for s/a=3 runs
+
+** Wording that confused the reviewers
+*** TODO Three sensors
+    - Rebuttal: [Reviewer 11] noted in the review that we "used three
+      sensors for possible fusion." That's not exactly right ---
+      although we do use a ratio of three sensors detecting each
+      attack in most experiments, we vary that ratio in the first
+      experiment.
+*** DONE Justification of choice for parameter settings
+    CLOSED: [2014-07-27 Sun 11:42]
+    - State "DONE"       from "JM"         [2014-07-27 Sun 11:42]
+    - Reviewer 11: A justification should be provided for the choice of
+      parameter settings on page 6.
+      - Rebuttal: In all cases, the initial settings for the
+        configuration parameters are both typical values for an IDS, and
+        consistent with Z+'s assumptions. The experiments vary these
+        values in ways which we anticipate would be worse for MIFD's
+        performance, to examine our expected performance both under
+        typical conditions, and under less typical conditions
+        approaching worst-case.
+*** TODO More detailed definitions
+    - Reviewer 11: System Z+, Bayesian networks, clustering methods
+      (for sensor fusion), etc. should be introduced more
+      clearly. What are benign event hypotheses and what are attack
+      event hypotheses? What are complex events? Even though they are
+      not the focus of the paper, they should at least be introduced
+      to give a reader an idea of the difference between all these
+      different types of events.
+    - Reviewer 1: The notion of Z+ ranking and Bayesian networks seems
+      to be sound, however, these experiments make it difficult to
+      understand how it compares to other state of the art systems.
+      - Rebuttals to both were the general "thanks, we'll address
+        that."
+*** DONE Explain notation in quan.-vs.-qual. table
+    CLOSED: [2014-07-27 Sun 12:55]
+    - State "DONE"       from "JM"         [2014-07-27 Sun 12:55]
+    - Reviewer 11: [T]he notations in the table on page 5 are not
+      properly introduced. What is \omega? A possible world or else? I
+      took that \phi is a formula (a hypothesis). What does \phi \in
+      \omega mean?
+      - Rebuttal was the general "thanks, we'll address that."
+      - We can define the symbols.  All of these are standard for probability
+        theory, so Reviewer 11 is being an idiot.
+*** DONE Clustering mechanism explanation
+    - Reviewer 11: I am not able to establish how outputs from
+      different sensors are related (or correlated) to generate a
+      single output (referred to as clustering by the authors in
+      several places). The description on page 5 right column is
+      confusing.
+      - Rebuttal was the general "thanks, we'll address that."
+      - Give an example DAG to show the effect of clustering?  Review and edit
+        the description.
+      - No, what he's missing is that clustering isn't what gives the
+        final "single output" (I also think he has pages 3 and 5
+        confused; clustering is explained on 3, not 5.).  I made the
+        output of the Clustering process more explicit and earlier.
+
+*** TODO Discuss boosting
+    - Reviewer 11: It seems to me that boosting could be used as an
+      alternative approach. Should the paper compare this approach to
+      boosting or at least mention it in Related Work?
+      - Rebuttal: Boosting does provide an alternative method for
+        fusion, but is not appropriate to IDS fusion. Boosting is
+        based on learning, but IDS fusion problems do not admit use of
+        ML: we do not get labeled data of attacks, nor do we get
+        reference data showing systems operating without attacks. We
+        will add a citation to papers about the failure of ML for
+        IDS. These challenges (see
+        [Sommer&Paxson,2010;Gates&Taylor,2006] on the challenges of ML
+        in IDS, full cites available upon request) account for our
+        adoption of a qualitative, non-adaptive framework. Also note
+        that different IDSes do not share a single "ontology" of
+        events; part of the function of MIFD's clustering is to align
+        reports with different frames of reference.
+*** TODO Emphasize applicability to sensor fusion in general, not just IDS fusion
+    Another point made in our rebuttal to Reviewer 4 to make more
+    explicit in the text.
+    Also applicable to diagnosis.  I name-checked this in the
+    introduction. Might need some more work, and make sure we hit it in the
+    conclusions as well.
+** TODO Update the related work on IDS fusion
+Maybe search forward from EMERALD, etc.?
+** JM Revise discussion of benign events in mifd-scyllarus.tex
+** JM Revise introduction to the Experimental Design section
++ [ ] I think the introduction oversimplifies and leaves too much out.  Yes, we
+  do evaluate what happens as the qualitative approximation breaks down, but
+  that's not /all/ we do. For example, we worry about base rate issues, and we
+  look at what happens when we require different numbers of sensors for
+  corroboration. Probably look at the "Objectives" section and use that as a
+  guide: that's a more comprehensive statement. Note that the statement is good,
+  but it lacks motivation, which should flow all the way back to the
+  introduction.
++ [x] We use the terms "precision" and "recall" before they are defined (in the
+  "Metrics" paragraph.).
+
+
+* UAI'14 submission
+** DONE Abstract
+   - State "DONE"       from "TODO"       [2014-03-19 Wed 18:21]
+Write this last
+** DONE Summary of research results in introduction
+   - State "DONE"       from "TODO"       [2014-03-19 Wed 17:49]
+** DONE Paper roadmap
+   - State "DONE"       from "TODO"       [2014-03-19 Wed 17:49]
+** CANCELED Challenges of IDS evaluation <<UAI14 Challenges of IDS evaluation>>
+   CLOSED: [2014-07-16 Wed 11:01]
+   - State "CANCELED"   from "TODO"       [2014-07-16 Wed 11:01] \\
+     Copied to AAAI'15 tasks, and this task marked as cancelled.
+   If space permits.
+** DONE Related work
+   - State "DONE"       from "TODO"       [2014-03-19 Wed 18:01]
+** DONE Introduction to experimental design
+   - State "DONE"       from "WAIT"       [2014-03-19 Wed 17:49]
+** DONE [#A] Write a sampling narrative in design.tex
+   SCHEDULED: <2014-03-18 Tue>
+   - State "DONE"       from "RPG"        [2014-03-18 Tue 22:45]
+Do this to check before John goes
+** DONE [#A] Write description of experiment results
+** DONE [#A] Run experiment with only 2 reports needed to make likely
+   - In progress.
+   - Committed this morning.
+** CANCELED [#B] Vary fp-kappa in 2-reports
+   CLOSED: [2014-07-16 Wed 10:58]
+   - State "CANCELED"   from "WAIT"       [2014-07-16 Wed 10:58]
+     Copied to AAAI'15 tasks, and this task marked as cancelled.
+   :PROPERTIES:
+   :ID:       2A48ECB1-A8CF-4146-945D-68B150622D6E
+   :END:
+   When the vary-kappa with 2 reports finishes I'll set up another run
+   which holds the kappa-translations constant, but which varies the
+   fp-kappa value actually used in the coinflip, to make it more
+   likely that we get FPs.
+** CANCELED [#B] 2-reports with vary-kappa betas
+   CLOSED: [2014-07-16 Wed 10:58]
+   - State "CANCELED"   from "CANCELED"   [2014-07-16 Wed 10:59] \\
+     Copied to AAAI'15 tasks, and this task marked as cancelled.
+   - State "CANCELED"   from "WAIT"       [2014-07-16 Wed 10:58]
+** CANCELED [#B] Vary FP/FN rates for s/a=3 runs
+   CLOSED: [2014-07-16 Wed 10:59]
+   - State "CANCELED"   from "WAIT"       [2014-07-16 Wed 10:59] \\
+     Copied to AAAI'15 tasks, and this task marked as cancelled.
+   :PROPERTIES:
+   :ID:       ABC6D8F1-8DFF-4345-9D83-166AF2F26A14
+   :END:
+** DONE [#A] Redo plots
++ Category legend with plot
++ Each plot in separate figure for ease of cross-reference
+** DONE [#C] Use gnuplot 3D plot to show base-rate effect
+   - State "DONE"       from "RPG"        [2014-03-19 Wed 17:16]
+Only if time permits.
+** DONE Conclusion
+   - State "DONE"       from "TODO"       [2014-03-19 Wed 17:35]
+** CANCELED Further related work <<UAI14 related work>>
+   CLOSED: [2014-07-16 Wed 11:00]
+   - State "CANCELED"   from "TODO"       [2014-07-16 Wed 11:00] \\
+     Copied to AAAI'15 tasks, and this task marked as cancelled.
+   :PROPERTIES:
+   :ID:       85116DCD-3E67-493F-89C2-DE566B8BB2B9
+   :END:
+Ours is a little stale.  If you have time: take a quick peek to see if anyone's
+citing the related work we cite, and see if we should refer to them.
+** DONE Cut the discussion of locations altogether
+   CLOSED: [2014-03-19 Wed 18:25]
+   - State "DONE"       from "TODO"       [2014-03-19 Wed 18:25]
+Since locations don't have anything special about them, we had confusing
+discussion about the fungibility of locations versus runs.  I (rpg) cut that
+discussion, but I think it would be fine to cut references to locations
+altogether.
+** DONE List number of runs and settings
+   CLOSED: [2014-03-19 Wed 18:19]
+   - State "DONE"       from "TODO"       [2014-03-19 Wed 18:19]
+There's nothing in the paper to tell the reader how many samples were in our
+tets.
+
+
+** Submit [2014-03-19 Wed 18:00]
+*** DONE Clear FIXMEs
+    CLOSED: [2014-07-16 Wed 11:01]
+    - State "DONE"       from "TODO"       [2014-07-16 Wed 11:01]
+*** DONE Clear FILL-IN
+    CLOSED: [2014-07-16 Wed 11:01]
+    - State "DONE"       from "TODO"       [2014-07-16 Wed 11:01]
+*** DONE Check page count
+    CLOSED: [2014-07-16 Wed 11:01]
+    - State "DONE"       from "TODO"       [2014-07-16 Wed 11:01]
+   :PROPERTIES:
+   :ID:       DBB3A7D1-2AC7-4FAE-B3BB-176E7804E33E
+   :END:
+9pp. of content, 1p of references.
+*** DONE Upload
+    CLOSED: [2014-07-16 Wed 11:01]
+    - State "DONE"       from "TODO"       [2014-07-16 Wed 11:01]
+
+* System Z applications <<ZCitations>>
+I believe that these papers are relevant to our claim that no one else is
+applying System Z+
++ [[file:opp/minock-kraus:zlog.pdf][Z-log: Applying System-Z]]
++ [[file:opp/boyce-etal:ieee-biomed-2007.pdf][Modeling Drug Mechanism Knowledge Using Evidence and Truth
+  Maintenance]]
+  - This one doesn't actually seem to say much about it, and doesn't
+    have experimental results.
++ [[file:opp/fujimoto:wiiat-2010.pdf][An Investigation of Potency of eWOM Messages with a Focus on
+  Subjective Rank Expressions]]
++ [[file:opp/fujimoto-matsuzawa:njc-1999.pdf][Intelligent systems using Web-pages as knowledge base for
+  statistical decision making]]
+
+* Some initial reactions [2014-08-24 Sun]
+** The abstract is off-balance
++ There's a ton of "scyllarus" in it, and not much MIFD. Suggests we say "MIFD,
+  and its predecessor, Scyllarus..." and then don't use the name "Scyllarus"
+  again.
++ Generally too much throat-clearing: it's at line 11 that we first say what we
+  are doing /here/. Before that, we say what has been done before. This should
+  be flipped. Say up front what we are doing /here/, and /then/ give the
+  setting.
++ There's nothing in the abstract that says why the reader should care about
+  these results.
++ I'm very concerned about saying "it is difficult to draw \emph{general}
+  conclusions about an intrusion detection approach based on field testing."
+  Unless the reader understands /why/ this is the case, which requires a lot of
+  explanation, this seems very sketchy.
++ There's a mismatch between the abstract (Scyllarus, Scyllarus, Scyllarus) and
+  the topic paragraph, which carefully /avoids/ using the name. If we think it's
+  ok to use Scyllarus, we should use it once in the topic paragraph, instead of
+  the somewhat tortured "In previous work..." and "Our original system."
++ Make the claim that we provide the only empirical analysis of the System Z+
+  scheme in application.
++ Discuss the generality of the scheme -- see my remarks about information
+  fusion and diagnostic reasoning.
++ For a reader not so familiar with this field, probably need to define IDS
+  fusion.
++ We could postpone abstract revision until the rest of the paper is stitched up
+  and make sure we hit all the high points.
+
+** Introduction
++ See above about, "it's difficult to draw /general/ conclusions." It's ok to
+  say this here, but to allay the reader's suspicions, we should promise to
+  explain why later on.
++ Also, we need to brag about what Scyllarus and MIFD have achieved.
++ I have tried to make the above modifications, but left some FIXME's around.
++ The paragraph starting "More generally..." doesn't seem to knit in with the
+  structure of the argument. I suggest it be rewritten in a more standard
+  "callous dismissal of others' work" form. In particular, the key sentence, is
+  relegated to a footnote, and does not clearly say "we have found no study of
+  system Z+ in which it is evaluated in an application content." "Few seem to
+  detail...", "typically", etc. is too hedged.  So something more like  "Another
+  area of contribution is the study of System Z+.  There have been no
+  experimental analyses of applications based on System Z+. There have been some
+  abstract studies of the calculus by X, Y, and Z, but their evaluations were
+  limited to..."  This will also help clearly call out the contribution.
++ Possibly we should revise to clearly state the /contributions/ of this paper,
+  rather than leaving the reader to winkle them out of our prose. We can keep
+  that in mind going forward.
+
+** Figures much improved
+Also, I think they should mostly be easier to read in black and white.
++ The exception is Figure 6.
+  + I was left wondering why there's both red and green
+    there.  I suspect that the green is supposed to show we're looking at the
+    underside....  Maybe try redrawing in black adn white and see if that helps?
+  + The second of the three figures has no legend at all, and the third has only
+    one axis labeled.  Shouldn't all three axes be labeled on all three figures?

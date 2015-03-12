@@ -1,0 +1,139 @@
+@Book{LiVitanyiBook08,
+  title =	"An Introduction to Kolmogorov Complexity and Its
+		 Applications, Third Edition",
+  author =	"Ming Li and Paul M. B. Vit{\'a}nyi",
+  publisher =	"Springer",
+  year = 	"2008",
+  bibdate =	"2013-12-06",
+  ISBN = 	"978-0-387-33998-6; 978-0-387-49820-1",
+  pages =	"i--xxiii, 1--790",
+  series =	"Texts in Computer Science",
+  URL =  	"http://dx.doi.org/10.1007/978-0-387-49820-1",
+}
+
+@Article{LiETAL:04,
+  title =	"The similarity metric",
+  author =	"Ming Li and Xin Chen and Xin Li and Bin Ma and Paul M.
+		 B. Vit{\'a}nyi",
+  journal =	"IEEE Transactions on Information Theory",
+  year = 	"2004",
+  number =	"12",
+  volume =	"50",
+  bibdate =	"2005-09-28",
+  bibsource =	"DBLP,
+		 http://dblp.uni-trier.de/db/journals/tit/tit50.html#LiCLMV04",
+  pages =	"3250--3264",
+  URL =  	"http://dx.doi.org/10.1109/TIT.2004.838101",
+}
+
+@Misc{CohenVitanyiNCDMultisets:12,
+  title =	"Normalized Compression Distance of Multisets with
+		 Applications",
+  note = 	"Comment: LaTeX 28 pages, 3 figures. This version is
+		 changed from the preliminary version to the final
+		 version. Updates of the theory. How to compute it,
+		 special recepies for classification, more applications
+		 and better results (see abstract and especially the
+		 detailed results in the paper). The title was changed
+		 to reflect this. In v4 corrected the proof of Theorem
+		 III-7",
+  author =	"Andrew R. Cohen and Paul M. B. Vitanyi",
+  year = 	"2013",
+  month =	mar # "~29",
+  abstract =	"Normalized compression distance (NCD) is a
+		 parameter-free, feature-free, alignment-free,
+		 similarity measure between a pair of finite objects
+		 based on compression. However, it is not sufficient for
+		 all applications. We propose an NCD of finite multisets
+		 (a.k.a. multiples) of finite objects that is also a
+		 metric. Previously, attempts to obtain such an NCD
+		 failed. We cover the entire trajectory from theoretical
+		 underpinning to feasible practice. The new NCD for
+		 multisets is applied to retinal progenitor cell
+		 classification questions and to related synthetically
+		 generated data that were earlier treated with the
+		 pairwise NCD. With the new method we achieved
+		 significantly better results. Similarly for questions
+		 about axonal organelle transport. We also applied the
+		 new NCD to handwritten digit recognition and improved
+		 classification accuracy significantly over that of
+		 pairwise NCD by incorporating both the pairwise and NCD
+		 for multisets. In the analysis we use the incomputable
+		 Kolmogorov complexity that for practical purposes is
+		 approximated from above by the length of the compressed
+		 version of the file involved, using a real-world
+		 compression program. Index Terms--- Normalized
+		 compression distance, multisets or multiples, pattern
+		 recognition, data mining, similarity, classification,
+		 Kolmogorov complexity, retinal progenitor cells,
+		 synthetic data, organelle transport, handwritten
+		 character recognition",
+  bibsource =	"OAI-PMH server at export.arxiv.org",
+  oai =  	"oai:arXiv.org:1212.5711",
+  subject =	"Computer Science - Computer Vision and Pattern
+		 Recognition; Computer Science - Information Theory;
+		 Physics - Data Analysis, Statistics and Probability;
+		 I.5.3; H.3.3; E.4; J.3",
+  URL =  	"http://arxiv.org/abs/1212.5711",
+}
+
+@Article{Cilibrasi:2005,
+  author =	"Rudi Cilibrasi and Paul M. B. Vitanyi",
+  title =	"Clustering by Compression",
+  journal =	"IEEE Transactions on Information Theory",
+  year = 	"2005",
+  volume =	"51",
+  number =	"4",
+  pages =	"1523--1545",
+  month =	apr,
+  keywords =	"genetic algorithms, genetic programming, complearn,
+		 universal dissimilarity distance, normalised
+		 compression distance, hierarchical unsupervised
+		 clustering, quartet tree method, parameter-free
+		 data-mining, heterogenous data analysis, Kolmogorov
+		 complexity",
+  URL =  	"http://homepages.cwi.nl/~paulv/papers/cluster.pdf",
+  size = 	"21 pages",
+  abstract =	"We present a new method for clustering based on
+		 compression. The method doesn't use subject-specific
+		 features or background knowledge, and works as follows:
+		 First, we determine a parameter-free, universal,
+		 similarity distance, the normalized compression
+		 distance or NCD , computed from the lengths of
+		 compressed data files (singly and in pairwise
+		 concatenation). Second, we apply a hierarchical
+		 clustering method. The NCD is not restricted to a
+		 specific application area, and works across application
+		 area boundaries. A theoretical precursor, the
+		 normalised information distance, co-developed by one of
+		 the authors, is provably optimal. However, the
+		 optimality comes at the price of using the
+		 non-computable notion of Kolmogorov complexity. We
+		 propose axioms to capture the real-world setting, and
+		 show that the NCD approximates optimality. To extract a
+		 hierarchy of clusters from the distance matrix, we
+		 determine a dendrogram (binary tree) by a new quartet
+		 method and a fast heuristic to implement it. The method
+		 is implemented and available as public software, and is
+		 robust under choice of different compressors. To
+		 substantiate our claims of universality and robustness,
+		 we report evidence of successful application in areas
+		 as diverse as genomics, virology, languages,
+		 literature, music, handwritten digits, astronomy, and
+		 combinations of objects from completely different
+		 domains, using statistical, dictionary, and block
+		 sorting compressors. In genomics we presented new
+		 evidence for major questions in Mammalian evolution,
+		 based on whole-mitochondrial genomic analysis: the
+		 Eutherian orders and the Marsupionta hypothesis against
+		 the Theria hypothesis.",
+  notes =	"With respect to the version published in the IEEE
+		 Trans. Inform. Th., 51:4(2005), 1523?1545, we have
+		 changed Definition 2.1 of 'admissible distance' making
+		 it more general and Definitions 2.4 and 2.5 of
+		 'normalized admissible distance,' consequently adapted
+		 Lemma 2.6 (II.2) and in its proof (II.3) and the
+		 displayed inequalities. This left Theorem 6.3 unchanged
+		 except for changing 'such that d(x; y) \le e' to 'such
+		 that d(x; y) \le e and C(v) \le C(x).'",
+}

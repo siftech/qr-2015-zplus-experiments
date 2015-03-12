@@ -1,0 +1,47 @@
+
+%% WONTFIX - Robert, should we move the ``of Goldszmidt and Pearl'' up
+%% to the first mention of \zplus ?
+%% I don't think so: I think that introducing subordinate phrases like that
+%% makes the topic sentence lose focus. We give them credit; that's all we need
+%% to do.
+\begin{abstract}
+We experimentally analyze the accuracy of the \zplus qualitative
+probability scheme of
+Goldszmidt and Pearl when used for diagnosis and information fusion.
+The \longids
+(\ids) fusion system
+Scyllarus, and its successor MIFD, use $Z+$ to assess the likelihood of various cyber attack events based on
+reports from \idses.
+$Z+$ provides an order of magnitude approximation of
+conventional probability, similar to the order of magnitude approximation of
+computational complexity provided by big-O analysis.
+Scyllarus accurately identifies attacks and
+substantially reduces the false positives that are the bane of intrusion detection.
+% However,
+% it is difficult to draw \emph{general} conclusions about an intrusion detection
+% approach based on
+% field testing, since variables are not systematically controlled.
+In the work described here, we experimentally analyze the performance of MIFD
+in order to provide general conclusions about its behavior, complementing the
+results from field tests.
+Our experiments show that the qualitative probability scheme degrades gracefully
+in precision and recall
+as its order of magnitude approximation is a less and less accurate
+representation of true distributions.
+The system also degrades gracefully as its input sensors become
+less discriminating.
+Finally, we show that qualitatively fusing multiple IDSes successfully
+addresses base rate issues in intrusion detection.
+The interest of these results is not limited to intrusion detection: the method
+used in our systems is a general abductive scheme, based on qualitative Bayes
+networks, so the results are applicable to other information fusion and
+diagnostic applications.
+To the best of our knowledge, ours is the only experimental
+investigation of the accuracy of $Z+$ as an approximation of conventional probability.
+\end{abstract}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "main"
+%%% End: 

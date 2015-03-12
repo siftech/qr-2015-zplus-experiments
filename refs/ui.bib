@@ -1,0 +1,174 @@
+File /net/users/goldman/refs/ui.bib last modified on Mon Dec  9 15:21:56 1996.
+
+@BOOK(Dix:HCIText,
+	AUTHOR = {A. Dix and J. Finlay and G. Abowd and R. Beale},
+	TITLE = "Human-Computer Interaction",
+	PUBLISHER = {Prentice-Hall},
+	YEAR = {1993},
+	ADDRESS = {New York}
+)
+
+@BOOK(Kosslyn:GraphDesign,
+	AUTHOR = {S. Kosslyn},
+	TITLE = "Elements of Graph Design",
+	PUBLISHER = {W.H. Freeman},
+	YEAR = {1994},
+	ADDRESS = {New York}
+)
+
+@INPROCEEDINGS{SmithONeill:BTA,
+	AUTHOR = {M.J. Smith and E.J. O'Neill},
+	TITLE = {Beyond Task Analysis: 
+		 Exploiting Task Models in Application Implementation},
+	BOOKTITLE = {Proceedings {CHI} '96 Conference Companion},
+	YEAR = {1996},
+	PUBLISHER = {ACM Press},
+	MONTH = apr,
+	ANNOTE = {Preliminary discussion of the use of task models
+		  in software development.  
+		  Mentions three such uses:  
+		  command enablement[sic]; on-line, context sensitive help;
+		  impact on usability.
+		  Their task models have tasks, sub-tasks and object flow.
+		  Only paper task representation.
+		  Users select task-object pairs from a priority queue
+		  of pairs.  System (interactive document analysis) 
+		  provides form appropriate to the object-task pair.
+		  As tasks are completed, more task-object pairs are 
+		  added to the queue.
+		  command enablement:  commands are enabled or disabled 
+		  depending on user roles and tasks (task-object pair).
+		  on-line, context sensitive help:  task structure used
+		  as skeleton for hypertext help framework.
+		  impact on usability:  terms from task model, which 
+		  was derived from
+		  user interviews, are used in user interface.
+		  }
+}
+
+@INPROCEEDINGS{Wilson:BH:93,
+	AUTHOR = {S. Wilson and P. Johnson and C. Kelly and 
+		  J. Cunningham and P. Markopoulos},
+	TITLE = {Beyond hacking ---
+		 a model based approach to user interface design},
+	BOOKTITLE = {People and Computers {VIII}, 
+		     Proceedings of the {HCI} '93 Conference},
+	YEAR = {1993},
+	PUBLISHER = {Cambridge University Press},
+	ANNOTE = {Discusses a system, the Adept UI tool,
+		  that drives user interface design
+		  from the requirements and specifications stage through
+		  implementation by centering around a task model.
+		  There are six major components to the 
+		  design process used:
+		  the initial task model and user model, that are then
+		  engineered into the designed task model and abstract 
+		  interface models that finally give rise to a 
+		  resultant task model and concrete interface model.}
+}
+
+@UNPUBLISHED{Castells:DMP:96,
+	AUTHOR = {P. Castells and P. Szekely and E. Salcher},
+	TITLE = "Declarative Models of Presentation",
+	NOTE = {submitted},
+	MONTH = sep,
+	YEAR = {1996},
+	ANNOTE = {Discusses the {MASTERMIND} system's modeling language.
+		  Designed for:
+		  \begin{enumerate}
+		  \item Support dynamic as well as static displays;
+		  \item Permit use of graphic design tools like grids and
+		  guides;
+		  \item Support automatic display update;
+		  \item Support using display components for input;
+		  \item Amenable to interactive specification.
+		  \end{enumerate}
+		  
+		  These desiderata do not seem to set this language aside 
+		  from AMULET/GARNET; nor do I have a clear sense of what
+		  {\em they\/} mean by ``declarative.''
+		  
+		  The system is built on top of Garnet/Amulet.
+		  
+		  They do extend a bit beyond Garnet/Amulet to adding what
+		  are called {\em data parameters} (to visual and layout 
+		  parameters) that specify information about the domain
+		  data to be displayed.  But there is still no 
+		  notion of the user task.
+		  
+		  Have condition-action pairs for conditional displaying.
+		  
+		  Overall, this still seems very graphic-design oriented,
+		  not task oriented.  The notion of application data is
+		  a {\em small\/} 
+		  step forward from what Garnet offers already.
+                 }
+}
+
+
+
+
+Task analysis
+============================================================
+Credits and Pointers: Action analysis
+------------------------------------------------------------
+
+The quantitative, engineering-style analysis of actions was 
+initially developed by Stuart Card, Thomas Moran, and Alan 
+Newell, based on theories of cognitive psychology that Newell 
+produced with Herbert Simon.  The Card, Moran, and Newell 
+approach is referred to as GOMS modelling (for Goals, 
+Operators, Methods, and Selection).  It's described in detail 
+in: 
+
+- Card, S., Moran, T., and Newell, A.  "The Psychology of 
+Human-Computer Interaction."  Hillsdale, New Jersey: Lawrence 
+Erlbaum, 1983.
+
+Important extensions to the work, including verifications and 
+additions to the list of action times, have been made by a 
+number of researchers.  An excellent overview of this work is 
+given in:
+
+- Olson, Judith Reitman, and Olson, Gary M. "The growth of 
+cognitive modeling in human-computer interaction since GOMS." 
+Human-Computer Interaction, 5 (1990), pp. 221-265.  
+
+The detailed action analysis on telephone operator 
+workstations is described in:
+
+- Gray, W.D., John, B.E., Stuart, R., Lawrence, D., Atwood, 
+M.E.  "GOMS meets the phone company: Analytic modeling 
+applied to real-world problems."  Proc. IFIP Interact'90: 
+Human-Computer Interaction.  1990, pp. 29-34. 
+ 
+The back-of-the-envelope analysis we describe draws on 
+observations by David Kieras on the procedures for doing 
+formal action analysis and interpreting its results.  Kieras 
+has worked to make the GOMS method easier to learn and more 
+reliable.  If you need to learn more about formal action 
+analysis, a good place to start would be:
+
+- Kieras, D.E.  "Towards a practical GOMS model methodology 
+for user interface design."  In M. Helander (Ed.), "Handbook 
+of Human-Computer Interaction" Amsterdam: Elsevier Science 
+(North-Holland), 1988.
+
+[end credits and pointers]-----------------------------------
+
+
+
+@INCOLLECTION{Szekely:Mastermind:96,
+	AUTHOR = {P. Szekely and P. Sukaviriya and P. Castells and
+  			J. Muthukumarasamy and E. Salcher},
+	TITLE = {Declarative interface models for user interface 
+		 construction tools: the Mastermind approach},
+	BOOKTITLE = {Engineering for Human-Computer Interaction},
+	PUBLISHER = {Chapman \& Hall},
+	YEAR = {1996},
+	EDITOR = {L. Bass and C. Unger},
+	ANNOTE = {A more in-depth discussion of Mastermind than provided
+		  in \cite{Castells:DMP:96}.  Covers the modeling language
+		  in more depth.}
+}
+

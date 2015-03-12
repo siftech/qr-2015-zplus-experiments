@@ -1,0 +1,70 @@
+% Commands
+
+\newcommand{\anoncite}[1]{\ifthenelse{\boolean{anonymous}}{{[\textbf{citation
+        withheld}]}}{\cite{#1}}}
+
+
+
+\newboolean{draft}
+\setboolean{draft}{true}
+\newcommand{\draft}[1]{\ifthenelse{\boolean{draft}}{\textit{#1}}{}}
+
+\newcommand{\hide}[1]{}
+
+\newboolean{blackAndWhite}
+\setboolean{blackAndWhite}{true}
+
+\newcommand{\newabbrev}[2]{\newcommand{#1}{#2\xspace}}
+
+% abbreviations
+\newabbrev{\ids}{IDS}
+\newabbrev{\longids}{Intrusion Detection System}
+\newabbrev{\longidses}{Intrusion Detection Systems}
+\newabbrev{\idses}{\ids{}es}
+\newabbrev{\snort}{\texttt{snort}}
+\newabbrev{\zplus}{System $Z+$}
+% reuse the abbreviation from previous text
+\newabbrev{\correlator}{fusion system}
+\newabbrev{\acorrelator}{a \correlator}
+% \kappa in text mode (rather than in mathmode)
+\newcommand{\tkappa}{$\kappa$\xspace}
+\newcommand{\tkappas}{$\kappa$s\xspace}
+
+\newabbrev{\mifd}{MIFD}
+
+\newabbrev{\numEventProtosDetected}%
+          {\textsl{num-events}}
+\newabbrev{\numLocations}%
+          {\textsl{num-locations}}
+\newabbrev{\numAttacks}%
+          {\textsl{num-attacks}}
+\newabbrev{\sensorToAttackRatio}%
+          {\textsl{sensor-to-attack-ratio}}
+\newabbrev{\sensorOverlap}%
+          {\textsl{sensor-overlap}}
+\newcommand{\fpKappa}{$\kappa(\text{false-positive})$}
+\newcommand{\attackKappa}{$\kappa(\text{attack})$}
+\newcommand{\benignKappa}{$\kappa(\text{benign})$}
+\newabbrev{\numBenignEvents}%
+          {\textsl{num-benign-events}}
+\newabbrev{\sensorToBenignRatio}%
+          {\textsl{sensor-to-benign-ratio}}
+\newabbrev{\kappaTranslations}%
+          {\textsl{kappa-translations}}
+
+\newcommand{\labresults}[2]{
+  \begin{tabular}{@{}l@{}}
+    \textbf{#1} \\ \includegraphics[width=.9\columnwidth]{#2}
+  \end{tabular}
+}
+\newcommand{\labresultsT}[2]{
+  \begin{tabular}{@{}l@{}}
+    \textbf{#1} \\[-1em] \includegraphics[width=.9\columnwidth]{#2}
+  \end{tabular}
+}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "main"
+%%% End: 
