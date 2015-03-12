@@ -91,30 +91,33 @@ in intrusion detection, as in
 other applications where very unlikely events must be detected, even a seemingly
 accurate sensor may yield too many false positives.  Axelsson gives the example
 of a 99\% accurate test detecting a disease that strikes only 1/10,000
-patients.  The probability of having the disease given a positive test result is
+patients.  
+Although the sensor is accurate, 
+the probability of having the disease given a positive test result is
 only 1\%.
 % %% This next bit seem redundant.
 %, although the probability of the sensor labeling correctly is 99\%.
-{\ids} users regularly either ignore or partially disable them, unable to absorb
-massive streams of false alarms:%
+
+Users regularly ignore or disable their {\idses}, unable to absorb
+massive streams of false alarms.
 %% TODO Restore for QR'15
 %``Users attending an 'ABCs of IDS' event at London's City University yesterday
 %  said more the 80 per cent of the alerts they received were false, with one
 %  citing 60 alerts he had received about non-existent problems that morning at
 %  0300''
-~\cite{Register}.
+% ~\cite{Register}.
 Recently, Target is reported to have ignored warnings about the
 data breach that resulted in theft of millions of credit
-cards~\cite{TargetIgnoredIDS}:
+card records~\cite{TargetIgnoredIDS}:
 ``They are bombarded with alerts. They get so many that they just don't respond
 to everything''~\cite{finkle14:_target}.
 Figure
 \ref{fig:workloadReduction} gives a sense of the gravity of this
-problem, showing how our earlier system was able to winnow
+problem. It shows how our earlier system was able to winnow
 the 
 flow of reports in a small corporate network~\anoncite{goldman:09Scyllarus}.
-Data reduction must join building a comprehensive overview
-and overcoming false positives and negatives as goals of \ids fusion.
+% Data reduction must join building a comprehensive overview
+% and overcoming false positives and negatives as goals of \ids fusion.
 \begin{figure}[t]
     \ifthenelse{\boolean{blackAndWhite}}{%
       \includegraphics[width=.45\textwidth]{figures/funnel-dup-cropped.pdf} }{%
@@ -234,8 +237,8 @@ The Prelude IDS's Correlator
 %from compatible IDSes~\cite{PreludeCor} following user-provided
 %rules.  Its function
 is closest to
-our clustering subsystem, but knowledge resides in stateful 
-rules instead of an ontology of attacks. 
+our clustering subsystem, but its knowledge resides in stateful 
+rules instead of an ontology of attacks~\cite{PreludeCor}. 
 %% TODO Restore full version for QR'15
 %The Arcsight Enterprise Security Manager~\cite{ArcsightEsm},
 %also ties correlated IDS reports to an installation's security goals

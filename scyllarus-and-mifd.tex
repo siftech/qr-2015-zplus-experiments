@@ -6,7 +6,7 @@ Our original system Scyllarus
 % was an open system which 
 performed IDS
 fusion on a diverse set of third party \idses~\anoncite{goldman:discex2001,goldman:discex2001}.
-Its successor
+Its successor,
 MIFD (Model-based Intrusion Fusion and Detection),
 enhances Scyllarus
 %% TODO Restore for QR'15
@@ -26,7 +26,7 @@ We will not discuss these less interesting
 preliminaries, except to mention that they
 involve a substantial amount of data rectification
 %% TODO Restore for QR'15
- to address the lack of standardization for data formats and event taxonomies.
+ to address the lack of standardization in data formats and event taxonomies.
 %.  There is no widely-accepted
 %common data format (the proposed IDMEF standard~\cite{IDMEF} has not caught on), nor
 %is there an accepted taxonomy for events or event roles (e.g., the widely used ``source''
@@ -35,8 +35,8 @@ involve a substantial amount of data rectification
 %are often simply a casually-assembled anthology of rules by different authors running in the same
 %framework.
 
-Core fusion inference begins with
-\textbf{Clustering:} From the
+{\ids} fusion proper begins with
+\textbf{Clustering.} From the
 sensor reports, MIFD generates \emph{event hypotheses} to represent the
 underlying events of interest that may have caused the sensor reports.  A
 sensor report that provides evidence for an event hypothesis is a
@@ -71,7 +71,7 @@ To handle simple sensor failures, MIFD associates with each sensor a false
 positive likelihood.
 But to address the correlated false positives such as the scanning example, we
 introduce benign events, that can compete with attack and (simple) false
-positive explanations for results.\footnote{And where possible, we try to introduce sensors that
+positive explanations for results.\footnote{Where possible, we try to introduce sensors that
 can specifically detect the benign events. 
 %% TODO Restore for QR'15
 %To return to our earlier example, we
@@ -104,19 +104,23 @@ similar characteristics.
   \label{fig:bnets}
 \end{figure}
 
-The final inference step is \textbf{Assessment:} MIFD assigns a degree of belief
+The second inference step is \textbf{Assessment,} in which MIFD assigns a degree of belief
 to each of the event hypotheses.
 MIFD does this by performing Bayesian updating on the belief network constructed
 by the clustering process. 
 %% As we discuss below, MIFD does this using the \zplus qualitative probability
 %% scheme rather than standard probability theory.
 %%
-Scyllarus and MIFD are intended as long-running online services, not batch processes.
+
+Note that Scyllarus and MIFD are intended as long-running online services, not batch processes.
 Scyllarus has run for months at a time.
 One major requirement for such long-term operation is that the
 inference steps must be performed cyclically.  MIFD repeatedly reads
 reports and clusters them, periodically interrupting that
 cycle to perform assessment.
+Scyllarus also periodically flushes older events and reports out of working
+memory (they persist in a database).
+
 %% FIXED Although this next sentence is a true fact, I'm not sure it
 %% belongs here --- it makes assessment efficient, but that's not per
 %% se an inherent requirement for long-term operation.

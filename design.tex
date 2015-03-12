@@ -51,8 +51,8 @@ sensor-to-attack ratio in our experiments.}
 % distinct from "location" is broken, so we must make the best of it that we
 % can.  Please have a whack at this.
 For each experiment we create a \emph{configuration},
-parameters specifying how a set of events and sensors (the
-\emph{setting}) is generated.  A
+a set of parameters specifying how a set of events and sensors, a
+\emph{setting}, is generated.  A
 setting comprises a set of possible attacks, a set
 of sensors, and a set of sensing relations between attacks and
 sensors.
@@ -62,8 +62,8 @@ from the attack and benign events.
 % These are
 % Bernoulli random variables; we discuss setting their probabilities
 % below.
-In each experiment we generated 1,000 settings with
-100 runs per setting.
+In each experiment, for each configuration, we generated 1,000 settings
+and conducted 100 runs per setting.
 %
 After sampling events, we sample from the sensors
 %at the corresponding location,
@@ -130,9 +130,9 @@ We then vary some configuration parameter in ways which degrade
 MIFD's performance. These experiments show us MIFD's performance under best-case conditions, and
 how that performance degrades.
 \begin{compactitem}
-\item \numEventProtosDetected\ --- The total number of events (both
+\item \numEventProtosDetected\ --- The total number of event types (both
   benign and attacks) to be
-  detected by each sensor, a measure of the sensor's specificity.
+  detected by each sensor, a measure of the sensor's specificity. 
   Initially we use a random variable which returns 1 80\%
   of the time, and 2 otherwise.
 \item \sensorToAttackRatio\ --- The number of sensors which should
@@ -211,10 +211,10 @@ how that performance degrades.
 %
 \textbf{Settings.}
 When creating a setting, we first consult
-the \numAttacks\ parameter to determine the number of attack prototypes.
-Each prototype is associated with an
-occurrence probability given by (or sampled for each prototype from)
-\attackKappa. The number of sensors is not fixed, but instead depends
+the \numAttacks\ parameter to determine the number of attack types.
+Each type is associated with an
+occurrence probability dictated by the 
+\attackKappa parameter. The number of sensors is not fixed, but instead depends
 on several configuration parameters. For each attack, we keep track of
 the number of sensors which we must assign to detect it; this value is
 initially set from \sensorToAttackRatio.  We create new sensors as
@@ -222,22 +222,22 @@ long as any attack requires assignment to an additional sensor. A new
 sensor is initially assigned a total number of events which it will
 detect from \numEventProtosDetected, and some set of attack
 events. Each sensor is assigned at least one attack, plus
-additional attacks up to its total number of events as consecutive
-samples of a Bernoulli random variable with success probability
-\sensorOverlap\ return 1.  After all sensor prototypes are
+additional attacks up to its total number of events based on a 
+Bernoulli random variable with parameter
+\sensorOverlap.  After all sensor types are
 created and assigned attacks, we assign benign events to the sensors
 to reach their total number of events.
 %% \begin{itemize}
 %% \item If we are given \numBenignEvents, then we create that total
-%%   number of benign event prototypes, and distribute them among the
+%%   number of benign event types, and distribute them among the
 %%   sensors using a \sensorToBenignRatio\ which allows each sensor's
 %%   total event count to be satisfied.
 %% \item
 %%   If we are given a \sensorToBenignRatio, then we create the
-%%   necessary number of benign event prototypes to satisfy both
+%%   necessary number of benign event types to satisfy both
 %%   \sensorToBenignRatio\ and each sensor's total event count.
 %% \end{itemize}
-We create enough benign event prototypes to satisfy
+We create enough benign event types to satisfy
 both \sensorToBenignRatio\ and each sensor's total event count, and
 distribute them randomly among the sensors according to their total
 event counts. 
@@ -253,28 +253,28 @@ event counts.
 % which those events (or false positives) trigger. We proceed by
 % considering each location of the network in turn.  We create the
 % events which occur at each location by considering each attack and
-% benign prototype. For each prototype, if a sample of a Bernoulli
+% benign type. For each type, if a sample of a Bernoulli
 % random variable whose success probability is the occurrence
-% probability of the prototype is 1, then the ground truth aspect will
-% contain a sensor report with that prototype and location.
+% probability of the type is 1, then the ground truth aspect will
+% contain a sensor report with that type and location.
 % %
 % For sensor reports at each location, we consider each sensor report
-% prototype of the setting. If a prototype indicates that the sensor can
+% type of the setting. If a type indicates that the sensor can
 % detect one of the events which we have generated for that location,
 % then we may have a report based on the events; otherwise we may have
 % report because of a false positive.
 % \begin{compactitem}
 % \item If we have detectable events, then for each one we sample a
 %   Bernoulli random variable whose success probability is the false
-%   negative probability of the report prototype. If \emph{any} of these
+%   negative probability of the report type. If \emph{any} of these
 %   samples are 0 --- that is, if for any event we do \emph{not} have a
 %   false negative --- then the ground truth aspect will contain a
-%   sensor report with that prototype and location.
+%   sensor report with that type and location.
 % \item If there are no events at a location which could trigger a
-%   report of that prototype, then we consult a Bernoulli random
+%   report of that type, then we consult a Bernoulli random
 %   variable whose success probability is the false positive probability
-%   of the sensor report prototype; if it returns 1, then the ground
-%   truth aspect will contain a sensor report with that prototype and
+%   of the sensor report type; if it returns 1, then the ground
+%   truth aspect will contain a sensor report with that type and
 %   location.
 % \end{compactitem}
 
