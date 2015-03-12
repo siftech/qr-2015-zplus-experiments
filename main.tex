@@ -63,19 +63,22 @@
 \input{results}
 \input{conclusions}
 
-\ifthenelse{\boolean{anonymous}}{}{%
-\subsubsection*{Acknowledgments}
-\label{sec:acknowledgments}
+%% TODO Put the acks back after review since anonymous now turned off
 
-This paper was supported by DARPA and the U.S. Air Force under contract number
-FA8650-11-C-7191.  
-Approved for Public Release, Distribution Unlimited. 
-\textit{[The previous is the clearance expression we will put in upon clearance]}
-The views expressed are those of the
-authors and do not reflect the official policy or position of the Department
-of Defense or the U.S. Government.} %endif anonymous
+% \ifthenelse{\boolean{anonymous}}{}{%
+% \subsubsection*{Acknowledgments.}
+% \label{sec:acknowledgments}
+% 
+% This paper was supported by DARPA and the U.S. Air Force under contract number
+% FA8650-11-C-7191.  
+% Approved for Public Release, Distribution Unlimited. 
+% \textit{[The previous is the clearance expression we will put in upon clearance]}
+% The views expressed are those of the
+% authors and do not reflect the official policy or position of the Department
+% of Defense or the U.S. Government.} %endif anonymous
 
-\clearpage{}
+% \clearpage{}
+
 \bibliographystyle{aaai}
 \bibliography{refs/names,refs/strings,refs/prob,refs/cyber,refs/goldman,refs/charniak,refs/collections,refs/ai,main}
 \end{document}
