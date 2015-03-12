@@ -147,8 +147,14 @@ MIFD translates Bayes networks into an
 %% DONE Charniak:88 is Charniak and Goldman --- withhold this one too? No --
 %% it's not obviously tied to this paper, so we don't need to worry about it
 %% breaching anonymity. [2014/08/24:rpg]
-ATMS~\cite{Forbus+DeKleer:1993}; see \cite{Charniak:88,Poole:93,provan-ijcai89}
-and \anoncite{goldman:09Scyllarus} for this encoding.
+ATMS~\cite{Forbus+DeKleer:1993}; see
+%% For anonymous:
+%\cite{Charniak:88,Poole:93,provan-ijcai89}
+%and \anoncite{goldman:09Scyllarus}
+%% De-anonymized:
+\cite{Charniak:88,Poole:93,provan-ijcai89,goldman:09Scyllarus}
+%
+for this encoding.
 This implementation is not especially efficient, but we have found
 it is I/O which dominates runtime, and we apply several optimizations to
 handle common special cases.
