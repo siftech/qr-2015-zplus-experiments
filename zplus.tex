@@ -6,19 +6,23 @@ follows Pearl's exhortation~\shortcite{Pearlbook} that the core of probability t
 the patterns of inference it enables (explaining away, combining forward causal
 inference and evidential reasoning, etc.), rather than precise numerical
 calculations.  He recommends these patterns be used even when precise numbers are
-not available, and that is what MIFD does.  As outlined above, MIFD treats
+not available, which MIFD does.
+%% TODO Restore for QR'15
+%As outlined above,
+MIFD treats
 \ids fusion as an abductive problem, formalized using Bayes nets.
-But precise values for the parameters of these Bayes nets ---
-probabilities of attacks, false positives, false negatives, etc. ---
+But precise values for the parameters of these Bayes nets
+%% TODO Restore for QR'15
+% --- probabilities of attacks, false positives, false negatives, etc. ---
 are \emph{never} available to us: populations of
 attacks and attackers change, different networks have little in common with each other, distributions are
 non-stationary, etc.  Moreover these difficulties are not solvable via machine learning:
 Sommer and Paxson~\shortcite{Sommer10outsidethe} discuss the challenges \ids pose to ML.
 
 Goldszmidt and
-Pearl's \zplus{}~\shortcite{Goldszmidt:96},
+Pearl's \zplus{}~\shortcite{Goldszmidt:96}
 shares the
-basic structure of normal probability theory, but abstracts the actual
+basic structure of normal probability theory but abstracts the actual
 probabilities.
 Events have a natural number rank \tkappa{}
 corresponding to their degree of surprise (so a rank of one is more surprising
@@ -26,16 +30,19 @@ than zero). The semantics of this scheme comes from a set of probability
 distributions in which the probabilities are polynomials over some infinitesimal
 $\epsilon$. In this scheme, the \tkappa{} corresponds to the exponent
 of the polynomial's leading term.
-As we mentioned earlier, \zplus is similar to the ``big-$O$'' method used
+%% TODO Restore for QR'15
+%As we mentioned earlier, 
+\zplus is similar to the ``big-$O$'' method used
 in analysis of algorithms.
-This semantics gives \zplus{} a
-qualitative flavor by providing a ``ladder'' of events of qualitatively different
+With this semantics \zplus{}
+provides a ``ladder'' of events of qualitatively different
 orders of likelihood.
-Note that \zplus is very different from Wellman's qualitative probability
-networks~\cite{Wellman:90}, whose abstraction is based on direction of change, rather than order
-of magnitude relations ``at rest,'' as it were.
-Wellman's approach is more relevant when choosing interventions (as in his work
-on medical diagnosis and treatment), and less for fusion.
+%% TODO Restore for QR'15
+%Note that \zplus is very different from Wellman's qualitative probability
+%networks~\cite{Wellman:90}, whose abstraction is based on direction of change, rather than order
+%of magnitude relations ``at rest,'' as it were.
+%Wellman's approach is more relevant when choosing interventions (as in his work
+%on medical diagnosis and treatment), and less for fusion.
 
 \hide{
 The \assessor{} must combine the judgments of a wide variety of intrusion
@@ -68,10 +75,15 @@ likelihoods(e.g., \cite{pradhan:96}). So inexactitude in the quantities specifie
 final conclusions.}
 
 Under \zplus\ we may apply the normal operation
-of probability theory --- conditionalization, Bayes' law, etc. --- but
-the arithmetic operations we use for them change.  Rather than multiplying
-probabilities, we add degrees of surprise; rather than adding
-probabilities, we take the minimum surprise.  Goldszmidt and
+of probability theory
+%% TODO Restore for QR'15
+% --- conditionalization, Bayes' law, etc. ---
+but the arithmetic operations we use for them change.  Rather than multiplying
+probabilities, we add degrees of surprise%
+%% TODO Restore for QR'15, but it's in the table anyway
+%; rather than adding
+%probabilities, we take the minimum surprise%
+.  Goldszmidt and
 Pearl~\shortcite{Goldszmidt:96} provide the following substitutions
 between the quantitative probability function $P$ and its qualitative
 counterpart $\kappa$ for formulas $\phi$ and $\psi$, and primitive events, $e$.
@@ -140,8 +152,10 @@ and \anoncite{goldman:09Scyllarus} for this encoding.
 This implementation is not especially efficient, but we have found
 it is I/O which dominates runtime, and we apply several optimizations to
 handle common special cases.
-To date (somewhat to our disappointment!) optimizing the general \zplus
-inference method has not been key to system performance.
+%% TODO Restore for QR'15
+%To date (somewhat to our disappointment!) optimizing the general \zplus
+%inference method has not been key to system performance.
+%
 % To date, finding the optimal inference method
 % % in terms of runtime
 % has been
@@ -186,8 +200,9 @@ have $0 < \kappa(\text{benign}) < \kappa(\text{attack})
 In actual deployments, we then
 nudge the false positive rankings up in the rare cases where we have a
 particularly good sensor, or down if we have a particularly bad sensor.
-We are less likely to adjust attack event probabilities, but
-there are exceptions such as scanning (very common), and some complex events.
+%% TODO Restore for QR'15
+%We are less likely to adjust attack event probabilities, but
+%there are exceptions such as scanning (very common), and some complex events.
 
 
 %%% Local Variables: 

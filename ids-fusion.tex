@@ -28,10 +28,17 @@ solution to the first.  For discussions of the first question, see
 Existing \idses are not designed to work together as part of a
 suite of sensors.  Instead, each program generates a separate,
 often voluminous, stream of reports; fusing them into a coherent 
-overview is left as an exercise for the user. 
+overview is left
+% TODO restore to QR15
+%as an exercise for
+ to
+the user. 
 Ideally, network administrators would have a suite of different \idses active,
-since different \ids approaches --- network (NIDS) vs.\
-host-based (HIDS), signature vs.\ anomaly-based --- bring different
+since different \ids approaches
+% TODO restore to QR15
+% --- network (NIDS) vs.\
+% host-based (HIDS), signature vs.\ anomaly-based --- 
+bring different
 strengths and weaknesses.
 %%
 %% Hm, can we just get rid of the details NIDS/HIDS and
@@ -85,13 +92,17 @@ other applications where very unlikely events must be detected, even a seemingly
 accurate sensor may yield too many false positives.  Axelsson gives the example
 of a 99\% accurate test detecting a disease that strikes only 1/10,000
 patients.  The probability of having the disease given a positive test result is
-only 1\%, although the probability of the sensor labeling correctly is 99\%.
+only 1\%.
+% %% This next bit seem redundant.
+%, although the probability of the sensor labeling correctly is 99\%.
 {\ids} users regularly either ignore or partially disable them, unable to absorb
-massive streams of false alarms:
-``Users attending an 'ABCs of IDS' event at London's City University yesterday
-  said more the 80 per cent of the alerts they received were false, with one
-  citing 60 alerts he had received about non-existent problems that morning at
-  0300''~\cite{Register}.
+massive streams of false alarms:%
+%% TODO Restore for QR'15
+%``Users attending an 'ABCs of IDS' event at London's City University yesterday
+%  said more the 80 per cent of the alerts they received were false, with one
+%  citing 60 alerts he had received about non-existent problems that morning at
+%  0300''
+~\cite{Register}.
 Recently, Target is reported to have ignored warnings about the
 data breach that resulted in theft of millions of credit
 cards~\cite{TargetIgnoredIDS}:
@@ -102,27 +113,17 @@ Figure
 problem, showing how our earlier system was able to winnow
 the 
 flow of reports in a small corporate network~\anoncite{goldman:09Scyllarus}.
-Data reduction, in addition to building a comprehensive overview
-and overcoming false positives and negatives, must be a goal of \ids fusion.
-% \begin{figure*}[t]
-%   \begin{tabular}{c}
-%     \ifthenelse{\boolean{blackAndWhite}}{%
-%       \includegraphics[width=.7\textwidth]{figures/funnel-bw.pdf} }{%
-%     \includegraphics[width=.7\textwidth]{figures/funnel.pdf}} \\
-%     \ifthenelse{\boolean{blackAndWhite}}{%
-%         \includegraphics[width=.7\textwidth]{figures/funnel-graph-bw} }{%
-%             \includegraphics[width=.7\textwidth]{figures/funnel-graph} } 
-%   \end{tabular}
-%   \centering
-%   \caption{Scyllarus workload reduction~\anoncite{goldman:09Scyllarus}.}
-%   \label{fig:workloadReduction}
-% \end{figure*}
+Data reduction must join building a comprehensive overview
+and overcoming false positives and negatives as goals of \ids fusion.
 \begin{figure}[t]
     \ifthenelse{\boolean{blackAndWhite}}{%
       \includegraphics[width=.45\textwidth]{figures/funnel-dup-cropped.pdf} }{%
     \includegraphics[width=.45\textwidth]{figures/funnel-dup-cropped.pdf}} 
   \centering
-  \caption{Scyllarus workload reduction~\anoncite{goldman:09Scyllarus}.}
+  \caption{Scyllarus workload reduction%
+% Squash citation here; cited in sentence referencing figure.
+%~\anoncite{goldman:09Scyllarus}
+.}
   \label{fig:workloadReduction}
 \end{figure}
 
@@ -197,20 +198,28 @@ and overcoming false positives and negatives, must be a goal of \ids fusion.
 \draft{Challenges of IDS evaluation}
 
 \paragraph{Related work.}
-SecurityFocus has developed the
-Attack Registry and Intelligence Service~\shortcite[ARIS]{ARIS}.
-Its extractor consolidates {\ids} reports from four different
-{\idses} into XML, and presents them in an incident
-console.  However it makes no attempts to fuse the reports, nor weigh
-evidence for and against them.
-MetaSTAT is a fusion system built on a set of STAT-based
-{\idses}~\cite{vigna01:designing}.  
-STAT is signature-based, and detects events by matching
-against extended finite-state event models.  MetaSTAT uses
-finite-state models of across-sensor events to consume events
-from lower-level sensors at a higher level,
-but does not attempt to judge the plausibility of different
+%% TODO Restore for QR'15
+%SecurityFocus has developed the
+%Attack Registry and Intelligence Service~\shortcite[ARIS]{ARIS}.
+%Its extractor consolidates {\ids} reports from four different
+%{\idses} into XML, and presents them in an incident
+%console.  However it makes no attempts to fuse the reports, nor weigh
+%evidence for and against them.
+%
+%% TODO Restore full version for QR'15
+STAT and MetaSTAT~\cite{vigna01:designing}
+use finite-state models to detect and fuse events,
+but do not attempt to judge the plausibility of different
 events.
+%MetaSTAT is a fusion system built on a set of STAT-based
+%{\idses}~\cite{vigna01:designing}.  
+%STAT is signature-based, and detects events by matching
+%against extended finite-state event models.
+%MetaSTAT uses
+%finite-state models of across-sensor events to consume events
+%from lower-level sensors at a higher level,
+%but does not attempt to judge the plausibility of different
+%events.
 EMERALD/eBayes~\cite{raid2001-pac} fusion is the most similar to our systems.
 Their sensors are Bayes net-based, and the correlation approach
 allows ``upstream'' sensors to adjust the priors on ``downstream''
@@ -219,13 +228,18 @@ Its fusion is limited to clustering alerts that meet a
 similarity criterion; they do not have models of high-level events like
 ours (see below).  To the best of our knowledge, they do not
 address the difficult issues of acquiring probability parameters for \ids fusion.
-The Prelude IDS's Correlator allows users to analyze reports sent to Prelude 
-from compatible IDSes~\cite{PreludeCor} following user-provided rules.  Its function is closest to
+The Prelude IDS's Correlator
+%% TODO Restore full version for QR'15
+% allows users to analyze reports sent to Prelude 
+%from compatible IDSes~\cite{PreludeCor} following user-provided
+%rules.  Its function
+is closest to
 our clustering subsystem, but knowledge resides in stateful 
 rules instead of an ontology of attacks. 
-The Arcsight Enterprise Security Manager~\cite{ArcsightEsm},
-also ties correlated IDS reports to an installation's security goals
-and vulnerability information.
+%% TODO Restore full version for QR'15
+%The Arcsight Enterprise Security Manager~\cite{ArcsightEsm},
+%also ties correlated IDS reports to an installation's security goals
+%and vulnerability information.
 
 
 %%% Local Variables: 

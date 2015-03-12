@@ -1,12 +1,18 @@
 \section{The Scyllarus and MIFD systems}
 \label{sec:mifd}
 
-Our original system Scyllarus was an open system which performed IDS
+Our original system Scyllarus
+%% TODO Restore for QR'15
+% was an open system which 
+performed IDS
 fusion on a diverse set of third party \idses~\anoncite{goldman:discex2001,goldman:discex2001}.
 Its successor
 MIFD (Model-based Intrusion Fusion and Detection),
-enhances Scyllarus as part of the STRATUS system's
-integration of IDS fusion into a comprehensive suite for cyber defense
+enhances Scyllarus
+%% TODO Restore for QR'15
+% as part of the STRATUS system's integration of
+ to integrate
+IDS fusion into a comprehensive suite for cyber defense
 \anoncite{thayer13:_compar_strat_tactic_respon_cyber_threat}.
 For simplicity we refer to our \ids fusion system as ``MIFD,'' but
 except where we specify otherwise, our account applies to Scyllarus as well.
@@ -18,13 +24,16 @@ must be translated into a common
 sensor report data structure for processing.
 We will not discuss these less interesting
 preliminaries, except to mention that they
-involve a substantial amount of data rectification.  There is no widely-accepted
-common data format (the proposed IDMEF standard~\cite{IDMEF} has not caught on), nor
-is there an accepted taxonomy for events or event roles (e.g., the widely used ``source''
-and ``destination'' are not consistently applied).
-These problems are exacerbated by the fact that intrusion detection ``systems''
-are often simply a casually-assembled anthology of rules by different authors running in the same
-framework.
+involve a substantial amount of data rectification
+%% TODO Restore for QR'15
+ to address the lack of standardization for data formats and event taxonomies.
+%.  There is no widely-accepted
+%common data format (the proposed IDMEF standard~\cite{IDMEF} has not caught on), nor
+%is there an accepted taxonomy for events or event roles (e.g., the widely used ``source''
+%and ``destination'' are not consistently applied).
+%These problems are exacerbated by the fact that intrusion detection ``systems''
+%are often simply a casually-assembled anthology of rules by different authors running in the same
+%framework.
 
 Core fusion inference begins with
 \textbf{Clustering:} From the
@@ -55,17 +64,20 @@ This creates a number of problems, first and foremost that the
 sensors have high false positive rates.
 For example, a local software update server
 may look like an attacker performing reconnaissance.
-What's worse, some of the false positives are correlated: the normal
+Worse, some false positives are correlated: the normal
 activity of a print server may be mis-detected as a scan by several
 different sensors.
 To handle simple sensor failures, MIFD associates with each sensor a false
 positive likelihood.
 But to address the correlated false positives such as the scanning example, we
 introduce benign events, that can compete with attack and (simple) false
-positive explanations for results.\footnote{Where possible, we try to introduce sensors that
-can specifically detect the benign events. To return to our earlier example, we
-might introduce a ``print server sensor'' to help disambiguate detections. We do
-not address this issue in our experiments.}
+positive explanations for results.\footnote{And where possible, we try to introduce sensors that
+can specifically detect the benign events. 
+%% TODO Restore for QR'15
+%To return to our earlier example, we
+%might introduce a ``print server sensor'' to help disambiguate detections. We do
+%not address this issue in our experiments.
+}
 % FIXME: Add a figure 2(c) -- or separately numbered figure -- where we have a
 % benign event, explaining two of the sensor reports, as well as the two attack
 % events. 
@@ -74,10 +86,12 @@ the features that they detect often occur not only in the absence of the
 advertised intrusion, but in the presence of \emph{other} intrusions with
 similar characteristics.
 
-MIFD also has \emph{complex} events that have component sub-events, such as a
-phishing attack with component events phishing email and drive-by-download.
-Our current experiments do not address the role of complex events, so we will
-not discuss them further.
+%% TODO Restore for QR'15 --- we'd earlier discussed
+%% removing this paragraph anyway.
+%MIFD also has \emph{complex} events that have component sub-events, such as a
+%phishing attack with component events phishing email and drive-by-download.
+%Our current experiments do not address the role of complex events, so we will
+%not discuss them further.
 
 \begin{figure}
   \centering

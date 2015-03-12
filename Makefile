@@ -11,3 +11,5 @@ clean:
 	(cd figures; make clean)
 	rm -f main.pdf
 
+count:
+	texcount main.tex -inc -nobib -sum
