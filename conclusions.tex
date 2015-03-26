@@ -7,9 +7,36 @@ MIFD have been successful in practical deployments.
 They show that the qualitative scheme they use is not sensitive to
 the actual probabilities of events, and that its performance degrades
 gracefully.
-The results also justify the claim that by combining the output of multiple sensors, even
-very noisy sensors, \ids fusion can tame the high false
-positive rates that plague the field of intrusion detection.
+
+We would like to remind the reader that imprecise probabilities 
+are forced upon us by the nature of the cyber intrusion detection domain: it's
+not just a matter of not having the right machine learning technique.  The
+true probabilities are non-stationary, they involve an adversarial process,
+vary from location to location, and are difficult if not impossible to learn
+because of the absence of valid labeled training data.
+The use of a small number of qualitatively distinct likelihood levels also aids
+us in the knowledge engineering process.
+
+In practice, we also find that the results of \zplus calculations are easy to
+understand.  We have found this through experience explaining the output of our
+systems to users, and through experience debugging.  When we draw out the Bayes
+networks, we can think of using assumptions to assemble the ``cheapest''
+explanation for a set of observations.  This can be simpler to understand than
+the exact computations in a Bayes net.
+
+Our experimental results also justify the claim that by combining the output of
+multiple sensors, even very noisy sensors, \ids fusion can tame the high false
+positive rates that plague the field of intrusion detection.  These results are
+somewhat independent from the question of the adequacy of the qualitative
+calculus.  In a system that performed diagnosis/fusion using conventional
+probability theory, it can be seen that multiple sensors that fail independently
+will tend to perform well:  it's easier to drive the probability of error down
+by multiplying failure probabilities ($p^n$) than to try to drive down a single
+sensor's $p$ of failure.  However, our results show that substituting \zplus for
+conventional probability theory preserves this desirable characteristic of
+probabilistic reasoning. Our results also show resistance to a moderate degree
+of correlation in sensor failures when using \zplus.
+
 Since our results predict the circumstances under which IDS fusion will work and
 will fail, they can also be used to inform the design and deployment of IDSes
 for effective incorporation in a fusion system.
