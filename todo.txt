@@ -59,14 +59,16 @@
       monospaced instead of proportionate sans-serif?
 *** TODO Review 1: Some references imprecise and poorly formatted
 ** From reviews
-*** TODO Review 1: learned or hand-made domains?
+*** RPG Review 1: learned or hand-made domains?
     - "I wonder how the underlying qualitative models were obtained -
       were they learned or made by domain expert? From the paper, I
       guess they were hand made because the learning part is never
       mentioned."
-    - ISTR we did write about this (and dismissed learning as an
-      option).  Did this get dropped?  Should we relocate/strengthen
-      this text?
+    - JM added some text to {Experimental Design} to make it even clearer
+      that we're generating these models.
+    - So we did write strongly about learning models not being
+      realistic here, but it's in the conclusion.  Should we
+      move/repeat in the introduction as well?
 *** TODO Review 1: Hand-made vs. generated
     - "If this is correct [that the underlying qualitative models were
       made by a domain expert], the results of the paper are not
