@@ -94,9 +94,18 @@
       to the last sentence before {Related Work} where we discuss this
       figure, "from 16,000 raw reports in XXX hours to 0 noteworthy
       events flagged over the same period"?
-*** TODO Review 3: Discuss/highlight plausibility of experiments
+*** RPG Review 3: Discuss/highlight plausibility of experiments
     - "I find strange that there is no discussion of the plausibility
       of the experiments although they are admittedly artificial."
+    - Robert, what do you think of appending to the 2nd paragraph of
+      {Experimental Design}, after "in principle inaccessible":
+
+      The models we generate have the same structure as models used in
+      deployments of Scyllarus for real scenarios.  What we observe
+      here is the change in performance as the generated models
+      diverge from best-case assumptions behind the use of qualitative
+      probability in the same way as the models of real scenarios
+      diverge from these assumptions.
 *** TODO Review 3: Some background irrelevant?
     - "The fact that there are several types of IDSes (from rule-based
       to hybrid) is irrelevant to this work just because their
