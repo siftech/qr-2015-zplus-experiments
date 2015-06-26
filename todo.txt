@@ -1,6 +1,9 @@
 # -*- org -*-
 #+CATEGORY: AAAI MIFD paper
 #+TODO: TODO WAIT RPG JM | DONE(d!) CANCELED(c@)
+#+TITLE: QR'15 to-do list
+#+OPTIONS: toc:nil TeX:t author:nil
+#+LaTeX_HEADER: \usepackage[margin=0.25in]{geometry}
 
 * QR'15 final copy
 ** Questions
@@ -112,7 +115,7 @@
 *** TODO Send PDF --- deadline July 16
     - No instructions at this point on where to send the final PDF.
 
-* AAAI'15 submission
+* AAAI'15 submission                                               :noexport:
 ** Excel graphs
 *** DONE In Figures 4, 5, 7, can we move the captions from the settings table into the actual figure?
     CLOSED: [2014-08-22 Fri 12:50]
@@ -392,7 +395,7 @@ Maybe search forward from EMERALD, etc.?
 + [x] We use the terms "precision" and "recall" before they are defined (in the
   "Metrics" paragraph.).
 
-* UAI'14 submission
+* UAI'14 submission                                                :noexport:
 ** DONE Abstract
    - State "DONE"       from "TODO"       [2014-03-19 Wed 18:21]
 Write this last
@@ -489,7 +492,7 @@ tets.
     CLOSED: [2014-07-16 Wed 11:01]
     - State "DONE"       from "TODO"       [2014-07-16 Wed 11:01]
 
-* System Z applications <<ZCitations>>
+* System Z applications <<ZCitations>>                             :noexport:
 I believe that these papers are relevant to our claim that no one else is
 applying System Z+
 + [[file:opp/minock-kraus:zlog.pdf][Z-log: Applying System-Z]]
@@ -502,7 +505,7 @@ applying System Z+
 + [[file:opp/fujimoto-matsuzawa:njc-1999.pdf][Intelligent systems using Web-pages as knowledge base for
   statistical decision making]]
 
-* Some initial reactions [2014-08-24 Sun]
+* Some initial reactions [2014-08-24 Sun]                          :noexport:
 ** The abstract is off-balance
 + There's a ton of "scyllarus" in it, and not much MIFD. Suggests we say "MIFD,
   and its predecessor, Scyllarus..." and then don't use the name "Scyllarus"
