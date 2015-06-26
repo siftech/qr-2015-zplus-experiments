@@ -10,13 +10,24 @@
       but it doesn't say anywhere.
 *** TODO Where do we send the final copy?
 ** References
-*** TODO Review 3: Page not found
+*** RPG Review 3: Page not found
     - At link https://trac.prelude-ids.org/wiki/PreludeCorrelator
     - Yep, it's gone.  SANS has a whitepaper about Prelude with a
       paragraph about the correlator,
       http://www.sans.org/reading-room/whitepapers/awareness/prelude-hybrid-ids-framework-33048
     - Oh, I think this might be where it lives now:
       https://www.prelude-siem.org/projects/prelude/wiki/PreludeCorrelator
+    - Robert, I think the last one is right, but I don't see that we
+      stored a copy of the old one.  I've gone ahead and updated the
+      reference.  Please have a look, and either set to DONE or add
+      comments.
+      - Hm, there's no attribution on the new page to Yoann
+        Vandoorselaere.  Does this look like the same page?  I totally
+        don't remember.  For the time being at least, I've made a
+        separate citation for this new page, citing it instead of the
+        old one.
+      - Ugh, @misc citation looks terrible without an author.  Will
+        come back to this later.
 *** TODO The Google Scholar URL
     - At least on my PDF viewer, the URL for Google Scholar doesn't
       copy out well.  I can't think of anything we can do about that,
