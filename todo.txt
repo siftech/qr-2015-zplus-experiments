@@ -10,7 +10,7 @@
       but it doesn't say anywhere.
 *** TODO Where do we send the final copy?
 ** References
-*** RPG Review 3: Page not found
+*** DONE Review 3: Page not found
     - At link https://trac.prelude-ids.org/wiki/PreludeCorrelator
     - Yep, it's gone.  SANS has a whitepaper about Prelude with a
       paragraph about the correlator,
@@ -28,6 +28,10 @@
         old one.
       - Ugh, @misc citation looks terrible without an author.  Will
         come back to this later.
+    - Aha!  This page clears it up,
+      https://www.prelude-siem.org/projects/prelude/news .  It is the
+      same stuff; they just changed the URLs.  Back to using the old
+      reference, and the URL there changed.
 *** TODO The Google Scholar URL
     - At least on my PDF viewer, the URL for Google Scholar doesn't
       copy out well.  I can't think of anything we can do about that,
