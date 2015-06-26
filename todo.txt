@@ -65,6 +65,7 @@
     - At link https://trac.prelude-ids.org/wiki/PreludeCorrelator
 ** Finish and submit
 *** RPG Acknowledgments
+    Robert, please double-check that the one that's there is correct.
 *** TODO Last spellcheck
 *** TODO Run dupwords
 *** TODO Send PDF --- deadline July 16
