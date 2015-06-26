@@ -106,10 +106,12 @@
       diverge from best-case assumptions behind the use of qualitative
       probability in the same way as the models of real scenarios
       diverge from these assumptions.
-*** TODO Review 3: Some background irrelevant?
+*** RPG Review 3: Flavors of IDS
     - "The fact that there are several types of IDSes (from rule-based
       to hybrid) is irrelevant to this work just because their
       integration is assumed to be part of the clustering problem?"
+    - I added a sentence to the {Intrusion detection fusion} section
+      to clarify.
 *** TODO Review 3: Variations of sub-network sensitivity
     - "Networks can be articulated in sub-networks of different
       sensitivity to attacks (perhaps due to the type of users or the
