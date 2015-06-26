@@ -2,6 +2,74 @@
 #+CATEGORY: AAAI MIFD paper
 #+TODO: TODO WAIT RPG JM | DONE(d!) CANCELED(c@)
 
+* QR'15 final copy
+** Questions
+*** RPG Do we have DARPA clearance already?
+*** TODO Final page count
+    - Assuming it's the same as the submitted-for-review page count,
+      but it doesn't say anywhere.
+*** TODO Where do we send the final copy?
+** From reviews
+*** TODO Review 1: learned or hand-made domains?
+    - "I wonder how the underlying qualitative models were obtained -
+      were they learned or made by domain expert? From the paper, I
+      guess they were hand made because the learning part is never
+      mentioned."
+    - ISTR we did write about this (and dismissed learning as an
+      option).  Did this get dropped?  Should we relocate/strengthen
+      this text?
+*** TODO Review 1: Hand-made vs. generated
+    - "If this is correct [that the underlying qualitative models were
+      made by a domain expert], the results of the paper are not
+      surprising - the very rare events that the models capture
+      successfully are obviously included in the model because domain
+      experts anticipated such behavior; maybe not all but at least
+      some rare events were anticipated."
+    - Moot, probably, but address when we discuss generated
+      vs. learned models?
+*** TODO Review 1: Some references imprecise and poorly formatted
+*** TODO Review 2: Edges for sub-events
+    - "During clustering and assessment are there ever edges between
+      hypothesis nodes indicating sub-events of particular kinds of
+      attacks? I imagine that this would be what the 'high-level
+      events' or 'ontology of attacks' are, but it is unclear."
+    - Clarify.
+*** TODO Review 2: Time frame
+    - "At the end of the intrusion detection system, the authors use
+      Figure 1 to help us understand the scale of the false positive
+      problem.  It would help the reader if the time frame of the
+      reports was included as well.  Is this over a minute?  A day?  A
+      week?"
+*** TODO Review 3: Discuss/highlight plausibility of experiments
+    - "I find strange that there is no discussion of the plausibility
+      of the experiments although they are admittedly artificial."
+*** TODO Review 3: Some background irrelevant?
+    - "The fact that there are several types of IDSes (from rule-based
+      to hybrid) is irrelevant to this work just because their
+      integration is assumed to be part of the clustering problem?"
+*** TODO Review 3: Variations of sub-network sensitivity
+    - "Networks can be articulated in sub-networks of different
+      sensitivity to attacks (perhaps due to the type of users or the
+      type of information distributed there), this is not
+      discussed. Is it assumed that a network is somehow homogeneous
+      from the attack viewpoint?"
+*** TODO Review 3: Limitation to three classes
+    - "The authors do not discuss the limitation to three classes
+      (likely, plausible and unlikely). Can the technique manage more
+      classes? Would it still behave nicely?"
+*** TODO Review 3: Reference to ontology of attacks
+    - "The reference to an 'ontology of attacks' (end of Related Work)
+      is not picked up in the rest of the paper."
+*** TODO Review 3: at pg.3, the entry (1,2) of the table has \phi instead of \psi.
+*** TODO Review 3: Page not found
+    - At link https://trac.prelude-ids.org/wiki/PreludeCorrelator
+** Finish and submit
+*** RPG Acknowledgments
+*** TODO Last spellcheck
+*** TODO Run dupwords
+*** TODO Send PDF --- deadline July 16
+    - No instructions at this point on where to send the final PDF.
+
 * AAAI'15 submission
 ** Excel graphs
 *** DONE In Figures 4, 5, 7, can we move the captions from the settings table into the actual figure?
@@ -281,7 +349,6 @@ Maybe search forward from EMERALD, etc.?
   introduction.
 + [x] We use the terms "precision" and "recall" before they are defined (in the
   "Metrics" paragraph.).
-
 
 * UAI'14 submission
 ** DONE Abstract
