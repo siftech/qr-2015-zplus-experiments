@@ -118,6 +118,7 @@
       type of information distributed there), this is not
       discussed. Is it assumed that a network is somehow homogeneous
       from the attack viewpoint?"
+    - Hm, something to discuss in the conclusion?
 *** RPG Review 3: Limitation to three classes
     - "The authors do not discuss the limitation to three classes
       (likely, plausible and unlikely). Can the technique manage more
