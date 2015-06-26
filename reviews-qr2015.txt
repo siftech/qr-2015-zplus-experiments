@@ -1,0 +1,91 @@
+Good afternoon,
+
+We are pleased to inform you that your paper was accepted for oral presentation at the 
+28th International Workshop on Qualitative Reasoning.
+
+More information about the program, schedule, and travel information will be sent out 
+shortly, and we will update the website accordingly: http://qr15.sift.net/
+
+Please refer to the reviews below for suggestions regarding your submission, as you 
+prepare a camera-ready copy.  You will upload your camera-ready copy via EasyChair, 
+where you made your initial submission.
+
+** The camera-ready deadline is July 16, 2015 **
+
+Regards,
+Scott & Kate
+
+
+----------------------- REVIEW 1 ---------------------
+PAPER: 2
+TITLE: Experimental Evaluation of Qualitative Probability applied to Sensor Fusion and Intrusion Detection/Diagnosis
+AUTHORS: Robert P. Goldman and John Maraist
+
+OVERALL EVALUATION: 0 (borderline paper)
+CLAIMS: Does the paper make clear claims about its contribution to QR? Such claims can take many forms, but they should be stated unambiguously in accessible language: 2 (vague claims)
+TECHNICAL CLARITY: Does the paper's writing and organization present its ideas to readers effectively? Can moderately informed readers understand the main contributions?: 2 (somewhat unclear)
+NOVELTY: Is this work novel? Do the authors present a problem or approach that advances qualitative reasoning techniques or applies them in a novel way?: 2 (minimally novel)
+RELEVANCE: Is the paper relevant to the QR community?: 2 (minimally relevant)
+
+----------- REVIEW -----------
+The paper presents the results of the experimental analysis of the System Z+ qualitative probability scheme through intrusion detection system MIFD. The paper is quite difficult to read provided the reader is not familiar with Z+ and/or intrusion detection systems.
+I wonder how the underlying qualitative models were obtained - were they learned or made by domain expert? From the paper, I guess they were hand made because the learning part is never mentioned. If this is correct, the results of the paper are not surprising - the very rare events that the models capture successfully are obviously included in the model because domain experts anticipated such behavior; maybe not all but at least some rare events were anticipated.
+Some references imprecise and poorly formatted.
+
+
+----------------------- REVIEW 2 ---------------------
+PAPER: 2
+TITLE: Experimental Evaluation of Qualitative Probability applied to Sensor Fusion and Intrusion Detection/Diagnosis
+AUTHORS: Robert P. Goldman and John Maraist
+
+OVERALL EVALUATION: 3 (strong accept)
+CLAIMS: Does the paper make clear claims about its contribution to QR? Such claims can take many forms, but they should be stated unambiguously in accessible language: 4 (clear claims)
+TECHNICAL CLARITY: Does the paper's writing and organization present its ideas to readers effectively? Can moderately informed readers understand the main contributions?: 4 (very clear)
+NOVELTY: Is this work novel? Do the authors present a problem or approach that advances qualitative reasoning techniques or applies them in a novel way?: 3 (somewhat novel)
+RELEVANCE: Is the paper relevant to the QR community?: 3 (relevant)
+
+----------- REVIEW -----------
+This paper provides an empirical evaluation of an intrusion detection
+system using the Z+ system which is an order-of-magnitude probability
+system.  The use of Z+ is well motivated by the intrusion detection
+problem.  The paper is clearly written and the experiments are quite
+detailed.
+
+During clustering and assessment are there ever edges between
+hypothesis nodes indicating sub-events of particular kinds of
+attacks?  I imagine that this would be what the "high-level events"
+or "ontology of attacks" are, but it is unclear. 
+
+At the end of the intrusion detection system, the authors use
+figure 1 to help us understand the scale of the false positive
+problem.  It would help the reader if the time frame of the reports
+was included as well.  Is this over a minute? a day? a week?
+
+It would probably be too much work for the paper version, but I
+recommend the authors present each experiment sequentially with the
+results and discussion at the workshop.
+
+
+----------------------- REVIEW 3 ---------------------
+PAPER: 2
+TITLE: Experimental Evaluation of Qualitative Probability applied to Sensor Fusion and Intrusion Detection/Diagnosis
+AUTHORS: Robert P. Goldman and John Maraist
+
+OVERALL EVALUATION: 2 (accept)
+CLAIMS: Does the paper make clear claims about its contribution to QR? Such claims can take many forms, but they should be stated unambiguously in accessible language: 4 (clear claims)
+TECHNICAL CLARITY: Does the paper's writing and organization present its ideas to readers effectively? Can moderately informed readers understand the main contributions?: 3 (somewhat clear)
+NOVELTY: Is this work novel? Do the authors present a problem or approach that advances qualitative reasoning techniques or applies them in a novel way?: 3 (somewhat novel)
+RELEVANCE: Is the paper relevant to the QR community?: 3 (relevant)
+
+----------- REVIEW -----------
+This paper discusses techniques for information and sensor fusion in the are of intrusion detection systems. Assuming the clustering of sensor reports is done correctly, the authors focus on the classification of the event hypotheses into three classes: likely, plausible and unlikely. The original part of the paper consists in the presentation of a series of experiments on the MIFD technique with which they calculate recall and precision, and establish that the results' accuracy of this approach degrades 'gracefully' as the data become less reliable (due to reduced fitness or sensor precision).
+
+This is a nice paper that I read with interest. It is on the scope of QR. The presentation is clear and well organized. I cannot judge the comparison with other approaches, this not being my area of expertise. There are a few things that I would suggest to consider for the final version.
+I find strange that there is no discussion of the plausibility of the experiments although they are admittedly artificial. 
+The fact that there are several types of IDSes (from rule-based to hybird) is irrelevant to this work just because their integration is assumed to be part of the clustering problem?
+Networks can be articulated in sub-networks of different sensitivity to attacks (perhaps due to the type of users or the type of information distributed there), this is not discussed. Is it assumed that a network is somehow homogeneous form the attach viewpoint? 
+The authors do not discuss the limitation to three classes (likely, plausible and unlikely). Can the technique manage more classes? Would it still behave nicely?
+The reference to an 'ontology of attacks' (end of Related Work) is not picked up in the rest of the paper.
+
+at pg.3, the entry (1,2) of the table has \phi instead of \psi.
+the link https://trac.prelude-ids.org/wiki/PreludeCorrelator gives "Page not found"
