@@ -84,12 +84,16 @@
       attacks? I imagine that this would be what the 'high-level
       events' or 'ontology of attacks' are, but it is unclear."
     - Clarify.
-*** TODO Review 2: Time frame
+*** RPG Review 2: Time frame
     - "At the end of the intrusion detection system, the authors use
       Figure 1 to help us understand the scale of the false positive
       problem.  It would help the reader if the time frame of the
       reports was included as well.  Is this over a minute?  A day?  A
       week?"
+    - Robert, your experience more than mine applies here.  Maybe add
+      to the last sentence before {Related Work} where we discuss this
+      figure, "from 16,000 raw reports in XXX hours to 0 noteworthy
+      events flagged over the same period"?
 *** TODO Review 3: Discuss/highlight plausibility of experiments
     - "I find strange that there is no discussion of the plausibility
       of the experiments although they are admittedly artificial."
