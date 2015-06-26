@@ -9,6 +9,35 @@
     - Assuming it's the same as the submitted-for-review page count,
       but it doesn't say anywhere.
 *** TODO Where do we send the final copy?
+** References
+*** TODO Review 3: Page not found
+    - At link https://trac.prelude-ids.org/wiki/PreludeCorrelator
+    - Yep, it's gone.  SANS has a whitepaper about Prelude with a
+      paragraph about the correlator,
+      http://www.sans.org/reading-room/whitepapers/awareness/prelude-hybrid-ids-framework-33048
+    - Oh, I think this might be where it lives now:
+      https://www.prelude-siem.org/projects/prelude/wiki/PreludeCorrelator
+*** TODO The Google Scholar URL
+    - At least on my PDF viewer, the URL for Google Scholar doesn't
+      copy out well.  I can't think of anything we can do about that,
+      but any ideas?
+*** JM InformationWeek article redirects
+    - The Schwartz article is still there, but they're rebranded
+      themselves, and the URL we give redirects.  Robert, unless you
+      object, I'll update our reference with the new URL.
+      Silence=consent.
+*** JM URL citations inconsistent
+    - One place we have "Query:" before the URL; other places just a
+      bare URL.  "InformationWeek web site," preceeds the URL while
+      "Prelude Correlator online documentation." follows it (and note
+      comma vs. period separating URL from overall artifact title).
+*** TODO Period with no space after the URL makes it hard to copy
+    - The period comes with the URL too easily.  I'm tempted to put a
+      nonbreaking space (or half space) in between the URL and period.
+*** TODO Monospaced URLs are hideous
+    - Is this a AAAI style thing, or is it a decision of ours to use
+      monospaced instead of proportionate sans-serif?
+*** TODO Review 1: Some references imprecise and poorly formatted
 ** From reviews
 *** TODO Review 1: learned or hand-made domains?
     - "I wonder how the underlying qualitative models were obtained -
@@ -27,7 +56,6 @@
       some rare events were anticipated."
     - Moot, probably, but address when we discuss generated
       vs. learned models?
-*** TODO Review 1: Some references imprecise and poorly formatted
 *** TODO Review 2: Edges for sub-events
     - "During clustering and assessment are there ever edges between
       hypothesis nodes indicating sub-events of particular kinds of
@@ -61,8 +89,6 @@
     - "The reference to an 'ontology of attacks' (end of Related Work)
       is not picked up in the rest of the paper."
 *** TODO Review 3: at pg.3, the entry (1,2) of the table has \phi instead of \psi.
-*** TODO Review 3: Page not found
-    - At link https://trac.prelude-ids.org/wiki/PreludeCorrelator
 ** Finish and submit
 *** RPG Acknowledgments
     Robert, please double-check that the one that's there is correct.
