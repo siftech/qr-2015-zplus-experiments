@@ -8,10 +8,12 @@
 * QR'15 final copy
 ** Questions
 *** RPG Do we have DARPA clearance already?
-*** TODO Final page count
+*** WAIT Final page count
     - Assuming it's the same as the submitted-for-review page count,
       but it doesn't say anywhere.
-*** TODO Where do we send the final copy?
+    - I emailed Scott.
+*** WAIT Where do we send the final copy?
+    - I emailed Scott.
 ** References
 *** DONE Review 3: Page not found
     - At link https://trac.prelude-ids.org/wiki/PreludeCorrelator
