@@ -127,9 +127,11 @@
       systems} after paragraph with "...ranks hypotheses as either
       likely, plausible or unlikely".  Robert, please mark DONE or
       discuss.
-*** TODO Review 3: Reference to ontology of attacks
+*** RPG Review 3: Reference to ontology of attacks
     - "The reference to an 'ontology of attacks' (end of Related Work)
       is not picked up in the rest of the paper."
+    - Picked up the reference a few paragraphs later, below
+      \textbf{Clustering}.  Robert, please mark DONE or discuss.
 *** DONE Review 3: at pg.3, the entry (1,2) of the table has \phi instead of \psi.
     - They mean $e$, but fixed.
 ** Finish and submit
