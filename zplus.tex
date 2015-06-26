@@ -167,12 +167,17 @@ handle common special cases.
 % has been
 % less important than finding an algorithm easy to modify for \zplus.
 
-MIFD's assessment ranks hypotheses as either
+\mifd's assessment ranks hypotheses as either
 \emph{likely}, \emph{plausible} or \emph{unlikely}. A hypothesis $h$,
 conditioned on evidence $\omega$,
 is \emph{likely} if
 $\kappa(h|\omega) < \kappa(\neg h|\omega)$, \emph{plausible} if $\kappa(h|\omega) = \kappa(\neg h|\omega)$
 and \emph{unlikely} otherwise.
+%
+Note that this restriction to three classes applies to \mifd's output,
+not its inputs --- the \tkappa\ values of \mifd's underlying model
+range over arbitrary natural numbers as needed to distinguish
+qualitatively distinct likelihoods.
 
 The MIFD system requires comparatively few \tkappa parameters given the above
 design.  For sensors, we need \fpKappa, and for events (attack and benign)

@@ -118,10 +118,14 @@
       type of information distributed there), this is not
       discussed. Is it assumed that a network is somehow homogeneous
       from the attack viewpoint?"
-*** TODO Review 3: Limitation to three classes
+*** RPG Review 3: Limitation to three classes
     - "The authors do not discuss the limitation to three classes
       (likely, plausible and unlikely). Can the technique manage more
       classes? Would it still behave nicely?"
+    - Added clarification to sentence in {The Scyllarus and MIFD
+      systems} after paragraph with "...ranks hypotheses as either
+      likely, plausible or unlikely".  Robert, please mark DONE or
+      discuss.
 *** TODO Review 3: Reference to ontology of attacks
     - "The reference to an 'ontology of attacks' (end of Related Work)
       is not picked up in the rest of the paper."
