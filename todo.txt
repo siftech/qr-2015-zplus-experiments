@@ -36,11 +36,11 @@
     - At least on my PDF viewer, the URL for Google Scholar doesn't
       copy out well.  I can't think of anything we can do about that,
       but any ideas?
-*** JM InformationWeek article redirects
+*** RPG InformationWeek article redirects
     - The Schwartz article is still there, but they're rebranded
-      themselves, and the URL we give redirects.  Robert, unless you
-      object, I'll update our reference with the new URL.
-      Silence=consent.
+      themselves, and the URL we give redirects.  Robert, I've updated
+      our reference with the new URL; please either mark DONE or
+      comment.
 *** JM URL citations inconsistent
     - One place we have "Query:" before the URL; other places just a
       bare URL.  "InformationWeek web site," preceeds the URL while
