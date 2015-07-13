@@ -7,13 +7,18 @@
 
 * QR'15 final copy
 ** Questions
-*** RPG Do we have DARPA clearance already?
+*** DONE Do we have DARPA clearance already?
+    - State "DONE"       from "RPG"        [2015-07-13 Mon 16:13]
+      Yes, this has been cleared.
 *** WAIT Final page count
     - Assuming it's the same as the submitted-for-review page count,
       but it doesn't say anywhere.
     - I emailed Scott.
-*** WAIT Where do we send the final copy?
+*** DONE Where do we send the final copy?
+    - State "DONE"       from "WAIT"       [2015-07-13 Mon 16:13]
     - I emailed Scott.
+    - I think we email to Scott again, yes?
+      
 ** References
 *** DONE Review 3: Page not found
     - At link https://trac.prelude-ids.org/wiki/PreludeCorrelator
@@ -41,11 +46,13 @@
     - At least on my PDF viewer, the URL for Google Scholar doesn't
       copy out well.  I can't think of anything we can do about that,
       but any ideas?
-*** RPG InformationWeek article redirects
+*** DONE InformationWeek article redirects
+    - State "DONE"       from "RPG"        [2015-07-13 Mon 16:30]
     - The Schwartz article is still there, but they're rebranded
       themselves, and the URL we give redirects.  Robert, I've updated
       our reference with the new URL; please either mark DONE or
       comment.
+    - I had to redo this: the article seems to have moved again.
 *** JM URL citations inconsistent
     - One place we have "Query:" before the URL; other places just a
       bare URL.  "InformationWeek web site," preceeds the URL while
@@ -54,9 +61,13 @@
 *** TODO Period with no space after the URL makes it hard to copy
     - The period comes with the URL too easily.  I'm tempted to put a
       nonbreaking space (or half space) in between the URL and period.
+    - I wonder if we could do something with the =\url=
+      macro when it appears in the context of a citation, so that it doesn't get
+      slurped like that.  It would actually be nice if Bibtex had a URL field.
 *** TODO Monospaced URLs are hideous
     - Is this a AAAI style thing, or is it a decision of ours to use
       monospaced instead of proportionate sans-serif?
+    - I think it's the URL style file. Probably not worth fixing.
 *** TODO Review 1: Some references imprecise and poorly formatted
 ** From reviews
 *** RPG Review 1: learned or hand-made domains?
