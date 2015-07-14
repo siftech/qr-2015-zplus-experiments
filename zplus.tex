@@ -167,17 +167,25 @@ handle common special cases.
 % has been
 % less important than finding an algorithm easy to modify for \zplus.
 
+% Extended this to address [[file:todo.txt::*Review%203:%20Limitation%20to%20three%20classes][Review 3: Limitation to three classes]]
 \mifd's assessment ranks hypotheses as either
 \emph{likely}, \emph{plausible} or \emph{unlikely}. A hypothesis $h$,
 conditioned on evidence $\omega$,
 is \emph{likely} if
 $\kappa(h|\omega) < \kappa(\neg h|\omega)$, \emph{plausible} if $\kappa(h|\omega) = \kappa(\neg h|\omega)$
 and \emph{unlikely} otherwise.
-%
+That is, a hypothesis is likely (unlikely) if some maximally likely scenario labels it as
+true (false) , and no maximally likely scenario labels it as false (true).  A
+hypothesis is plausible, in any other situation.
 Note that this restriction to three classes applies to \mifd's output,
 not its inputs --- the \tkappa\ values of \mifd's underlying model
 range over arbitrary natural numbers as needed to distinguish
 qualitatively distinct likelihoods.
+It would be possible to alter the assessment process to provide more classes of
+likelihood, using the difference in kappa ranks between the maximally likely
+scenario in which a hypothesis is labeled as true (false) and the one in which
+it is labeled as false (true).  We have not seen the need to do so and, indeed,
+worry that additional precision would come at the cost of validity.
 
 The MIFD system requires comparatively few \tkappa parameters given the above
 design.  For sensors, we need \fpKappa, and for events (attack and benign)
