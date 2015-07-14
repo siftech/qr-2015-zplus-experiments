@@ -159,7 +159,7 @@
       computer network."
     - Feel free to mark this as "DONE"
 
-*** JM Review 3: Limitation to three classes
+*** RPG Review 3: Limitation to three classes
     - "The authors do not discuss the limitation to three classes
       (likely, plausible and unlikely). Can the technique manage more
       classes? Would it still behave nicely?"
@@ -170,6 +170,9 @@
     - I just searched [[file:scyllarus-and-mifd.tex]] and I don't find "ranks"
       anywhere in there. So I'm not sure what you mean by having added a
       clarification to this sentence.
+    - It's in this commit:
+      [[https://bitbucket.org/rpgoldman/qr-2015/commits/0dcf034fc46afbee08956d735b94b35ef9969b79]].
+      Seems to still be in [[file:zplus.tex]].
 *** DONE Review 3: Reference to ontology of attacks
     - State "DONE"       from "RPG"        [2015-07-14 Tue 11:58]
     - "The reference to an 'ontology of attacks' (end of Related Work)
