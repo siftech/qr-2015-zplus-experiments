@@ -159,7 +159,8 @@
       computer network."
     - Feel free to mark this as "DONE"
 
-*** RPG Review 3: Limitation to three classes
+*** DONE Review 3: Limitation to three classes
+    - State "DONE"       from "RPG"        [2015-07-14 Tue 13:52]
     - "The authors do not discuss the limitation to three classes
       (likely, plausible and unlikely). Can the technique manage more
       classes? Would it still behave nicely?"
@@ -173,6 +174,8 @@
     - It's in this commit:
       [[https://bitbucket.org/rpgoldman/qr-2015/commits/0dcf034fc46afbee08956d735b94b35ef9969b79]].
       Seems to still be in [[file:zplus.tex]].
+    - I added a discussion to [[file:zplus.tex::\mifd's%20assessment%20ranks%20hypotheses%20as%20either][zplus.tex]].  I think this is done, but wanted you
+      to have a chance to check.
 *** DONE Review 3: Reference to ontology of attacks
     - State "DONE"       from "RPG"        [2015-07-14 Tue 11:58]
     - "The reference to an 'ontology of attacks' (end of Related Work)
@@ -182,7 +185,8 @@
 *** DONE Review 3: at pg.3, the entry (1,2) of the table has \phi instead of \psi.
     - They mean $e$, but fixed.
 ** Finish and submit
-*** RPG Acknowledgments
+*** DONE Acknowledgments
+    - State "DONE"       from "RPG"        [2015-07-14 Tue 13:47]
     Robert, please double-check that the one that's there is correct.
 *** TODO Last spellcheck
 *** TODO Run dupwords
