@@ -39,20 +39,31 @@ since different \ids approaches
 % --- network (NIDS) vs.\
 % host-based (HIDS), signature vs.\ anomaly-based --- 
 bring different
-strengths and weaknesses.
+strengths and weaknesses, and have different ``fields of view.'' For example, local
+privilege escalation attacks may be invisible to a NIDS; HIDS systems are more
+accurate for many purposes, but impose higher administrative burdens because
+they must be scattered around the defended network, rather that centrally
+deployed like NIDS.  Signature-based IDSes provide fewer false positives, but
+are more likely to be blind to zero-day attacks than anomaly-based systems.
 %%
 %% Hm, can we just get rid of the details NIDS/HIDS and
 %% signature/anomaly comparisons, and keep just the takeaway? I don't
 %% believe we refer to them after this. 
 %%
-Briefly, more accurate \idses have significantly higher software
-administration burdens, and there is an inevitable tradeoff between
-false positives and false negatives.
-This tradeoff applies for all of the different varieties of IDS,
-for example NIDS or HIDS, signature-based, anomaly-detecting, various
-hybrids.  We do not discuss the varieties of \idses here;
-we are not concerned with the mechanics of clustering reports, but
-rather with the subsequent assessment of hypothesized events.
+% Briefly, more accurate \idses have significantly higher software
+% administration burdens, and there is an inevitable tradeoff between
+% false positives and false negatives.
+% This tradeoff applies for all of the different varieties of IDS,
+% for example NIDS or HIDS, signature-based, anomaly-detecting, various
+% hybrids.
+
+% clarification relevant to [[file:todo.txt::*Review%203:%20Flavors%20of%20IDS][Review 3: Flavors of IDS]]
+We will not discuss the varieties of \idses further here -- there is a
+voluminous literature on them.   The \emph{precise} nature of \ids weaknesses and
+strengths is not critical to our investigation here, but the fact that there
+\emph{are} such strengths and weaknesses is what motivates our information
+fusion, and difficulties in modeling the events and sensors is what motivates
+our use of qualitative methods.
 %%
 %%Some systems aim to overcome the limitations of existing \idses by assembling 
 %%a suite of
