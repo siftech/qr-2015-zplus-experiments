@@ -18,7 +18,8 @@
     - State "DONE"       from "WAIT"       [2015-07-13 Mon 16:13]
     - I emailed Scott.
     - I think we email to Scott again, yes?
-      
+      - No, we push a new "version" to EasyChair.
+
 ** References
 *** DONE Review 3: Page not found
     - At link https://trac.prelude-ids.org/wiki/PreludeCorrelator
@@ -150,8 +151,8 @@
     Robert, please double-check that the one that's there is correct.
 *** TODO Last spellcheck
 *** TODO Run dupwords
-*** TODO Send PDF --- deadline July 16
-    - No instructions at this point on where to send the final PDF.
+*** TODO Upload PDF --- deadline July 16
+    - Via EasyChair
 
 * AAAI'15 submission                                               :noexport:
 ** Excel graphs
