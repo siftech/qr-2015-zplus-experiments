@@ -43,7 +43,9 @@
       https://www.prelude-siem.org/projects/prelude/news .  It is the
       same stuff; they just changed the URLs.  Back to using the old
       reference, and the URL there changed.
-*** TODO The Google Scholar URL
+*** WONTFIX The Google Scholar URL
+    CLOSED: [2015-07-14 Tue 15:59]
+    - State "WONTFIX"    from "TODO"       [2015-07-14 Tue 15:59]
     - At least on my PDF viewer, the URL for Google Scholar doesn't
       copy out well.  I can't think of anything we can do about that,
       but any ideas?
@@ -63,13 +65,17 @@
       bare URL.  "InformationWeek web site," preceeds the URL while
       "Prelude Correlator online documentation." follows it (and note
       comma vs. period separating URL from overall artifact title).
-*** TODO Period with no space after the URL makes it hard to copy
+*** WONTFIX Period with no space after the URL makes it hard to copy
+    CLOSED: [2015-07-14 Tue 15:58]
+    - State "WONTFIX"    from "TODO"       [2015-07-14 Tue 15:58]
     - The period comes with the URL too easily.  I'm tempted to put a
       nonbreaking space (or half space) in between the URL and period.
     - I wonder if we could do something with the =\url=
       macro when it appears in the context of a citation, so that it doesn't get
       slurped like that.  It would actually be nice if Bibtex had a URL field.
-*** TODO Monospaced URLs are hideous
+*** WONTFIX Monospaced URLs are hideous
+    CLOSED: [2015-07-14 Tue 15:59]
+    - State "WONTFIX"    from "TODO"       [2015-07-14 Tue 15:59]
     - Is this a AAAI style thing, or is it a decision of ours to use
       monospaced instead of proportionate sans-serif?
     - I think it's the URL style file. Probably not worth fixing.
@@ -188,8 +194,12 @@
 *** DONE Acknowledgments
     - State "DONE"       from "RPG"        [2015-07-14 Tue 13:47]
     Robert, please double-check that the one that's there is correct.
-*** TODO Last spellcheck
-*** TODO Run dupwords
+*** DONE Last spellcheck
+    CLOSED: [2015-07-14 Tue 16:00]
+    - State "DONE"       from "TODO"       [2015-07-14 Tue 16:00]
+*** DONE Run dupwords
+    CLOSED: [2015-07-14 Tue 16:00]
+    - State "DONE"       from "TODO"       [2015-07-14 Tue 16:00]
 *** TODO Upload PDF --- deadline July 16
     - Via EasyChair
 
