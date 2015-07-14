@@ -54,7 +54,9 @@
       our reference with the new URL; please either mark DONE or
       comment.
     - I had to redo this: the article seems to have moved again.
-*** JM URL citations inconsistent
+*** DONE URL citations inconsistent
+    CLOSED: [2015-07-14 Tue 09:23]
+    - State "DONE"       from "JM"         [2015-07-14 Tue 09:23]
     - One place we have "Query:" before the URL; other places just a
       bare URL.  "InformationWeek web site," preceeds the URL while
       "Prelude Correlator online documentation." follows it (and note
